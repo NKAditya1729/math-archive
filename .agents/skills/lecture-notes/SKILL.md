@@ -95,6 +95,20 @@ a timestamp. In lecture front matter, set `timestamps: false` by default. Do not
 include the `time` parameter in `block.html` or inline `time.html` markers; the
 owner adds them while verifying the notes against the video.
 
+### Vocabulary gate: applies to the entire page
+
+The vocabulary gate recorded in `context/course-map.md` applies to **every part of
+the page without exception**:
+- Supplements
+- Exercise statements and worked solutions
+- Examples and non-examples
+- Reading notes and open questions
+- Figure captions and annotations
+
+Never use a concept, notation, or theorem the course has not yet reached. For example:
+- In Lecture 2, "open set", "basis", norms $\lVert \cdot \rVert$, and metric spaces are forbidden everywhere on the page, including in exercise solutions.
+- If an exercise requires bounding distances in $\mathbb{R}^2$ in Lecture 2, use elementary coordinate algebra ($x^2 + y^2$), never the triangle inequality for Euclidean vectors or norms (which arrive in Lecture 14). Using an unreached concept in an exercise solution is a gate defect.
+
 ## Block grammar
 
 Use build-time Liquid includes via `{% include block.html ... %}`. The template renders semantic HTML classes and data attributes matching the styles in rule 03.

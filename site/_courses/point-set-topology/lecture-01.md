@@ -17,7 +17,10 @@ timestamps: false
 figures: 2
 corrections: 0
 depends_on: []
-used_in: []
+used_in:
+  - lecture: 2
+    title: "The Standard Topology on the Real Line and the Plane"
+    relationship: "Supplies the topology axioms (T1)–(T3) used to establish the standard topology on R."
 notation:
   - symbol: "$\\varnothing$"
     gloss: "Empty set (read aloud as 'phi' on the lecture audio)"

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 270" width="100%" height="auto" style="background:#fcfbf9;">
+  <defs>
+    <marker id="arrow-m" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#766e65"/>
+    </marker>
+  </defs>
+
+  <!-- LEFT PANEL: Geometric decomposition -->
+  <g id="geometric-decomp">
+    <text x="160" y="28" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Area Decomposition</text>
+
+    <!-- Axes -->
+    <line x1="40" y1="210" x2="280" y2="210" stroke="#b0a89f" stroke-width="1.2" marker-end="url(#arrow-m)"/>
+    <line x1="50" y1="220" x2="50" y2="40" stroke="#b0a89f" stroke-width="1.2" marker-end="url(#arrow-m)"/>
+
+    <!-- Base rectangle: [0, x] x [0, y] -->
+    <!-- Origin at (50, 210). x = 120 (width 120), y = 90 (height 90, so y goes from 210 to 120) -->
+    <rect x="50" y="120" width="120" height="90" fill="rgba(43, 92, 143, 0.15)" stroke="#2b5c8f" stroke-width="1.5"/>
+    <text x="110" y="170" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#2b5c8f" text-anchor="middle">xy</text>
+
+    <!-- Top horizontal strip: x * (y' - y). width 120, height 28 (y' goes from 120 to 92) -->
+    <rect x="50" y="92" width="120" height="28" fill="rgba(59, 122, 87, 0.2)" stroke="#3b7a57" stroke-width="1.2" stroke-dasharray="3,2"/>
+    <text x="110" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500" fill="#3b7a57" text-anchor="middle">x(y′ − y)</text>
+
+    <!-- Right vertical strip: (x' - x) * y'. width 32, height 118 (from y=92 to y=210) -->
+    <rect x="170" y="92" width="32" height="118" fill="rgba(139, 58, 43, 0.18)" stroke="#8b3a2b" stroke-width="1.2" stroke-dasharray="3,2"/>
+    <text x="186" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500" fill="#8b3a2b" text-anchor="middle" transform="rotate(-90 186 155)">(x′ − x)y′</text>
+
+    <!-- Axis tick labels -->
+    <text x="50" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#766e65" text-anchor="middle">0</text>
+    <text x="170" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#2b5c8f" text-anchor="middle">x</text>
+    <text x="202" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8b3a2b" text-anchor="middle">x′</text>
+    <line x1="170" y1="208" x2="170" y2="214" stroke="#2b5c8f" stroke-width="1.5"/>
+    <line x1="202" y1="208" x2="202" y2="214" stroke="#8b3a2b" stroke-width="1.5"/>
+
+    <text x="42" y="124" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#2b5c8f" text-anchor="end">y</text>
+    <text x="42" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#3b7a57" text-anchor="end">y′</text>
+    <line x1="48" y1="120" x2="54" y2="120" stroke="#2b5c8f" stroke-width="1.5"/>
+    <line x1="48" y1="92" x2="54" y2="92" stroke="#3b7a57" stroke-width="1.5"/>
+
+    <text x="160" y="255" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#766e65" text-anchor="middle">x′y′ − xy = (x′ − x)y′ + x(y′ − y)</text>
+  </g>
+
+  <!-- DIVIDER -->
+  <line x1="330" y1="30" x2="330" y2="245" stroke="#e4dfd5" stroke-width="1"/>
+
+  <!-- RIGHT PANEL: Algebraic control & delta choice -->
+  <g id="algebraic-control">
+    <text x="500" y="28" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Controlling the Error</text>
+
+    <!-- Step 1: bounds -->
+    <rect x="360" y="55" width="280" height="50" rx="4" fill="#f5f2eb" stroke="#d5cebe" stroke-width="1"/>
+    <text x="375" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1a1a1a">For (x′, y′) ∈ S_δ(x, y) with δ ≤ 1:</text>
+    <text x="375" y="94" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#2b5c8f" font-weight="500">|x′ − x| &lt; δ,   |y′| ≤ |y| + δ ≤ |y| + 1</text>
+
+    <!-- Step 2: triangle inequality bound -->
+    <rect x="360" y="115" width="280" height="55" rx="4" fill="#f5f2eb" stroke="#d5cebe" stroke-width="1"/>
+    <text x="375" y="135" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1a1a1a">Triangle inequality gives:</text>
+    <text x="375" y="154" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#8b3a2b" font-weight="600">|x′y′ − xy| &lt; δ(|x| + |y| + 1)</text>
+
+    <!-- Step 3: target epsilon' and delta definition -->
+    <rect x="360" y="180" width="280" height="65" rx="4" fill="rgba(43, 92, 143, 0.08)" stroke="#2b5c8f" stroke-width="1.2"/>
+    <text x="375" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#1a1a1a">To achieve error &lt; ε′ (with ε′ ≤ 1):</text>
+    <text x="500" y="222" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#2b5c8f" text-anchor="middle">δ = ε′ / (|x| + |y| + 1) ≤ 1</text>
+    <text x="500" y="238" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#3b7a57" text-anchor="middle">⇒ M(S_δ(x, y)) ⊆ B_{ε′}(xy)</text>
+  </g>
+</svg>

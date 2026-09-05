@@ -1,0 +1,74 @@
+<svg viewBox="0 0 620 260" role="img" aria-labelledby="fig-box-prod-title"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="fig-box-prod-title">Comparison of basic open sets in infinite products: the box topology allows restrictions on all coordinates, while the product topology restricts only finitely many coordinates.</title>
+  <style>
+    .panel-box { stroke: var(--ink-soft); stroke-width: 1; fill: none; }
+    .restricted { stroke: var(--accent); stroke-width: 1.5; fill: var(--accent); fill-opacity: 0.18; }
+    .full-space { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 4 3; fill: var(--ink-soft); fill-opacity: 0.05; }
+    .divider { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 4 4; }
+    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; fill: var(--ink); text-anchor: middle; }
+    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--ink); text-anchor: middle; }
+    .heading { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-weight: 600; fill: var(--ink); text-anchor: middle; }
+    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 13px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
+    .label-soft { font-family: 'Source Serif 4', Georgia, serif; font-size: 13px; font-style: italic; fill: var(--ink-soft); text-anchor: middle; }
+  </style>
+
+  <!-- Background -->
+  <rect width="620" height="260" fill="var(--paper)" />
+
+  <!-- Center Divider -->
+  <line x1="310" y1="20" x2="310" y2="240" class="divider" />
+
+  <!-- LEFT PANEL: Box Topology -->
+  <text x="155" y="32" class="heading">Box Basis Element (ℬ₁)</text>
+  <text x="155" y="52" class="label-soft">∏_{i ∈ I} U_i  (infinitely many U_i ⊊ X_i)</text>
+
+  <!-- Coordinate rows for Box -->
+  <!-- Coord 1 -->
+  <text x="45" y="90" class="label-italic">X_1 :</text>
+  <rect x="70" y="77" width="170" height="18" class="full-space" />
+  <rect x="100" y="77" width="70" height="18" class="restricted" />
+  <text x="135" y="91" class="label-accent">U_1 ⊊ X_1</text>
+
+  <!-- Coord 2 -->
+  <text x="45" y="125" class="label-italic">X_2 :</text>
+  <rect x="70" y="112" width="170" height="18" class="full-space" />
+  <rect x="120" y="112" width="60" height="18" class="restricted" />
+  <text x="150" y="126" class="label-accent">U_2 ⊊ X_2</text>
+
+  <!-- Coord 3 -->
+  <text x="45" y="160" class="label-italic">X_3 :</text>
+  <rect x="70" y="147" width="170" height="18" class="full-space" />
+  <rect x="85" y="147" width="80" height="18" class="restricted" />
+  <text x="125" y="161" class="label-accent">U_3 ⊊ X_3</text>
+
+  <!-- Dots for Box -->
+  <text x="155" y="195" class="label">⋮  (every factor may be proper)</text>
+  <text x="155" y="235" class="label-soft">Strictly finer, too many open sets</text>
+
+  <!-- RIGHT PANEL: Product Topology -->
+  <text x="465" y="32" class="heading">Product Basis Element (ℬ₂)</text>
+  <text x="465" y="52" class="label-soft">∏_{i ∈ I} U_i  (all but finitely many U_i = X_i)</text>
+
+  <!-- Coordinate rows for Product -->
+  <!-- Coord 1 -->
+  <text x="355" y="90" class="label-italic">X_1 :</text>
+  <rect x="380" y="77" width="170" height="18" class="full-space" />
+  <rect x="410" y="77" width="70" height="18" class="restricted" />
+  <text x="445" y="91" class="label-accent">U_1 ⊊ X_1</text>
+
+  <!-- Coord 2 -->
+  <text x="355" y="125" class="label-italic">X_2 :</text>
+  <rect x="380" y="112" width="170" height="18" class="full-space" />
+  <rect x="430" y="112" width="60" height="18" class="restricted" />
+  <text x="460" y="126" class="label-accent">U_2 ⊊ X_2</text>
+
+  <!-- Coord 3 -->
+  <text x="355" y="160" class="label-italic">X_3 :</text>
+  <rect x="380" y="147" width="170" height="18" class="full-space" />
+  <text x="465" y="161" class="label">U_3 = X_3 (full space)</text>
+
+  <!-- Dots for Product -->
+  <text x="465" y="195" class="label">⋮  (U_i = X_i for all remaining i)</text>
+  <text x="465" y="235" class="label-accent">Standard product topology: τ_prod ⊆ τ_box</text>
+</svg>

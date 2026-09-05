@@ -31,58 +31,61 @@ cleanly at L23 with Hausdorff and compactness.
 
 ## Part I — Building spaces (1–6)
 
-**L1.** Power set. Definition of a topology, three conditions, finite/arbitrary
+**L1 [PROCESSED].** Power set. Definition of a topology, three conditions, finite/arbitrary
 asymmetry stressed. Trivial, discrete, and finite-complement topologies on an
 arbitrary set, all three verified in full.
 
-**L2.** Intervals. Property $(\ast)$ on $\mathbb{R}$. $(0,1)$ satisfies it via
-$\varepsilon = \min\{x/2,(1-x)/2\}$; $[0,1)$ fails at $0$. Standard topology on
+**L2 [PROCESSED].** Intervals. Property $(\ast)$ on $\mathbb{R}$. $(0,1)$ satisfies it via
+$\varepsilon = \min\lbrace x/2,(1-x)/2\rbrace$; $[0,1)$ fails at $0$. Standard topology on
 $\mathbb{R}$, all three axioms — the **min argument** appears here first. Open
 square $S_\varepsilon(a,b)$. $(\ast)$ restated for $\mathbb{R}^2$; open disc
-satisfies, closed disc fails at $(1,0)$. Ends mid-argument.
+satisfies, closed disc fails at $(1,0)$. Ends mid-argument. Forward reference to L3:
+completes the proof for $\mathbb{R}^2$, generalises to $\mathbb{R}^n$, defines open sets,
+and introduces bases.
 
-**L3.** Completes $\mathbb{R}^2$. States $\mathbb{R}^n$ as an exercise. Open
-ball $B_\varepsilon(x)$ and $(\ast')$; two exercises, including
-$\tau = \tau'$, with the remark that one topology has many descriptions.
-Defines **open set**. Defines **basis** (one condition). Open intervals form a
-basis for $\mathbb{R}$; squares for $\mathbb{R}^2$, $\mathbb{R}^n$.
+**L3 [PROCESSED].** Completes $\mathbb{R}^2$ verification of standard topology. States $\mathbb{R}^n$ topology as an exercise. Open ball $B_\varepsilon(x)$ and $(\ast')$ in $\mathbb{R}^n$; exercises on $B_\varepsilon(x) \in \tau'$ and $\tau = \tau'$, with the remark that one topology has many descriptions. Defines **open set**. Defines **basis** (one condition: $\forall U \in \tau, \forall x \in U\ \exists W \in \mathcal{B}$ s.t. $x \in W \subseteq U$). Open intervals form a basis for $\mathbb{R}$; squares/hypercubes for $\mathbb{R}^n$. Forward reference to L4: union of basis elements is $X$, the generating proposition for topologies, and subspace topology.
 
-**L4.** Lemma: $\bigcup_{W \in \mathcal{B}} W = X$. **The generating
+**L4 [PROCESSED].** Lemma: $\bigcup_{W \in \mathcal{B}} W = X$. **The generating
 proposition** — a collection $\mathcal{B}$ satisfying (i) it covers $X$ and
 (ii) the refinement condition on pairwise intersections generates a topology
 $\tau_{\mathcal{B}}$ with $\mathcal{B}$ as basis. Condition (2) $\Rightarrow$
 (2′) for $n$ sets, by induction, left as an exercise. Exercise: $\tau =
 \tau_{\mathcal{B}}$. **Subspace topology** defined. Examples: trivial, discrete,
-and $\mathbb{Z} \subseteq \mathbb{R}$ is discrete.
+and $\mathbb{Z} \subseteq \mathbb{R}$ is discrete. Forward reference to L5:
+$\mathbb{R} \hookrightarrow \mathbb{R}^2$ as $x$-axis, Comparison Lemma, and
+Product Topology.
 
-**L5.** $\mathbb{R} \hookrightarrow \mathbb{R}^2$ as the $x$-axis; subspace
+**L5 [PROCESSED].** $\mathbb{R} \hookrightarrow \mathbb{R}^2$ as the $x$-axis; subspace
 topology equals the standard one. **The comparison lemma** ($\mathcal{B}_1
 \subseteq \tau_2 \Rightarrow \tau_1 \subseteq \tau_2$) and its corollary —
 used constantly thereafter. Basis for a subspace. Lemma: $\{U \times V\}$
 satisfies the two generating conditions. **Product topology** on $X \times Y$.
+Forward reference to L6: infinite products, box topology, and matrix groups catalogue.
 
-**L6.** Finite products. **Box topology** $\mathcal{B}_1$ versus **product
+**L6 [PROCESSED].** Finite products. **Box topology** $\mathcal{B}_1$ versus **product
 topology** $\mathcal{B}_2$ (all but finitely many factors full) on infinite
 products; $\tau_2 \subseteq \tau_1$; they agree for finite index sets. The
-catalogue of examples: standard $=$ product on $\mathbb{R}^n$ (claim), $S^1$,
+catalogue of examples: standard $=$ product on $\mathbb{R}^n$ (proved), $S^1$,
 $S^n$, $M_n(\mathbb{R}) \cong \mathbb{R}^{n^2}$, transporting a topology along
-a bijection, $GL_n(\mathbb{R})$, $O(n)$, $SO(n)$, $\mathbb{C}$ two ways,
+a bijection, $GL_n(\mathbb{R})$, $SL_n(\mathbb{R})$, $O(n)$, $SO(n)$, $\mathbb{C}$ two ways,
 $M_n(\mathbb{C})$, $GL_n(\mathbb{C})$, $SL_n(\mathbb{C})$, $U(n)$, $SU(n)$.
+Concludes Part I. Forward reference to Part II / L7: continuous maps by preimages.
 
 ---
 
 ## Part II — Continuous maps and metric spaces (7–15)
 
-**L7.** **Continuity** by preimages. Identity; inclusion of a subspace;
+**L7 [PROCESSED].** **Continuity** by preimages. Identity; inclusion of a subspace;
 subspace topology is the smallest making the inclusion continuous. Projections
 are continuous; product topology is the smallest making all projections
 continuous. Why the box topology fails: the diagonal $\Delta : \mathbb{R} \to
 \prod \mathbb{R}$ is not box-continuous. Exercise, plus the basis lemma stated
-for next time.
+for next time. Forward reference to L8: basis criterion for continuity and continuous operations.
 
-**L8.** Basis criterion for continuity, proved. Addition and multiplication
+**L8 [PROCESSED].** Basis criterion for continuity, proved. Addition and multiplication
 $\mathbb{R}^2 \to \mathbb{R}$ are continuous, by explicit $\varepsilon$
-estimates. $x \mapsto 1/x$ on $\mathbb{R}^{\times}$ is continuous.
+estimates. Subspace basis on $\mathbb{R}^\times$; $x \mapsto 1/x$ on $\mathbb{R}^\times$ is continuous.
+Forward reference to L9: composition, restriction, maps into products, and algebraic combinations $f+g, fg, f/g$.
 
 **L9.** Composition; restriction to a subspace; corestriction to a subspace
 containing the image. **Maps into a product** are continuous iff each component

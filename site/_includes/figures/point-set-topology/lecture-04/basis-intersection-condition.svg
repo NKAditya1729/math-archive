@@ -1,0 +1,34 @@
+<svg viewBox="0 0 540 260" role="img" aria-labelledby="fig-basis-intersection-title"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="fig-basis-intersection-title">Generating condition (ii) for a basis: given basis elements W_1 and W_2 and a point x in their intersection, there exists a basis element W containing x and contained in the intersection.</title>
+  <style>
+    .set-1 { stroke: var(--ink-soft); stroke-width: 1.5; fill: var(--ink-soft); fill-opacity: 0.08; }
+    .set-2 { stroke: var(--ink-soft); stroke-width: 1.5; fill: var(--ink-soft); fill-opacity: 0.08; }
+    .set-w { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 3; fill: var(--accent); fill-opacity: 0.22; }
+    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; fill: var(--ink); text-anchor: middle; }
+    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--ink); text-anchor: middle; }
+    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
+  </style>
+
+  <!-- Background -->
+  <rect width="540" height="260" fill="var(--paper)" />
+
+  <!-- Set W_1 (left ellipse) -->
+  <ellipse cx="200" cy="130" rx="120" ry="85" class="set-1" />
+  <text x="120" y="75" class="label-italic">W_1</text>
+
+  <!-- Set W_2 (right ellipse) -->
+  <ellipse cx="320" cy="130" rx="120" ry="85" class="set-2" />
+  <text x="400" y="75" class="label-italic">W_2</text>
+
+  <!-- Smaller basis set W inside W_1 ∩ W_2 -->
+  <ellipse cx="260" cy="130" rx="42" ry="32" class="set-w" />
+  <text x="260" y="105" class="label-accent">W</text>
+
+  <!-- Point x inside W -->
+  <circle cx="255" cy="135" r="4" fill="var(--ink)" />
+  <text x="270" y="148" class="label-italic" style="font-weight: bold;">x</text>
+
+  <!-- Caption text below -->
+  <text x="260" y="235" class="label">x ∈ W ⊆ W_1 ∩ W_2  with  W ∈ ℬ</text>
+</svg>

@@ -102,7 +102,10 @@ reload. Do not add a fourth control without being asked.
 
 Also required on every lecture page: breadcrumb, previous/next lecture links
 at the foot, and a "Report an error" mailto link prefilled with the course
-and lecture number.
+and lecture number. Navigation in `lecture.html` uses Jekyll's built-in collection
+variables (`page.previous.url` and `page.next.url`), automatically linking adjacent
+published lectures; front matter `prev:` and `next:` are retained in the schema for
+metadata and explicit overrides.
 
 ## Design tokens
 

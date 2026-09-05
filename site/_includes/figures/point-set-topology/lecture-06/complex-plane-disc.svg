@@ -1,0 +1,45 @@
+<svg viewBox="0 0 540 260" role="img" aria-labelledby="fig-c-plane-title"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="fig-c-plane-title">Topology on the complex numbers: an open set U in C contains an open disk B_epsilon(z) around every point z in U, equivalent to the standard topology on R^2.</title>
+  <style>
+    .axis { stroke: var(--ink); stroke-width: 1.5; }
+    .region { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 6 4; fill: var(--ink-soft); fill-opacity: 0.08; }
+    .disk { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 3; fill: var(--accent); fill-opacity: 0.22; }
+    .radius { stroke: var(--accent); stroke-width: 1.5; }
+    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; fill: var(--ink); text-anchor: middle; }
+    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--ink); text-anchor: middle; }
+    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
+  </style>
+
+  <!-- Background -->
+  <rect width="540" height="260" fill="var(--paper)" />
+
+  <!-- Axes: Re at y = 140, Im at x = 110 -->
+  <line x1="40" y1="140" x2="500" y2="140" class="axis" />
+  <polygon points="500,136 510,140 500,144" fill="var(--ink)" />
+  <text x="495" y="165" class="label">Re</text>
+
+  <line x1="110" y1="240" x2="110" y2="25" class="axis" />
+  <polygon points="106,25 110,15 114,25" fill="var(--ink)" />
+  <text x="130" y="25" class="label">Im</text>
+
+  <!-- Open region U in C (smooth blob) -->
+  <path d="M 210,80 C 270,40 390,50 430,100 C 470,150 440,210 370,220 C 300,230 220,200 190,160 C 160,120 170,100 210,80 Z" class="region" />
+  <text x="435" y="85" class="label-italic" style="font-weight: bold;">U ⊆ ℂ</text>
+
+  <!-- Point z inside U at (300, 140) -->
+  <!-- Open disk B_eps(z) of radius 45 -->
+  <circle cx="310" cy="135" r="45" class="disk" />
+
+  <!-- Center z -->
+  <circle cx="310" cy="135" r="4" fill="var(--ink)" />
+  <text x="310" y="155" class="label-italic" style="font-weight: bold;">z = x + iy</text>
+
+  <!-- Radius line and epsilon label -->
+  <line x1="310" y1="135" x2="348" y2="110" class="radius" />
+  <circle cx="348" cy="110" r="2.5" fill="var(--accent)" />
+  <text x="333" y="112" class="label-accent">ε</text>
+
+  <text x="310" y="70" class="label-accent">B_ε(z) = {w ∈ ℂ : |w − z| &lt; ε} ⊆ U</text>
+  <text x="310" y="248" class="label">Direct disk topology τ₁ agrees with transported topology τ₂ from ℝ²</text>
+</svg>

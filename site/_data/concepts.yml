@@ -24,7 +24,15 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 3
+  anchor: "definition-3-6-basis-for-a-topology"
   symbol: "$\\mathcal{B}, \\mathcal{B}_n$"
+- letter: B
+  name: Basis criterion for continuity
+  gloss: 'A map $f : X \to Y$ is continuous if and only if preimages $f^{-1}(B)$ of basic open sets $B \in \mathcal{B}_Y$ are open in $X$.'
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 8
+  anchor: "lemma-8-1-basis-criterion-for-continuity"
 - letter: B
   name: Bounded subset
   gloss: A subset of $\mathbb{R}^n$ contained within some open ball around the origin.
@@ -38,6 +46,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 6
+  anchor: "definition-6-1-the-box-topology"
 - letter: C
   name: Closed set
   gloss: A subset $A \subseteq X$ whose complement $X \setminus A$ is an open set
@@ -69,6 +78,7 @@
   lecture:
   - 6
   - 28
+  anchor: "example-3-classical-complex-matrix-groups"
   symbol: "$U(n), SU(n)$"
 - letter: C
   name: Components of a space
@@ -86,12 +96,20 @@
   course_title: Point-Set Topology
   lecture: 15
 - letter: C
+  name: Continuous arithmetic operations
+  gloss: 'Addition $A(x,y) = x+y$ and multiplication $M(x,y) = xy$ on $\mathbb{R}^2 \to \mathbb{R}$, as well as inversion on $\mathbb{R}^\times$, are continuous under standard topologies.'
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 8
+  anchor: "theorem-8-2-continuity-of-addition-and-multiplication"
+- letter: C
   name: Continuous map
   gloss: 'A map $f : X \to Y$ such that the preimage $f^{-1}(V)$ of every open set
     $V \subseteq Y$ is open in $X$.'
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 7
+  anchor: "definition-7-1-continuous-map"
 - letter: C
   name: Coordinates are polynomials
   gloss: Proving continuity of matrix maps and determinant functions by observing
@@ -124,6 +142,7 @@
   - 5
   - 6
   - 10
+  anchor: "lemma-5-1-the-comparison-lemma"
 - letter: D
   name: Dense subset
   gloss: A subset $T \subseteq X$ whose closure is the full space, equivalently meeting
@@ -183,6 +202,7 @@
   - 6
   - 11
   - 19
+  anchor: "example-2-classical-real-matrix-groups"
   symbol: "$GL_n(\\mathbb{R})$"
 - letter: G
   name: Generating conditions for a basis
@@ -191,6 +211,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 4
+  anchor: "proposition-4-2-the-generating-proposition"
 - letter: G
   name: Grassmannian
   gloss: The manifold $Gr(r,n)$ parametrizing all $r$-dimensional linear subspaces
@@ -230,6 +251,13 @@
   - 21
   - 27
   - 28
+- letter: I
+  name: Inversion map
+  gloss: 'The reciprocal map $f : \mathbb{R}^\times \to \mathbb{R}^\times$, $f(x) = 1/x$, continuous in the subspace topology.'
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 8
+  anchor: "theorem-8-4-continuity-of-inversion-on-the-punctured-real-line"
 - letter: L
   name: Locally compact space
   gloss: A space where every point has an open neighbourhood whose closure is compact.
@@ -301,19 +329,29 @@
   symbol: "$\\hat{X}, p_0$"
 - letter: O
   name: Open ball
-  gloss: 'The set $\{y \in \mathbb{R}^n : \lVert x - y \rVert < \varepsilon\}$ of points within Euclidean distance $\varepsilon$
+  gloss: 'The set $\lbrace y \in \mathbb{R}^n : \lVert x - y \rVert < \varepsilon\rbrace$ of points within Euclidean distance $\varepsilon$
     of $x$ in $\mathbb{R}^n$.'
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 3
+  anchor: "definition-3-3-open-ball-in-rn"
   symbol: "$B_\\varepsilon(x)$"
 - letter: O
+  name: Open hypercube
+  gloss: The Cartesian product of $n$ open intervals of length $2\varepsilon$ in $\mathbb{R}^n$, centered at $x \in \mathbb{R}^n$.
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 3
+  anchor: "definition-3-1-open-hypercube-in-rn"
+  symbol: "$S_\\varepsilon(x)$"
+- letter: O
   name: Open interval
-  gloss: 'The standard basic open set $(a,b) = \{x \in \mathbb{R} : a < x < b\}$ on
+  gloss: 'The open interval $(a,b) = \lbrace x \in \mathbb{R} : a < x < b\rbrace$ on
     the real line, where $a, b$ may be $\pm\infty$.'
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 2
+  anchor: "definition-2-1-open-interval-in-r"
   symbol: "$(a,b)$"
 - letter: O
   name: Open set
@@ -322,6 +360,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 3
+  anchor: "definition-3-5-open-set"
 - letter: O
   name: Open square
   gloss: The Cartesian product of open intervals in $\mathbb{R}^2$ with side length
@@ -329,16 +368,18 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 2
+  anchor: "definition-2-3-open-square-in-r2"
   symbol: "$S_\\varepsilon(a,b), S_\\varepsilon(x)$"
 - letter: O
   name: Orthogonal group
-  gloss: 'The compact matrix Lie group $O(n) = \{A \in M_n(\mathbb{R}) : A^T A = I\}$.'
+  gloss: 'The compact matrix Lie group $O(n) = \lbrace A \in M_n(\mathbb{R}) : A^T A = I\rbrace$.'
   course: point-set-topology
   course_title: Point-Set Topology
   lecture:
   - 6
   - 11
   - 19
+  anchor: "example-2-classical-real-matrix-groups"
   symbol: "$O(n)$"
 - letter: O
   name: The one-witness argument
@@ -347,6 +388,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 2
+  anchor: "condition-t3-arbitrary-unions"
 - letter: P
   name: Path components
   gloss: The equivalence classes of points under path connectivity; need not be closed
@@ -387,6 +429,7 @@
   lecture:
   - 5
   - 6
+  anchor: "definition-5-6-product-topology-on-x-x-y"
 - letter: P
   name: Projection map
   gloss: 'The canonical coordinate projection $p_j : \prod X_i \to X_j$ onto the $j$th
@@ -394,6 +437,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 7
+  anchor: "proposition-7-4-continuity-of-coordinate-projections"
   symbol: "$p_j$"
 - letter: P
   name: Property (∗'_Rn) via open balls
@@ -402,6 +446,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 3
+  anchor: "definition-3-4-property"
   symbol: "$(\\ast'_{\\mathbb{R}^n})$"
 - letter: P
   name: Property (∗) and (∗')
@@ -418,6 +463,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 2
+  anchor: "definition-2-2-property"
   symbol: "$(\\ast_{\\mathbb{R}})$"
 - letter: P
   name: Property (∗_R2) on the plane
@@ -426,6 +472,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 2
+  anchor: "definition-2-4-property-on-r2"
   symbol: "$(\\ast_{\\mathbb{R}^2})$"
 - letter: P
   name: Property (∗_Rn) in Euclidean space
@@ -433,11 +480,12 @@
     \subseteq U$.'
   course: point-set-topology
   course_title: Point-Set Topology
-  lecture: 2
+  lecture: 3
+  anchor: "definition-3-2-property-on-rn"
   symbol: "$(\\ast_{\\mathbb{R}^n})$"
 - letter: P
   name: Punctured real line
-  gloss: The multiplicative group $\mathbb{R} \setminus \{0\}$ with the subspace topology
+  gloss: The multiplicative group $\mathbb{R} \setminus \lbrace 0\rbrace$ with the subspace topology
     from $\mathbb{R}$.
   course: point-set-topology
   course_title: Point-Set Topology
@@ -512,11 +560,12 @@
   symbol: "$SO(n)$"
 - letter: S
   name: Subspace topology
-  gloss: 'The relative topology $\tau_Y = \{U \cap Y : U \in \tau\}$ on a subset $Y
+  gloss: 'The relative topology $\tau_Y = \lbrace U \cap Y : U \in \tau\rbrace$ on a subset $Y
     \subseteq X$; the coarsest topology making inclusion continuous.'
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 4
+  anchor: "definition-4-3-subspace-topology"
   symbol: "$\\tau_Y$"
 - letter: S
   name: Supremum norm

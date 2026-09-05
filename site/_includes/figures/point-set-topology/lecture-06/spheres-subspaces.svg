@@ -1,0 +1,60 @@
+<svg viewBox="0 0 600 260" role="img" aria-labelledby="fig-spheres-title"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="fig-spheres-title">Spheres with the subspace topology: the unit circle S^1 in the plane and the 2-sphere S^2 in 3-space inheriting relative open sets from Euclidean open sets.</title>
+  <style>
+    .axis { stroke: var(--ink-soft); stroke-width: 1; stroke-dasharray: 4 4; }
+    .circle-ambient { stroke: var(--ink-soft); stroke-width: 1.5; fill: none; }
+    .sphere-ambient { stroke: var(--ink-soft); stroke-width: 1.5; fill: none; }
+    .sphere-equator { stroke: var(--ink-soft); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .open-ambient { stroke: var(--accent-2, #3b6e8c); stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; }
+    .rel-arc { stroke: var(--accent); stroke-width: 4; stroke-linecap: round; fill: none; }
+    .rel-cap { fill: var(--accent); fill-opacity: 0.35; stroke: var(--accent); stroke-width: 2; }
+    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; fill: var(--ink); text-anchor: middle; }
+    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--ink); text-anchor: middle; }
+    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
+    .divider { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 4 4; }
+  </style>
+
+  <!-- Background -->
+  <rect width="600" height="260" fill="var(--paper)" />
+  <line x1="300" y1="20" x2="300" y2="240" class="divider" />
+
+  <!-- LEFT PANEL: S^1 in R^2 -->
+  <text x="150" y="30" class="label" style="font-weight: 600;">The Circle S¹ ⊆ ℝ²</text>
+
+  <!-- Axes -->
+  <line x1="50" y1="130" x2="250" y2="130" class="axis" />
+  <line x1="150" y1="230" x2="150" y2="40" class="axis" />
+
+  <!-- Circle S^1: radius 70 centered at (150, 130) -->
+  <circle cx="150" cy="130" r="70" class="circle-ambient" />
+  <text x="235" y="120" class="label-italic">S¹</text>
+
+  <!-- Open ambient set U: circle of radius 35 at (199, 81) [angle 45 deg, cos 45 = 0.707 -> 150+49.5=199.5, 130-49.5=80.5] -->
+  <circle cx="200" cy="80" r="32" class="open-ambient" />
+  <text x="245" y="70" class="label-italic" style="fill: var(--accent-2, #3b6e8c);">U ∈ τ_{ℝ²}</text>
+
+  <!-- Relative open arc on S^1: from angle ~18 deg to ~72 deg -->
+  <!-- Arc path from (216, 108) to (172, 63) -->
+  <path d="M 216 108 A 70 70 0 0 0 172 64" class="rel-arc" />
+
+  <text x="150" y="248" class="label-accent">Relative open arc: U ∩ S¹ ∈ τ_{S¹}</text>
+
+  <!-- RIGHT PANEL: S^n in R^{n+1} (represented as S^2) -->
+  <text x="450" y="30" class="label" style="font-weight: 600;">The Sphere Sⁿ ⊆ ℝⁿ⁺¹</text>
+
+  <!-- Sphere S^2: radius 70 centered at (450, 130) -->
+  <circle cx="450" cy="130" r="70" class="sphere-ambient" />
+  <ellipse cx="450" cy="130" rx="70" ry="22" class="sphere-equator" />
+  <text x="535" y="120" class="label-italic">Sⁿ</text>
+
+  <!-- Open cap at the top -->
+  <!-- Arc on circle from (415, 68) to (485, 68) -->
+  <path d="M 415 68 A 70 70 0 0 1 485 68 A 35 10 0 0 1 415 68 Z" class="rel-cap" />
+
+  <!-- Ambient ball boundary around the cap -->
+  <circle cx="450" cy="60" r="32" class="open-ambient" />
+  <text x="500" y="55" class="label-italic" style="fill: var(--accent-2, #3b6e8c);">U ∈ τ_{ℝⁿ⁺¹}</text>
+
+  <text x="450" y="248" class="label-accent">Relative open cap: U ∩ Sⁿ ∈ τ_{Sⁿ}</text>
+</svg>

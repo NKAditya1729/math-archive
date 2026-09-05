@@ -49,8 +49,19 @@ layout: default
           <ul class="dep-list">
             {% for item in page.depends_on %}
               <li>
-                <a href="{{ site.baseurl }}/{{ page.course }}/{{ item.lecture | default: item }}/">Lecture {{ item.lecture | default: item | remove: "lecture-" | plus: 0 }}{% if item.title %}: {{ item.title }}{% endif %}</a>
-                {% if item.description %}<span class="dep-note">— {{ item.description }}</span>{% endif %}
+                {% assign dep_num = item.lecture | default: item | remove: "lecture-" | plus: 0 %}
+                {% if dep_num < 10 %}
+                  {% assign dep_slug = "lecture-0" | append: dep_num %}
+                {% else %}
+                  {% assign dep_slug = "lecture-" | append: dep_num %}
+                {% endif %}
+                {% assign target_page = site.courses | where: "lecture_number", dep_num | first %}
+                {% if target_page %}
+                  <a href="{{ site.baseurl }}/{{ page.course }}/{{ dep_slug }}/">Lecture {{ dep_num }}{% if item.title %}: {{ item.title }}{% endif %}</a>
+                {% else %}
+                  <span>Lecture {{ dep_num }}{% if item.title %}: {{ item.title }}{% endif %} (forthcoming)</span>
+                {% endif %}
+                {% if item.description %}<span class="dep-note">— {{ item.description }}</span>{% elsif item.relationship %}<span class="dep-note">— {{ item.relationship }}</span>{% endif %}
               </li>
             {% endfor %}
           </ul>
@@ -62,8 +73,19 @@ layout: default
           <ul class="dep-list">
             {% for item in page.used_in %}
               <li>
-                <a href="{{ site.baseurl }}/{{ page.course }}/{{ item.lecture | default: item }}/">Lecture {{ item.lecture | default: item | remove: "lecture-" | plus: 0 }}{% if item.title %}: {{ item.title }}{% endif %}</a>
-                {% if item.description %}<span class="dep-note">— {{ item.description }}</span>{% endif %}
+                {% assign dep_num = item.lecture | default: item | remove: "lecture-" | plus: 0 %}
+                {% if dep_num < 10 %}
+                  {% assign dep_slug = "lecture-0" | append: dep_num %}
+                {% else %}
+                  {% assign dep_slug = "lecture-" | append: dep_num %}
+                {% endif %}
+                {% assign target_page = site.courses | where: "lecture_number", dep_num | first %}
+                {% if target_page %}
+                  <a href="{{ site.baseurl }}/{{ page.course }}/{{ dep_slug }}/">Lecture {{ dep_num }}{% if item.title %}: {{ item.title }}{% endif %}</a>
+                {% else %}
+                  <span>Lecture {{ dep_num }}{% if item.title %}: {{ item.title }}{% endif %} (forthcoming)</span>
+                {% endif %}
+                {% if item.description %}<span class="dep-note">— {{ item.description }}</span>{% elsif item.relationship %}<span class="dep-note">— {{ item.relationship }}</span>{% endif %}
               </li>
             {% endfor %}
           </ul>
@@ -75,7 +97,9 @@ layout: default
   <!-- Footer Navigation & Error Reporting -->
   <nav class="lecture-footer-nav" aria-label="Lecture Navigation">
     <div>
-      {% if page.prev %}
+      {% if page.previous %}
+        <a href="{{ site.baseurl }}{{ page.previous.url }}" class="nav-prev">← Previous Lecture</a>
+      {% elsif page.prev %}
         <a href="{{ site.baseurl }}/{{ page.course }}/{{ page.prev }}/" class="nav-prev">← Previous Lecture</a>
       {% endif %}
     </div>
@@ -83,7 +107,9 @@ layout: default
       <a href="{{ site.baseurl }}/{{ page.course }}/">Course Index</a>
     </div>
     <div>
-      {% if page.next %}
+      {% if page.next.url %}
+        <a href="{{ site.baseurl }}{{ page.next.url }}" class="nav-next">Next Lecture →</a>
+      {% elsif page.next and page.next != empty %}
         <a href="{{ site.baseurl }}/{{ page.course }}/{{ page.next }}/" class="nav-next">Next Lecture →</a>
       {% endif %}
     </div>
