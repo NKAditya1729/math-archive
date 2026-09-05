@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+
+  <!-- Typography: Source Serif 4 (Body/Math) & IBM Plex Sans (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/site.css">
+
+  <!-- KaTeX for Mathematics -->
+  {% include katex.html %}
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="site-header">
+      <div class="content-container">
+        <div class="header-inner">
+          <a href="{{ site.baseurl }}/" class="site-title">{{ site.title }}</a>
+          <nav class="site-nav">
+            <a href="{{ site.baseurl }}/">Courses</a>
+            <a href="{{ site.baseurl }}/concepts/">Concepts</a>
+            <a href="{{ site.baseurl }}/search/">Search</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <div class="content-container">
+        {{ content }}
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="content-container">
+        <p>Mathematical Lecture Archive. Line-by-line reading notes for self-study.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% if page.notation and page.notation.size > 0 %}
+<details class="notation-key">
+  <summary>Notation on this page ({{ page.notation.size }} symbol{% if page.notation.size > 1 %}s{% endif %})</summary>
+  <div class="notation-content">
+    <dl class="notation-list">
+      {% for item in page.notation %}
+        <div class="notation-item">
+          <dt class="notation-sym">{{ item.symbol }}</dt>
+          <dd class="notation-gloss">{{ item.gloss }}</dd>
+        </div>
+      {% endfor %}
+    </dl>
+  </div>
+</details>
+{% endif %}

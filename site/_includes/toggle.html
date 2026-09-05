@@ -1,0 +1,121 @@
+<div class="page-controls-bar">
+  <div class="breadcrumb">
+    <a href="{{ site.baseurl }}/">Home</a> /
+    {% if page.course %}
+      <a href="{{ site.baseurl }}/{{ page.course }}/">{{ page.course_title | default: page.course }}</a>
+      {% if page.lecture_number %} / Lecture {{ page.lecture_number }}{% endif %}
+    {% else %}
+      {{ page.title }}
+    {% endif %}
+  </div>
+  <div class="controls-group">
+    <button type="button" class="control-btn" id="toggle-supplements" aria-pressed="false">
+      Supplements: <span id="supplements-status">Hidden</span>
+    </button>
+    <button type="button" class="control-btn" id="toggle-proofs" aria-pressed="true">
+      Proofs: <span id="proofs-status">Expanded</span>
+    </button>
+    <button type="button" class="control-btn" id="toggle-theme">
+      Theme: <span id="theme-status">Auto</span>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // 1. Initialize State from localStorage
+  const savedTheme = localStorage.getItem('math_archive_theme');
+  const savedSupplements = localStorage.getItem('math_archive_supplements') || 'hidden';
+  const savedProofs = localStorage.getItem('math_archive_proofs') || 'expanded';
+
+  // Apply Theme
+  function applyTheme(theme) {
+    if (theme === 'dark' || theme === 'light') {
+      document.documentElement.setAttribute('data-theme', theme);
+      const status = document.getElementById('theme-status');
+      if (status) status.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const status = document.getElementById('theme-status');
+      if (status) status.textContent = prefersDark ? 'Dark (Auto)' : 'Light (Auto)';
+    }
+  }
+
+  // Apply Supplements
+  function applySupplements(state) {
+    document.body.setAttribute('data-supplements', state);
+    const btn = document.getElementById('toggle-supplements');
+    const status = document.getElementById('supplements-status');
+    if (btn && status) {
+      btn.setAttribute('aria-pressed', state === 'shown' ? 'true' : 'false');
+      status.textContent = state === 'shown' ? 'Shown' : 'Hidden';
+    }
+  }
+
+  // Apply Proofs
+  function applyProofs(state) {
+    document.body.setAttribute('data-proofs', state);
+    const btn = document.getElementById('toggle-proofs');
+    const status = document.getElementById('proofs-status');
+    if (btn && status) {
+      btn.setAttribute('aria-pressed', state === 'expanded' ? 'true' : 'false');
+      status.textContent = state === 'expanded' ? 'Expanded' : 'Collapsed';
+    }
+  }
+
+  // Execute immediate styling on load
+  applyTheme(savedTheme);
+  applySupplements(savedSupplements);
+  applyProofs(savedProofs);
+
+  // Setup Event Listeners
+  window.addEventListener('DOMContentLoaded', function() {
+    applyTheme(localStorage.getItem('math_archive_theme'));
+    applySupplements(localStorage.getItem('math_archive_supplements') || 'hidden');
+    applyProofs(localStorage.getItem('math_archive_proofs') || 'expanded');
+
+    // Theme Toggle
+    const themeBtn = document.getElementById('toggle-theme');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        let newTheme;
+        if (!currentTheme) {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          newTheme = prefersDark ? 'light' : 'dark';
+        } else if (currentTheme === 'dark') {
+          newTheme = 'light';
+        } else {
+          newTheme = 'dark';
+        }
+        localStorage.setItem('math_archive_theme', newTheme);
+        applyTheme(newTheme);
+      });
+    }
+
+    // Supplements Toggle
+    const suppBtn = document.getElementById('toggle-supplements');
+    if (suppBtn) {
+      suppBtn.addEventListener('click', function() {
+        const current = document.body.getAttribute('data-supplements') || 'hidden';
+        const next = current === 'hidden' ? 'shown' : 'hidden';
+        localStorage.setItem('math_archive_supplements', next);
+        applySupplements(next);
+      });
+    }
+
+    // Proofs Toggle
+    const proofBtn = document.getElementById('toggle-proofs');
+    if (proofBtn) {
+      proofBtn.addEventListener('click', function() {
+        const current = document.body.getAttribute('data-proofs') || 'expanded';
+        const next = current === 'expanded' ? 'collapsed' : 'expanded';
+        localStorage.setItem('math_archive_proofs', next);
+        applyProofs(next);
+      });
+    }
+
+  });
+})();
+</script>

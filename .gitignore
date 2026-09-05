@@ -1,0 +1,12 @@
+source/*/references/
+*.pdf
+*.epub
+build/tmp/
+_site/
+.jekyll-cache/
+.DS_Store
+**/.DS_Store
+
+# Working input — never published
+source/
+topology-archive-kit/

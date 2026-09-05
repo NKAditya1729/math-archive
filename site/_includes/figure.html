@@ -1,0 +1,12 @@
+<figure class="math-figure"{% if include.id %} id="{{ include.id }}"{% endif %}>
+  {% if include.src %}
+    {% include figures/{{ include.src }} %}
+  {% elsif include.file %}
+    {% include figures/{{ include.file }} %}
+  {% elsif include.path %}
+    {% include figures/{{ include.path }} %}
+  {% endif %}
+  {% if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

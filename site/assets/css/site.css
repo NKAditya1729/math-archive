@@ -1,0 +1,1065 @@
+/* ==========================================================================
+   Mathematical Lecture Archive — Design Tokens & Core Styles
+   ========================================================================== */
+
+:root {
+  --paper: #FBFBF9;
+  --ink: #1B2A38;
+  --ink-soft: #56646F;
+  --rule: #DCE2E6;
+  --accent: #0F5C68;
+  --accent-bg: #EDF4F4;
+  --flag: #8A4B2A;
+  --flag-bg: #FBF4F0;
+  --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, Cambria, serif;
+}
+
+[data-theme="dark"] {
+  --paper: #141B21;
+  --ink: #E4E9EC;
+  --ink-soft: #8F9CA7;
+  --rule: #2A3642;
+  --accent: #4FA3AE;
+  --accent-bg: #1B2A32;
+  --flag: #C88055;
+  --flag-bg: #261E1A;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141B21;
+    --ink: #E4E9EC;
+    --ink-soft: #8F9CA7;
+    --rule: #2A3642;
+    --accent: #4FA3AE;
+    --accent-bg: #1B2A32;
+    --flag: #C88055;
+    --flag-bg: #261E1A;
+  }
+}
+
+/* ==========================================================================
+   Base Elements
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.65;
+  background-color: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.site-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 68ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.25rem;
+}
+
+/* ==========================================================================
+   Typography & Headings
+   ========================================================================== */
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h1.lecture-title, h1.page-title {
+  font-size: 1.55rem; /* ~28px */
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.22rem; /* ~22px */
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.35rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+p, ul, ol {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover, a:focus {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+
+header.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 0;
+  font-family: var(--sans);
+  font-size: 0.833rem; /* ~15px */
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.site-title {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  margin-left: 1.25rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.site-nav a:hover, .site-nav a:focus {
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   Page Controls Bar (Supplements, Proofs, Theme)
+   ========================================================================== */
+
+.page-controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.833rem; /* 15px */
+  color: var(--ink-soft);
+}
+
+.breadcrumb {
+  font-size: 0.833rem;
+  color: var(--ink-soft);
+}
+
+.breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.controls-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.control-btn {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  padding: 0.25rem 0.55rem;
+  cursor: pointer;
+}
+
+.control-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.control-btn:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+/* ==========================================================================
+   Coverage & Metadata Panels
+   ========================================================================== */
+
+.coverage-panel {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  background-color: var(--accent-bg);
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  line-height: 1.5;
+}
+
+.coverage-panel strong {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.lecture-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Mathematical Blocks — Rigorous House Style
+   ========================================================================== */
+
+/* Generic block container fallback */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  color: var(--ink);
+}
+
+/* Block Label (Plex Sans) */
+.block-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+/* 1. Definition Block: 2px teal left rule, slightly larger, generous spacing */
+.block-definition,
+blockquote.definition,
+[data-block-type="definition"] {
+  border-left: 2px solid var(--accent);
+  background: transparent;
+  font-size: 1.06rem;
+  margin: 2rem 0;
+  padding: 0.75rem 1.25rem;
+}
+
+.block-definition .block-label,
+blockquote.definition .block-label,
+[data-block-type="definition"] .block-label {
+  color: var(--accent);
+}
+
+/* 2. Theorem / Proposition / Claim: teal left rule, italic statement */
+.block-theorem,
+blockquote.theorem,
+[data-block-type="theorem"],
+[data-block-type="claim"],
+[data-block-type="proposition"],
+[data-block-type="lemma"] {
+  border-left: 2px solid var(--accent);
+  background: transparent;
+  font-style: italic;
+  margin: 1.75rem 0;
+  padding: 0.75rem 1.25rem;
+}
+
+.block-theorem .block-label,
+[data-block-type="theorem"] .block-label {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* 3. Proof: indented, smaller leading, right-aligned QED symbol */
+.block-proof,
+.proof,
+[data-block-type="proof"] {
+  margin: 1rem 0 1.5rem 1.25rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--rule);
+  line-height: 1.55;
+}
+
+.proof-header {
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 0.35rem;
+}
+
+.proof-qed {
+  display: block;
+  text-align: right;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-top: 0.5rem;
+}
+
+/* 4. Example: hairline box */
+.block-example,
+blockquote.example,
+[data-block-type="example"] {
+  border: 1px solid var(--rule);
+  background: transparent;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+}
+
+.block-example .block-label,
+[data-block-type="example"] .block-label {
+  color: var(--ink);
+}
+
+/* 5. Non-example: warm hairline box */
+.block-non-example,
+blockquote.non-example,
+[data-block-type="non-example"] {
+  border: 1px solid var(--flag);
+  background: var(--flag-bg);
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+}
+
+.block-non-example .block-label,
+[data-block-type="non-example"] .block-label {
+  color: var(--flag);
+}
+
+/* 6. Supplement: tinted --accent-bg, small label "Supplement — not in the lecture" */
+.block-supplement,
+blockquote.supplement,
+[data-block-type="supplement"] {
+  background-color: var(--accent-bg);
+  border-left: 2px solid var(--accent);
+  margin: 1.5rem 0;
+  padding: 0.85rem 1.25rem;
+}
+
+.block-supplement .block-label,
+[data-block-type="supplement"] .block-label {
+  color: var(--accent);
+}
+
+/* 7. Correction Note: --flag left rule, always visible */
+.block-correction,
+blockquote.correction,
+[data-block-type="correction"] {
+  border-left: 3px solid var(--flag);
+  background-color: var(--flag-bg);
+  margin: 1.5rem 0;
+  padding: 0.85rem 1.25rem;
+}
+
+.block-correction .block-label,
+[data-block-type="correction"] .block-label {
+  color: var(--flag);
+}
+
+/* 8. Open Question: dashed --flag rule, label "Unresolved — needs the video" */
+.block-open-question,
+blockquote.open-question,
+[data-block-type="open"],
+[data-block-type="open-question"] {
+  border-left: 2px dashed var(--flag);
+  background-color: var(--flag-bg);
+  margin: 1.5rem 0;
+  padding: 0.85rem 1.25rem;
+}
+
+.block-open-question .block-label,
+[data-block-type="open"] .block-label {
+  color: var(--flag);
+}
+
+/* 9. Exercise: hairline box, <details> for worked solution */
+.block-exercise,
+blockquote.exercise,
+[data-block-type="exercise"] {
+  border: 1px solid var(--rule);
+  background: transparent;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+}
+
+.block-exercise .block-label,
+[data-block-type="exercise"] .block-label {
+  color: var(--ink);
+}
+
+details {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rule);
+  font-size: 0.95rem;
+}
+
+summary {
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+summary:hover {
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   State Toggles Behavior (Supplements hidden / Proofs collapsed)
+   ========================================================================== */
+
+/* Supplements: Hidden by default */
+body[data-supplements="hidden"] .block-supplement,
+body[data-supplements="hidden"] blockquote.supplement,
+body[data-supplements="hidden"] [data-block-type="supplement"] {
+  display: none !important;
+}
+
+/* Proofs: Collapsible with one-line stub */
+body[data-proofs="collapsed"] .block-proof,
+body[data-proofs="collapsed"] .proof,
+body[data-proofs="collapsed"] [data-block-type="proof"] {
+  display: block !important;
+  margin: 0.75rem 0 1.25rem 1.25rem !important;
+  padding: 0.2rem 0 0.2rem 0.75rem !important;
+  border-left: 1px solid var(--rule) !important;
+}
+
+body[data-proofs="collapsed"] .block-proof > *,
+body[data-proofs="collapsed"] .proof > *,
+body[data-proofs="collapsed"] [data-block-type="proof"] > * {
+  display: none !important;
+}
+
+body[data-proofs="collapsed"] .block-proof::before,
+body[data-proofs="collapsed"] .proof::before,
+body[data-proofs="collapsed"] [data-block-type="proof"]::before {
+  content: "Proof (collapsed)";
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Course Accordion & Part Listings
+   ========================================================================== */
+
+.part-section {
+  margin: 2rem 0;
+}
+
+.part-header {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.35rem;
+}
+
+.part-desc {
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+.lecture-accordion {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lecture-row {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.65rem 0;
+}
+
+.lecture-row details summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  list-style: none;
+  font-family: var(--sans);
+}
+
+.lecture-row details summary::-webkit-details-marker {
+  display: none;
+}
+
+.lecture-row-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.lecture-row-title:hover {
+  color: var(--accent);
+}
+
+.lecture-row-coverage {
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  color: var(--ink-soft);
+  margin-top: 0.35rem;
+  padding-left: 0.5rem;
+}
+
+.empty-list-note {
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  padding: 0.5rem 0;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+figure.math-figure {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 100%;
+}
+
+figure.math-figure svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  stroke: var(--accent);
+  fill: none;
+}
+
+figcaption {
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  color: var(--ink-soft);
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Lecture Footer Navigation
+   ========================================================================== */
+
+.lecture-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.833rem;
+}
+
+.error-report-link {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 0 2.5rem 0;
+  margin-top: auto;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   Accessibility & Responsiveness
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .site-nav a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+  .page-controls-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   Video Correspondence & Timestamps (A1, A2)
+   ========================================================================== */
+
+.block-timestamp,
+.timestamp {
+  float: right;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.timestamp-status-note {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: -0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Notation Key (<details>) (B1)
+   ========================================================================== */
+
+.notation-key {
+  margin: 1rem 0 1.5rem 0;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.notation-key summary {
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.notation-key summary:hover {
+  color: var(--accent);
+}
+
+.notation-content {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.notation-list {
+  display: grid;
+  grid-template-columns: minmax(80px, max-content) 1fr;
+  gap: 0.4rem 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.notation-item {
+  display: contents;
+}
+
+.notation-sym {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.notation-gloss {
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Recall Sheet: At a glance box (B3)
+   ========================================================================== */
+
+.at-a-glance-box {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.at-a-glance-box h3 {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.at-a-glance-box ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.at-a-glance-box li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.at-a-glance-box a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.at-a-glance-box a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Dependency Graph (Builds on / Used later in) (C1)
+   ========================================================================== */
+
+.lecture-dependencies {
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.dep-group {
+  flex: 1 1 240px;
+}
+
+.dep-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+
+.dep-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dep-list li {
+  font-family: var(--sans);
+  font-size: 0.833rem;
+  margin-bottom: 0.35rem;
+}
+
+.dep-list a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.dep-list a:hover {
+  text-decoration: underline;
+}
+
+.dep-note {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   Course Page Badges, Counts, Progress (E1, E2, E3)
+   ========================================================================== */
+
+.status-badge {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.status-badge.drafted {
+  background-color: #F7EDE8;
+  color: var(--flag);
+  border: 1px solid var(--flag);
+}
+
+[data-theme="dark"] .status-badge.drafted {
+  background-color: rgba(200, 128, 85, 0.15);
+  color: var(--flag);
+}
+
+.status-badge.audio-reviewed {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.status-badge.verified {
+  background-color: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+}
+
+.lecture-row-meta {
+  display: flex;
+  gap: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 0.35rem;
+  padding-left: 0.5rem;
+}
+
+.course-progress-summary {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 1rem 0 1.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+/* ==========================================================================
+   Concepts Page (D1)
+   ========================================================================== */
+
+.concepts-container {
+  margin: 1.5rem 0;
+}
+
+.concept-letter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+.concept-letter-nav a {
+  display: inline-block;
+  min-width: 1.8rem;
+  text-align: center;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.concept-letter-nav a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.concept-group {
+  margin-bottom: 2.5rem;
+}
+
+.concept-letter-heading {
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.concept-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.concept-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.875rem;
+}
+
+.concept-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.concept-name {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.concept-sym {
+  font-family: var(--serif);
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.concept-gloss {
+  color: var(--ink-soft);
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
+.concept-source {
+  font-size: 0.78rem;
+  margin-top: 0.35rem;
+}
+
+.concept-source a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.concept-source a:hover {
+  text-decoration: underline;
+}
+
+.concept-unpub {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+}
+
+/* ==========================================================================
+   Print Stylesheet (G3)
+   ========================================================================== */
+
+@media print {
+  .site-header,
+  .page-controls-bar,
+  .lecture-footer-nav,
+  .error-report-link,
+  .site-footer,
+  .timestamp-status-note,
+  .control-btn,
+  .controls-group {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .content-container,
+  .site-wrap {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Show supplements regardless of toggle state */
+  body[data-supplements="hidden"] .block-supplement,
+  body[data-supplements="hidden"] blockquote.supplement,
+  body[data-supplements="hidden"] [data-block-type="supplement"] {
+    display: block !important;
+  }
+
+  /* Show proofs regardless of toggle state */
+  body[data-proofs="collapsed"] .block-proof,
+  body[data-proofs="collapsed"] .proof,
+  body[data-proofs="collapsed"] [data-block-type="proof"] {
+    display: block !important;
+  }
+
+  body[data-proofs="collapsed"] .block-proof > *,
+  body[data-proofs="collapsed"] .proof > *,
+  body[data-proofs="collapsed"] [data-block-type="proof"] > * {
+    display: block !important;
+  }
+
+  body[data-proofs="collapsed"] .block-proof::before,
+  body[data-proofs="collapsed"] .proof::before,
+  body[data-proofs="collapsed"] [data-block-type="proof"]::before {
+    display: none !important;
+  }
+
+  /* Keep figures and prevent page-break within */
+  figure.math-figure {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .block-definition,
+  .block-theorem,
+  .block-example,
+  .block-non-example,
+  .block-supplement,
+  .block-correction,
+  .block-open-question,
+  .block-exercise {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+

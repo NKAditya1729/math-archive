@@ -1,0 +1,25 @@
+title: "Mathematical Lecture Archive"
+description: "A personal mathematics study website with line-by-line reading notes."
+baseurl: "/math-archive"
+url: "https://nkaditya1729.github.io"
+
+# Directory layout
+source: site
+destination: _site
+
+# Collections
+collections:
+  courses:
+    output: true
+    permalink: /:path/
+
+# Markdown engine
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
+
+# Exclude files inside the site source directory (none currently)
+exclude: []

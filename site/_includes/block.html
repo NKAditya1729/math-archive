@@ -1,0 +1,66 @@
+{% assign block_type = include.type | default: "definition" | downcase %}
+{% assign block_class = "block-" | append: block_type %}
+{% if block_type == "nonexample" %}
+  {% assign block_type = "non-example" %}
+  {% assign block_class = "block-non-example" %}
+{% elsif block_type == "open" %}
+  {% assign block_type = "open-question" %}
+  {% assign block_class = "block-open-question" %}
+{% elsif block_type == "claim" or block_type == "proposition" or block_type == "lemma" %}
+  {% assign block_class = "block-theorem" %}
+{% elsif block_type == "proof" %}
+  {% assign block_class = "block-proof proof" %}
+{% endif %}
+
+{% assign block_id = include.id %}
+{% if block_id == nil and include.title %}
+  {% assign block_id = include.title | slugify %}
+{% endif %}
+
+{% if include.end %}
+  {% if include.type == "proof" or include.qed %}
+    <span class="proof-qed">&#x220E;</span>
+  {% endif %}
+  {% if include.solution %}
+    <details>
+      <summary>Worked solution — not from the lecture</summary>
+      <div class="solution-content">{{ include.solution | markdownify }}</div>
+    </details>
+  {% endif %}
+  </div>
+</div>
+{% else %}
+<div class="{{ block_class }}" data-block-type="{{ block_type }}"{% if block_id %} id="{{ block_id }}"{% endif %}>
+  {% if include.time %}
+    <span class="block-timestamp">{{ include.time }}</span>
+  {% endif %}
+  {% if block_type == "supplement" %}
+    <span class="block-label">Supplement — not in the lecture</span>
+    {% if include.title %}<p><strong>{{ include.title }}</strong></p>{% endif %}
+  {% elsif block_type == "correction" %}
+    <span class="block-label">Correction</span>
+    {% if include.title %}<p><strong>{{ include.title }}</strong></p>{% endif %}
+  {% elsif block_type == "open-question" %}
+    <span class="block-label">Unresolved — needs the video</span>
+    {% if include.title %}<p><strong>{{ include.title }}</strong></p>{% endif %}
+  {% elsif block_type == "proof" %}
+    <div class="proof-header">{{ include.title | default: "Proof" }}</div>
+  {% else %}
+    <span class="block-label">{% if include.title %}{{ include.title }}{% else %}{{ include.type | capitalize }}{% endif %}</span>
+  {% endif %}
+  {% unless include.start %}
+  <div class="block-content">
+    {{ include.content | markdownify }}
+  </div>
+  {% if block_type == "proof" %}
+    <span class="proof-qed">&#x220E;</span>
+  {% endif %}
+  {% if include.solution %}
+    <details>
+      <summary>Worked solution — not from the lecture</summary>
+      <div class="solution-content">{{ include.solution | markdownify }}</div>
+    </details>
+  {% endif %}
+</div>
+  {% endunless %}
+{% endif %}

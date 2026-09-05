@@ -1,0 +1,17 @@
+---
+---
+[
+  {% assign first = true %}
+  {% for item in site.courses %}
+    {% unless first %},{% endunless %}
+    {% assign first = false %}
+    {
+      "title": {{ item.title | jsonify }},
+      "course": {{ item.course | jsonify }},
+      "lecture_number": {{ item.lecture_number | jsonify }},
+      "url": {{ item.url | relative_url | jsonify }},
+      "coverage": {{ item.coverage | strip_newlines | jsonify }},
+      "content": {{ item.content | strip_html | strip_newlines | jsonify }}
+    }
+  {% endfor %}
+]

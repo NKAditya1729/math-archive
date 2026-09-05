@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+<article class="lecture-page">
+  <!-- Top Bar with Breadcrumbs & Three Toggles -->
+  {% include toggle.html %}
+
+  <!-- Lecture Header -->
+  <header class="lecture-header">
+    <h1 class="lecture-title">{{ page.title }}</h1>
+
+    {% if page.coverage %}
+      <div class="coverage-panel">
+        <strong>Coverage</strong>
+        {{ page.coverage | markdownify }}
+      </div>
+    {% endif %}
+
+    {% unless page.timestamps %}
+      <div class="timestamp-status-note">No video timestamps recorded yet.</div>
+    {% endunless %}
+
+    {% if page.notation and page.notation.size > 0 %}
+      {% include notation.html %}
+    {% endif %}
+
+    <div class="lecture-meta-bar">
+      {% if page.lecture_number %}<span>Lecture {{ page.lecture_number }}</span>{% endif %}
+      {% if page.date %}<span>Date: {{ page.date }}</span>{% endif %}
+      {% if page.status %}<span>Status: <em>{{ page.status }}</em></span>{% endif %}
+      {% if page.figures %}<span>Figures: {{ page.figures }}</span>{% endif %}
+      {% if page.corrections %}<span>Corrections: {{ page.corrections }}</span>{% endif %}
+      {% if page.version %}<span>v{{ page.version }}</span>{% endif %}
+    </div>
+  </header>
+
+  <!-- Lecture Notes Body -->
+  <div class="lecture-content">
+    {{ content }}
+  </div>
+
+  <!-- Dependency Graph (Builds on / Used later in) -->
+  {% if page.depends_on.size > 0 or page.used_in.size > 0 %}
+    <div class="lecture-dependencies">
+      {% if page.depends_on and page.depends_on.size > 0 %}
+        <div class="dep-group">
+          <span class="dep-label">Builds on</span>
+          <ul class="dep-list">
+            {% for item in page.depends_on %}
+              <li>
+                <a href="{{ site.baseurl }}/{{ page.course }}/{{ item.lecture | default: item }}/">Lecture {{ item.lecture | default: item | remove: "lecture-" | plus: 0 }}{% if item.title %}: {{ item.title }}{% endif %}</a>
+                {% if item.description %}<span class="dep-note">— {{ item.description }}</span>{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      {% if page.used_in and page.used_in.size > 0 %}
+        <div class="dep-group">
+          <span class="dep-label">Used later in</span>
+          <ul class="dep-list">
+            {% for item in page.used_in %}
+              <li>
+                <a href="{{ site.baseurl }}/{{ page.course }}/{{ item.lecture | default: item }}/">Lecture {{ item.lecture | default: item | remove: "lecture-" | plus: 0 }}{% if item.title %}: {{ item.title }}{% endif %}</a>
+                {% if item.description %}<span class="dep-note">— {{ item.description }}</span>{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <!-- Footer Navigation & Error Reporting -->
+  <nav class="lecture-footer-nav" aria-label="Lecture Navigation">
+    <div>
+      {% if page.prev %}
+        <a href="{{ site.baseurl }}/{{ page.course }}/{{ page.prev }}/" class="nav-prev">← Previous Lecture</a>
+      {% endif %}
+    </div>
+    <div>
+      <a href="{{ site.baseurl }}/{{ page.course }}/">Course Index</a>
+    </div>
+    <div>
+      {% if page.next %}
+        <a href="{{ site.baseurl }}/{{ page.course }}/{{ page.next }}/" class="nav-next">Next Lecture →</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  <div class="error-report-link">
+    <a href="mailto:nistala.aditya@gmail.com?subject={{ page.course_title | default: page.course | url_encode }}%20Lecture%20{{ page.lecture_number }}%20Error%20Report">Report an error in Lecture {{ page.lecture_number }}</a>
+  </div>
+</article>

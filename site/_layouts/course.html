@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article class="course-page">
+  <header class="course-header">
+    <div class="breadcrumb" style="margin-top: 1.5rem; margin-bottom: 0.5rem;">
+      <a href="{{ site.baseurl }}/">Home</a> / {{ page.title }}
+    </div>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="part-desc" style="font-size: 1rem; margin-bottom: 1.5rem;">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  <div class="course-content">
+    {{ content }}
+  </div>
+</article>

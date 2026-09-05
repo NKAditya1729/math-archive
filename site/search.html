@@ -1,0 +1,95 @@
+---
+layout: default
+title: "Search the Archive"
+permalink: /search/
+---
+
+<div class="search-page">
+  <div class="breadcrumb" style="margin-top: 1.5rem; margin-bottom: 0.5rem;">
+    <a href="{{ site.baseurl }}/">Home</a> / Search
+  </div>
+  <h1 class="page-title">Search Archive</h1>
+  <p class="part-desc">Search lecture notes, concepts, definitions, and theorems across all courses.</p>
+
+  <div class="search-input-wrapper" style="margin: 1.5rem 0;">
+    <input type="search" id="search-box" placeholder="Search by concept, theorem, or term (e.g., basis, compactness)..." style="width: 100%; padding: 0.6rem 0.8rem; font-family: var(--sans); font-size: 0.95rem; border: 1px solid var(--rule); background: var(--paper); color: var(--ink);">
+  </div>
+
+  <div id="search-results" class="search-results-list" style="margin-top: 2rem;">
+    <p id="search-status" style="font-family: var(--sans); font-size: 0.85rem; color: var(--ink-soft);">Type a query to search.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script>
+(function() {
+  let documents = [];
+  let idx = null;
+  const searchBox = document.getElementById('search-box');
+  const resultsContainer = document.getElementById('search-results');
+  const statusElem = document.getElementById('search-status');
+
+  fetch('{{ site.baseurl }}/search.json')
+    .then(response => response.json())
+    .then(data => {
+      documents = data;
+      idx = lunr(function() {
+        this.ref('url');
+        this.field('title', { boost: 10 });
+        this.field('coverage', { boost: 5 });
+        this.field('content');
+
+        data.forEach(function(doc) {
+          this.add(doc);
+        }, this);
+      });
+      if (searchBox.value) performSearch(searchBox.value);
+    })
+    .catch(err => {
+      statusElem.textContent = 'Could not load search index.';
+    });
+
+  function performSearch(query) {
+    if (!idx) return;
+    query = query.trim();
+    if (!query) {
+      resultsContainer.innerHTML = '<p style="font-family: var(--sans); font-size: 0.85rem; color: var(--ink-soft);">Type a query to search.</p>';
+      return;
+    }
+
+    try {
+      const results = idx.search(query);
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '<p style="font-family: var(--sans); font-size: 0.85rem; color: var(--ink-soft);">No matching lectures found for "<strong>' + query.replace(/</g, "&lt;") + '</strong>".</p>';
+        return;
+      }
+
+      let html = '<ul class="lecture-accordion">';
+      results.forEach(result => {
+        const item = documents.find(d => d.url === result.ref);
+        if (item) {
+          html += `
+            <li class="lecture-row">
+              <a href="${item.url}" class="lecture-row-title" style="display: block; font-weight: 600; margin-bottom: 0.25rem;">
+                Lecture ${item.lecture_number ? item.lecture_number + ': ' : ''}${item.title}
+              </a>
+              ${item.coverage ? `<div class="lecture-row-coverage">${item.coverage}</div>` : ''}
+            </li>
+          `;
+        }
+      });
+      html += '</ul>';
+      resultsContainer.innerHTML = html;
+    } catch (e) {
+      // If user typed partial regex or lunr query error
+      resultsContainer.innerHTML = '<p style="font-family: var(--sans); font-size: 0.85rem; color: var(--ink-soft);">Invalid search syntax.</p>';
+    }
+  }
+
+  if (searchBox) {
+    searchBox.addEventListener('input', function(e) {
+      performSearch(e.target.value);
+    });
+  }
+})();
+</script>
