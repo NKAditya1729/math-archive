@@ -21,5 +21,12 @@ kramdown:
   syntax_highlighter_opts:
     disable: true
 
-# Exclude files inside the site source directory (none currently)
-exclude: []
+# Excluded files and directories
+exclude:
+  - "source/*/references/"
+  - "build/"
+  - "context/"
+  - "source/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "AGENTS.md"

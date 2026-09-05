@@ -208,7 +208,7 @@
   lecture: 19
   symbol: "$GL_n(\\mathbb{R})^+$"
 - letter: H
-  name: Hausdorff space ($T_2$)
+  name: Hausdorff space
   gloss: A topological space in which any two distinct points have disjoint open neighbourhoods.
   course: point-set-topology
   course_title: Point-Set Topology
@@ -285,7 +285,7 @@
   - 10
   - 30
 - letter: "N"
-  name: Normal space ($T_4$)
+  name: Normal space
   gloss: A space where any two disjoint closed sets have disjoint open neighbourhoods;
     every metric space is normal.
   course: point-set-topology
@@ -301,8 +301,8 @@
   symbol: "$\\hat{X}, p_0$"
 - letter: O
   name: Open ball
-  gloss: 'The set $\{y \in X : d(x,y) < \varepsilon\}$ of points within distance $\varepsilon$
-    of $x$ in a metric space.'
+  gloss: 'The set $\{y \in \mathbb{R}^n : \lVert x - y \rVert < \varepsilon\}$ of points within Euclidean distance $\varepsilon$
+    of $x$ in $\mathbb{R}^n$.'
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 3
@@ -405,7 +405,7 @@
   symbol: "$(\\ast'_{\\mathbb{R}^n})$"
 - letter: P
   name: Property (∗) and (∗')
-  gloss: The local metric neighbourhood conditions on subsets of $\mathbb{R}^n$, specifying
+  gloss: The local Euclidean neighbourhood conditions on subsets of $\mathbb{R}^n$, specifying
     that every point admits an open ball or square contained in the set.
   course: point-set-topology
   course_title: Point-Set Topology
@@ -477,7 +477,7 @@
   - 25
   - 34
 - letter: R
-  name: Regular space ($T_3$)
+  name: Regular space
   gloss: A space where every point and disjoint closed set have disjoint open neighbourhoods.
   course: point-set-topology
   course_title: Point-Set Topology
@@ -595,8 +595,7 @@
   symbol: "$S^1, S^n$"
 - letter: U
   name: Urysohn Metrisation Theorem
-  gloss: Every regular, second-countable space is metrisable (embeds into the Hilbert
-    cube $[0,1]^\mathbb{N}$).
+  gloss: Every regular, second-countable space is metrisable (embeds into $\mathbb{R}^\mathbb{N}$).
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 40
@@ -606,4 +605,4 @@
     function into $[0,1]$.
   course: point-set-topology
   course_title: Point-Set Topology
-  lecture: 39
+  lecture: 36
