@@ -35,6 +35,23 @@ done
 Unbalanced inline `$` is harder to detect mechanically; read the rendered
 page. This is not optional — an unrendered page is unusable.
 
+### Check for stripped escapes in compiled HTML
+
+After every build, grep the compiled HTML for bare `{`, `}` or `|` inside math
+spans. Kramdown processes backslash escapes inside `$...$` before KaTeX runs,
+stripping `\{`, `\}`, and `\|` to bare `{`, `}`, and `|`. KaTeX then reads bare
+braces as invisible grouping tokens (stripping set braces entirely) and bare
+pipes as single vertical bars (turning double-bar norms into absolute values).
+A silently stripped delimiter renders as plausible-looking but wrong
+mathematics, which is worse than a visible failure.
+
+```bash
+find _site -name '*.html' -exec grep -En '\$[^$\n]*(\{|\}|\|)[^$\n]*\$' {} +
+```
+
+Any match indicates an escape consumed by kramdown. Fix in source using
+`\lbrace`, `\rbrace`, `\lVert`, or `\rVert`.
+
 ## Step 3 — Figures
 
 - Every `{% include figure.html %}` resolves to a file that exists.

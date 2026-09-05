@@ -65,7 +65,7 @@ course: point-set-topology
 course_title: Point-Set Topology
 lecture_number: 3
 title: "Standard Topology on R^n; Open Sets; Basis for a Topology"
-date: 
+lecture_date:
 coverage: >
   Completes the proof that the standard topology on R^2 is a topology;
   states the standard topology on R^n as an exercise; defines open sets and

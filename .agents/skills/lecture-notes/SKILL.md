@@ -113,7 +113,7 @@ Let $U \in \tau$ and $x \in U$. By definition ...
 {% include block.html type="proof" title="Proof" content=proof_content %}
 
 {% capture example_content %}
-Let $X$ be any set and let $\tau = \{\varnothing, X\}$.
+Let $X$ be any set and let $\tau = \lbrace\varnothing, X\rbrace$.
 {% endcapture %}
 {% include block.html type="example" title="Example 3 (Finite complement topology)" content=example_content %}
 
@@ -144,6 +144,24 @@ Verify conditions (T1)–(T3) directly.
 {% endcapture %}
 {% include block.html type="exercise" title="Exercise 3.1 (set by the lecturer)" content=ex_content solution=ex_solution %}
 ```
+
+### Math escaping rules: `\lbrace`, `\rbrace`, `\lVert`, `\rVert`, and `aligned`
+
+Kramdown processes markdown escapes inside inline math `$...$` before KaTeX runs.
+Backslash-escaped punctuation is stripped to bare characters:
+
+- **Set braces**: Always write `\lbrace` and `\rbrace` (e.g. `\tau =
+  \lbrace\varnothing, X\rbrace`, `\lbrace a, b, c\rbrace`, `\lbrace\, x \in X :
+  P(x) \,\rbrace`, `\mathbb{Z} \setminus \lbrace n\rbrace`). Never write `\{`
+  and `\}` (kramdown emits bare `{` and `}`, which KaTeX reads as grouping
+  tokens, causing braces to vanish from rendered pages).
+- **Norms**: Always write `\lVert` and `\rVert` (e.g. `\lVert f \rVert_\infty`,
+  `\lVert x \rVert_2`). Never write `\|` (kramdown strips `\|` to bare `|`,
+  silently converting a double-bar norm into a single-bar absolute value).
+- **Multi-line display math (`aligned`)**: Always set `aligned` environments
+  inside display math blocks `$$...$$` with `\\` for line breaks. Kramdown
+  preserves `\\` inside `$$...$$`, but collapses `\\` to `\` inside single-dollar
+  inline math `$...$`.
 
 Numbering: definitions, claims and examples take `<lecture>.<n>` unless the
 lecturer used his own number, in which case his number wins and yours goes in

@@ -79,7 +79,10 @@ once in a supplement.
 | Power set | `\mathcal{P}(X)` | `P(X)` |
 | A topology | `\tau` | `T` |
 | Subset (not nec. proper) | `\subseteq` | `\subset` |
-| Set-builder | `\{\, x \in X : P(x) \,\}` | `\{x \| P(x)\}` |
+| Set braces | `\lbrace \dots \rbrace` | `\{ \dots \}` (kramdown strips `\{`/`\}`) |
+| Set-builder | `\lbrace\, x \in X : P(x) \,\rbrace` | `\{x \| P(x)\}` |
+| Norm | `\lVert x \rVert`, `\lVert f \rVert_\infty` | `\|x\|`, `\|f\|_\infty` (kramdown strips `\|` to `|`) |
+| Modulus / absolute value | `|x|`, `\lvert x \rvert` | |
 | Indexed union | `\bigcup_{i \in I} U_i` | `U U_i` |
 | Finite intersection | `\bigcap_{i=1}^{n} U_i` | |
 | Open interval | `(a,b)` | `]a,b[` |
@@ -98,9 +101,23 @@ single symbols. Never break a formula across a line break in the source.
 KaTeX renders the site. It is fast and covers everything point-set topology
 needs, but it is **not** full LaTeX.
 
+- **Set braces must be `\lbrace` and `\rbrace`.** Kramdown parses markdown before
+  KaTeX processes math. It treats `\{` and `\}` as escaped characters and emits
+  bare `{` and `}`, which KaTeX then reads as invisible grouping characters —
+  stripping every set brace from the rendered page. Always write `\lbrace` and
+  `\rbrace` for literal set braces (e.g. `\lbrace a, b, c\rbrace`,
+  `\lbrace\varnothing, X\rbrace`).
+- **Norms must be `\lVert` and `\rVert`.** Writing `\|f\|` in inline math is stripped
+  by Kramdown to bare `|f|`, turning a double-bar norm into a single-bar absolute value.
+  Always write `\lVert` and `\rVert` (e.g. `\lVert f \rVert_\infty`, `\lVert x \rVert_2`).
+- **Multi-line alignments (`aligned`) must be in display math `$$...$$` with `\\`.**
+  Kramdown preserves `\\` inside display math blocks `$$...$$`, but collapses `\\` to
+  `\` inside single-dollar inline math `$...$`. Always set multi-line alignments as
+  displayed equations inside `$$...$$` and use `\\` for line breaks.
 - Supported and used freely: `\mathbb`, `\mathcal`, `\subseteq`, `\varnothing`,
   `\bigcup`, `\bigcap`, `\varepsilon`, `\blacksquare`, `aligned`, `cases`,
-  `\overline`, `\operatorname`.
+  `\overline`, `\operatorname`, `\lbrace`, `\rbrace`, `\lVert`, `\rVert`,
+  `\lvert`, `\rvert`.
 - **Not supported.** No `\begin{tikzpicture}`, no `\newcommand` in page
   source, no `\label`/`\ref` cross-referencing, no `align` (use `aligned`
   inside `$$`), no `\text` with nested math beyond one level.

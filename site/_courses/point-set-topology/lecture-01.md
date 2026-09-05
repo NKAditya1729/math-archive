@@ -11,6 +11,7 @@ coverage: >
   conditions for three topologies available on any set X — the trivial
   topology, the discrete topology, and the finite complement topology.
 status: drafted
+lecture_date:
 version: 1.0
 timestamps: false
 figures: 2
@@ -116,7 +117,7 @@ It is tempting to read (T2) and (T3) as the same condition with $\cap$ and $\cup
 
 {% capture ex1_content %}
 Let $X$ be any set and put
-$$\tau = \{\, \varnothing,\; X \,\}.$$
+$$\tau = \lbrace\, \varnothing,\; X \,\rbrace.$$
 This collection has exactly two elements. Then $\tau$ is a topology on $X$,
 called the **trivial topology**.
 {% endcapture %}
@@ -148,7 +149,7 @@ $\bigcup_{i \in I} U_i = \varnothing \in \tau$.
 *Case (b): some $U_j = X$.* Then $X \subseteq \bigcup_{i \in I} U_i \subseteq X$,
 so the union equals $X$, and $X \in \tau$. ✓
 
-All three conditions hold, so $\tau = \{\varnothing, X\}$ is a topology on
+All three conditions hold, so $\tau = \lbrace\varnothing, X\rbrace$ is a topology on
 $X$.
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Example 1" content=ex1_proof %}
@@ -186,11 +187,11 @@ Hence $\tau = \mathcal{P}(X)$ is a topology on $X$.
 {% include block.html type="proof" title="Proof of Example 2" content=ex2_proof %}
 
 {% capture supp_extremes %}
-These first two examples are the smallest and the largest topologies available on a given set $X$. Any topology $\tau$ on $X$ must contain $\varnothing$ and $X$ by (T1), so $\{\varnothing, X\} \subseteq \tau$; and $\tau$ is by definition a collection of subsets of $X$, so $\tau \subseteq \mathcal{P}(X)$. Every topology on $X$ therefore sits between the trivial and the discrete topology.
+These first two examples are the smallest and the largest topologies available on a given set $X$. Any topology $\tau$ on $X$ must contain $\varnothing$ and $X$ by (T1), so $\lbrace\varnothing, X\rbrace \subseteq \tau$; and $\tau$ is by definition a collection of subsets of $X$, so $\tau \subseteq \mathcal{P}(X)$. Every topology on $X$ therefore sits between the trivial and the discrete topology.
 
 {% include figure.html
    src="point-set-topology/lecture-01/topology-lattice-abc.svg"
-   caption="Every topology on $X=\{a,b,c\}$ contains $\{\varnothing, X\}$ and is contained in $\mathcal{P}(X)$; the trivial and discrete topologies form the universal lower and upper bounds in the inclusion lattice. *(Structure diagram — not drawn on the lecture board.)*"
+   caption="Every topology on $X=\lbrace a,b,c\rbrace$ contains $\lbrace\varnothing, X\rbrace$ and is contained in $\mathcal{P}(X)$; the trivial and discrete topologies form the universal lower and upper bounds in the inclusion lattice. (Structure diagram — not drawn on the lecture board.)"
    alt="A Hasse diagram showing topologies on a three-element set ordered by inclusion, with the trivial topology at the bottom and the discrete topology at the top." %}
 {% endcapture %}
 {% include block.html type="supplement" title="The two extremes" content=supp_extremes %}
@@ -203,7 +204,7 @@ This one is, in the lecturer's words, a little more interesting.
 
 {% capture ex3_content %}
 Let $X$ be any set and put
-$$\tau = \{\, U \subseteq X \;:\; U = \varnothing \ \text{ or } \ X \setminus U \text{ is a finite set} \,\}.$$
+$$\tau = \lbrace\, U \subseteq X \;:\; U = \varnothing \ \text{ or } \ X \setminus U \text{ is a finite set} \,\rbrace.$$
 Then $\tau$ is a topology on $X$, called the **finite complement topology**.
 {% endcapture %}
 {% include block.html type="example" title="Example 3 (Finite complement topology)" content=ex3_content %}
@@ -250,7 +251,7 @@ All three conditions hold, so $\tau$ is a topology on $X$.
 {% include block.html type="proof" title="Proof of Example 3" content=ex3_proof %}
 
 {% capture supp_demorgan %}
-Both (T2) and (T3) above turn on one identity, which the lecturer passes over as "some simple set theory". These are De Morgan's laws in their general form. For any family $\{A_i\}_{i \in I}$ of subsets of $X$:
+Both (T2) and (T3) above turn on one identity, which the lecturer passes over as "some simple set theory". These are De Morgan's laws in their general form. For any family $\lbrace A_i\rbrace_{i \in I}$ of subsets of $X$:
 $$X \setminus \bigcap_{i \in I} A_i = \bigcup_{i \in I} (X \setminus A_i), \qquad X \setminus \bigcup_{i \in I} A_i = \bigcap_{i \in I} (X \setminus A_i).$$
 Both hold for arbitrary $I$, finite or not. To see the first: $x$ fails to lie in every $A_i$ exactly when $x$ fails to lie in at least one of them. The second is the same statement with the roles reversed.
 {% endcapture %}
@@ -258,16 +259,16 @@ Both hold for arbitrary $I$, finite or not. To see the first: $x$ fails to lie i
 
 {% capture supp_finiteness %}
 The finite complement topology already shows that (T2) would be *false* if arbitrary intersections were allowed. Take $X = \mathbb{Z}$ and, for each $n \geq 1$, put
-$$U_n = \mathbb{Z} \setminus \{n\}.$$
-Each $U_n$ has complement $\{n\}$, a one-element set, so each $U_n \in \tau$. Their intersection over all $n \geq 1$ is
-$$\bigcap_{n \geq 1} U_n = \mathbb{Z} \setminus \{1, 2, 3, \dots\},$$
-which is non-empty (it contains $0$ and every negative integer) and whose complement $\{1,2,3,\dots\}$ is infinite. So this intersection satisfies neither clause of the definition and does **not** lie in $\tau$.
+$$U_n = \mathbb{Z} \setminus \lbrace n\rbrace.$$
+Each $U_n$ has complement $\lbrace n\rbrace$, a one-element set, so each $U_n \in \tau$. Their intersection over all $n \geq 1$ is
+$$\bigcap_{n \geq 1} U_n = \mathbb{Z} \setminus \lbrace 1, 2, 3, \dots\rbrace,$$
+which is non-empty (it contains $0$ and every negative integer) and whose complement $\lbrace 1,2,3,\dots\rbrace$ is infinite. So this intersection satisfies neither clause of the definition and does **not** lie in $\tau$.
 
 Notice how narrowly the argument in (T2) actually depended on finiteness: a union of finitely many finite sets is finite, but a union of infinitely many finite sets need not be.
 
 {% include figure.html
    src="point-set-topology/lecture-01/finite-complement-on-Z.svg"
-   caption="Left: an open set in $(\mathbb{Z}, \tau_{\text{fc}})$ contains all integers except a finite subset $\{-1, 1, 2\}$. Right: a countable intersection $\bigcap_{n \geq 1} (\mathbb{Z} \setminus \{n\}) = \mathbb{Z} \setminus \{1, 2, 3, \dots\}$ produces a set with infinite complement escaping $\tau_{\text{fc}}$, demonstrating why axiom (T2) strictly requires finite intersections. *(Structure diagram — not drawn on the lecture board.)*"
+   caption="Left: an open set in $(\mathbb{Z}, \tau_{\text{fc}})$ contains all integers except a finite subset $\lbrace -1, 1, 2\rbrace$. Right: a countable intersection $\bigcap_{n \geq 1} (\mathbb{Z} \setminus \lbrace n\rbrace) = \mathbb{Z} \setminus \lbrace 1, 2, 3, \dots\rbrace$ produces a set with infinite complement escaping $\tau_{\text{fc}}$, demonstrating why axiom (T2) strictly requires finite intersections. (Structure diagram — not drawn on the lecture board.)"
    alt="Two-panel diagram showing open sets in the finite-complement topology on integers, and an infinite intersection of open sets whose complement is infinite, failing the definition." %}
 {% endcapture %}
 {% include block.html type="supplement" title="Where finiteness in (T2) is doing real work" content=supp_finiteness %}
@@ -296,10 +297,10 @@ topology on the real line.
 The lecturer sets no explicit exercise in this lecture.
 
 {% capture ex11_content %}
-Let $X = \{a, b, c\}$. Write down the trivial topology and the discrete topology on $X$, and count the elements of each. Then find a topology on $X$ that is neither.
+Let $X = \lbrace a, b, c\rbrace$. Write down the trivial topology and the discrete topology on $X$, and count the elements of each. Then find a topology on $X$ that is neither.
 {% endcapture %}
 {% capture ex11_sol %}
-Trivial: $\{\varnothing, X\}$, two elements. Discrete: $\mathcal{P}(X)$, eight elements. One topology in between is $\tau = \{\varnothing, \{a\}, X\}$: condition (T1) holds; the only intersections and unions to check involve $\varnothing$, $\{a\}$ and $X$, and each returns one of those three sets.
+Trivial: $\lbrace\varnothing, X\rbrace$, two elements. Discrete: $\mathcal{P}(X)$, eight elements. One topology in between is $\tau = \lbrace\varnothing, \lbrace a\rbrace, X\rbrace$: condition (T1) holds; the only intersections and unions to check involve $\varnothing$, $\lbrace a\rbrace$ and $X$, and each returns one of those three sets.
 {% endcapture %}
 {% include block.html type="exercise" title="Exercise 1.1 (not from the lecture — for practice)" content=ex11_content solution=ex11_sol %}
 
@@ -316,7 +317,7 @@ Trivial: $\{\varnothing, X\}$, two elements. Discrete: $\mathcal{P}(X)$, eight e
     </li>
     <li>
       <a href="#example-1-trivial-topology">Example 1 (Trivial Topology)</a>:
-      $\tau = \{\varnothing, X\}$ is the coarsest (smallest) topology on any set $X$.
+      $\tau = \lbrace\varnothing, X\rbrace$ is the coarsest (smallest) topology on any set $X$.
     </li>
     <li>
       <a href="#example-2-discrete-topology">Example 2 (Discrete Topology)</a>:
@@ -324,7 +325,7 @@ Trivial: $\{\varnothing, X\}$, two elements. Discrete: $\mathcal{P}(X)$, eight e
     </li>
     <li>
       <a href="#example-3-finite-complement-topology">Example 3 (Finite Complement Topology)</a>:
-      $\tau = \{U \subseteq X : U = \varnothing \text{ or } X \setminus U \text{ is finite}\}$ is a topology on any set $X$; on infinite sets it demonstrates why axiom (T2) requires finiteness.
+      $\tau = \lbrace U \subseteq X : U = \varnothing \text{ or } X \setminus U \text{ is finite}\rbrace$ is a topology on any set $X$; on infinite sets it demonstrates why axiom (T2) requires finiteness.
     </li>
   </ul>
 </div>

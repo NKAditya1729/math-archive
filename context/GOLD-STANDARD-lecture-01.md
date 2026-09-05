@@ -25,7 +25,7 @@ course: point-set-topology
 course_title: Point-Set Topology
 lecture_number: 1
 title: "Topological Spaces: Definition and First Examples"
-date:
+lecture_date:
 coverage: >
   Recalls the power set. Defines a topology on a set X by three conditions:
   that the empty set and X belong; that finite intersections of members
@@ -121,7 +121,7 @@ subsets, and the three conditions are the only constraints on that choice.
 
 > [!EXAMPLE] Example 1 (Trivial topology)
 > Let $X$ be any set and put
-> $$\tau = \{\, \varnothing,\; X \,\}.$$
+> $$\tau = \lbrace\, \varnothing,\; X \,\rbrace.$$
 > This collection has exactly two elements. Then $\tau$ is a topology on $X$,
 > called the **trivial topology**.
 
@@ -150,7 +150,7 @@ $\bigcup_{i \in I} U_i = \varnothing \in \tau$.
 *Case (b): some $U_j = X$.* Then $X \subseteq \bigcup_{i \in I} U_i \subseteq X$,
 so the union equals $X$, and $X \in \tau$. ✓
 
-All three conditions hold, so $\tau = \{\varnothing, X\}$ is a topology on
+All three conditions hold, so $\tau = \lbrace\varnothing, X\rbrace$ is a topology on
 $X$. $\blacksquare$
 
 ---
@@ -183,7 +183,7 @@ Hence $\tau = \mathcal{P}(X)$ is a topology on $X$. $\blacksquare$
 > [!SUPPLEMENT]
 > **The two extremes.** These first two examples are the smallest and the
 > largest topologies available on a given set $X$. Any topology $\tau$ on $X$
-> must contain $\varnothing$ and $X$ by (T1), so $\{\varnothing, X\} \subseteq
+> must contain $\varnothing$ and $X$ by (T1), so $\lbrace\varnothing, X\rbrace \subseteq
 > \tau$; and $\tau$ is by definition a collection of subsets of $X$, so
 > $\tau \subseteq \mathcal{P}(X)$. Every topology on $X$ therefore sits
 > between the trivial and the discrete topology.
@@ -196,7 +196,7 @@ This one is, in the lecturer's words, a little more interesting.
 
 > [!EXAMPLE] Example 3 (Finite complement topology)
 > Let $X$ be any set and put
-> $$\tau = \{\, U \subseteq X \;:\; U = \varnothing \ \text{ or } \ X \setminus U \text{ is a finite set} \,\}.$$
+> $$\tau = \lbrace\, U \subseteq X \;:\; U = \varnothing \ \text{ or } \ X \setminus U \text{ is a finite set} \,\rbrace.$$
 > Then $\tau$ is a topology on $X$, called the **finite complement topology**.
 
 **Proof.**
@@ -243,7 +243,7 @@ All three conditions hold, so $\tau$ is a topology on $X$. $\blacksquare$
 > **The set-theoretic step used twice.** Both (T2) and (T3) above turn on one
 > identity, which the lecturer passes over as "some simple set theory". These
 > are De Morgan's laws in their general form. For any family
-> $\{A_i\}_{i \in I}$ of subsets of $X$:
+> $\lbrace A_i\rbrace_{i \in I}$ of subsets of $X$:
 > $$X \setminus \bigcap_{i \in I} A_i = \bigcup_{i \in I} (X \setminus A_i),
 > \qquad
 > X \setminus \bigcup_{i \in I} A_i = \bigcap_{i \in I} (X \setminus A_i).$$
@@ -255,12 +255,12 @@ All three conditions hold, so $\tau$ is a topology on $X$. $\blacksquare$
 > **Where finiteness in (T2) is doing real work.** The finite complement
 > topology already shows that (T2) would be *false* if arbitrary intersections
 > were allowed. Take $X = \mathbb{Z}$ and, for each $n \geq 1$, put
-> $$U_n = \mathbb{Z} \setminus \{n\}.$$
-> Each $U_n$ has complement $\{n\}$, a one-element set, so each $U_n \in \tau$.
+> $$U_n = \mathbb{Z} \setminus \lbrace n\rbrace.$$
+> Each $U_n$ has complement $\lbrace n\rbrace$, a one-element set, so each $U_n \in \tau$.
 > Their intersection over all $n \geq 1$ is
-> $$\bigcap_{n \geq 1} U_n = \mathbb{Z} \setminus \{1, 2, 3, \dots\},$$
+> $$\bigcap_{n \geq 1} U_n = \mathbb{Z} \setminus \lbrace 1, 2, 3, \dots\rbrace,$$
 > which is non-empty (it contains $0$ and every negative integer) and whose
-> complement $\{1,2,3,\dots\}$ is infinite. So this intersection satisfies
+> complement $\lbrace 1,2,3,\dots\rbrace$ is infinite. So this intersection satisfies
 > neither clause of the definition and does **not** lie in $\tau$.
 >
 > Notice how narrowly the argument in (T2) actually depended on finiteness: a
@@ -293,16 +293,16 @@ topology on the real line.
 The lecturer sets no explicit exercise in this lecture.
 
 > [!EXERCISE] Exercise 1.1 (not from the lecture — for practice)
-> Let $X = \{a, b, c\}$. Write down the trivial topology and the discrete
+> Let $X = \lbrace a, b, c\rbrace$. Write down the trivial topology and the discrete
 > topology on $X$, and count the elements of each. Then find a topology on $X$
 > that is neither.
 >
 > <details><summary>Worked solution — not from the lecture</summary>
 >
-> Trivial: $\{\varnothing, X\}$, two elements. Discrete: $\mathcal{P}(X)$,
+> Trivial: $\lbrace\varnothing, X\rbrace$, two elements. Discrete: $\mathcal{P}(X)$,
 > eight elements. One topology in between is
-> $\tau = \{\varnothing, \{a\}, X\}$: condition (T1) holds; the only
-> intersections and unions to check involve $\varnothing$, $\{a\}$ and $X$,
+> $\tau = \lbrace\varnothing, \lbrace a\rbrace, X\rbrace$: condition (T1) holds; the only
+> intersections and unions to check involve $\varnothing$, $\lbrace a\rbrace$ and $X$,
 > and each returns one of those three sets.
 >
 > </details>
