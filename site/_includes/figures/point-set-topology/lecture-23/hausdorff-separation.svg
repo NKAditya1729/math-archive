@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 280" width="100%" height="auto">
+  <!-- Background -->
+  <rect width="650" height="280" fill="#f8fafc" rx="8"/>
+
+  <!-- Ambient Space X -->
+  <g transform="translate(40, 30)">
+    <path d="M 40 40 C 140 10, 420 20, 520 60 C 600 100, 580 180, 500 200 C 400 220, 100 210, 40 180 C -10 150, -10 80, 40 40 Z"
+          fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="510" y="45" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#475569">X</text>
+
+    <!-- Open set U1 around x1 -->
+    <path d="M 120 70 C 180 60, 200 110, 180 150 C 150 180, 90 160, 80 120 C 70 90, 90 75, 120 70 Z"
+          fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="130" cy="120" r="5" fill="#1e293b"/>
+    <text x="130" y="145" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">x₁</text>
+    <text x="130" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#2563eb" text-anchor="middle">U₁</text>
+
+    <!-- Open set U2 around x2 -->
+    <path d="M 380 65 C 440 60, 470 105, 450 155 C 420 185, 350 170, 340 130 C 330 95, 350 70, 380 65 Z"
+          fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+    <circle cx="395" cy="120" r="5" fill="#1e293b"/>
+    <text x="395" y="145" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">x₂</text>
+    <text x="395" y="95" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#059669" text-anchor="middle">U₂</text>
+
+    <!-- Disjointness annotation -->
+    <text x="260" y="125" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#64748b" text-anchor="middle">U₁ ∩ U₂ = ∅</text>
+    <line x1="200" y1="120" x2="320" y2="120" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+</svg>

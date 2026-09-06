@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 300" width="100%" height="auto">
+  <defs>
+    <marker id="map-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="path-arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+    <marker id="path-arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="650" height="300" fill="#f8fafc" rx="8"/>
+
+  <!-- Left: Domain X -->
+  <g transform="translate(40, 40)">
+    <!-- Blob X -->
+    <path d="M 40 40 C 90 20, 160 30, 190 70 C 220 110, 200 170, 160 190 C 120 210, 50 200, 30 150 C 10 100, 0 60, 40 40 Z"
+          fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <text x="35" y="30" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#1e40af">X</text>
+    <text x="35" y="46" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">(path connected)</text>
+
+    <!-- Points x1, x2 in X -->
+    <circle cx="60" cy="130" r="5" fill="#1e293b"/>
+    <text x="50" y="150" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b">x₁</text>
+
+    <circle cx="160" cy="90" r="5" fill="#1e293b"/>
+    <text x="170" y="85" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b">x₂</text>
+
+    <!-- Path gamma joining x1 and x2 -->
+    <path d="M 60 130 C 90 80, 120 140, 160 90" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="105" y="95" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#2563eb">γ(t)</text>
+  </g>
+
+  <!-- Center: Mapping arrow f -->
+  <g transform="translate(265, 130)">
+    <line x1="10" y1="0" x2="80" y2="0" stroke="#1e293b" stroke-width="2" marker-end="url(#map-arrow)"/>
+    <text x="45" y="-10" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#1e293b" text-anchor="middle">f</text>
+    <text x="45" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">continuous</text>
+  </g>
+
+  <!-- Right: Target Y and subspace f(X) -->
+  <g transform="translate(370, 30)">
+    <!-- Ambient Y -->
+    <rect x="0" y="0" width="240" height="230" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="225" y="25" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#475569" text-anchor="end">Y</text>
+
+    <!-- Image f(X) blob -->
+    <path d="M 30 50 C 70 30, 150 40, 180 80 C 210 120, 180 180, 140 190 C 90 200, 40 180, 20 140 C 0 100, 0 70, 30 50 Z"
+          fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="40" y="55" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#047857">f(X)</text>
+
+    <!-- Points f(x1), f(x2) in f(X) -->
+    <circle cx="50" cy="140" r="5" fill="#1e293b"/>
+    <text x="35" y="165" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b">f(x₁)</text>
+
+    <circle cx="150" cy="100" r="5" fill="#1e293b"/>
+    <text x="160" y="95" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b">f(x₂)</text>
+
+    <!-- Image path f o gamma -->
+    <path d="M 50 140 C 80 90, 110 150, 150 100" fill="none" stroke="#059669" stroke-width="2.5"/>
+    <text x="85" y="105" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#059669">(f ∘ γ)(t)</text>
+  </g>
+</svg>

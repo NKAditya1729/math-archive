@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 260" width="100%" height="260" aria-label="Continuous rotation path in GL_2(R)+ from -I to J to I">
+  <!-- Determinant surface / curve -->
+  <!-- Start -I -->
+  <circle cx="90" cy="130" r="5" fill="var(--ink)" />
+  <text class="fig-label" x="65" y="160" fill="var(--ink)" font-size="14">−I₂</text>
+
+  <!-- Intermediate J = [0 1; -1 0] -->
+  <circle cx="260" cy="80" r="5" fill="var(--ink)" />
+  <text class="fig-label" x="255" y="60" fill="var(--ink)" font-size="14" font-style="italic">J</text>
+
+  <!-- End I -->
+  <circle cx="430" cy="130" r="5" fill="var(--accent)" />
+  <text class="fig-focus fig-label" x="435" y="160" fill="var(--accent)" font-size="15" font-weight="bold">+I₂</text>
+
+  <!-- Path 1: -I to J -->
+  <path class="fig-focus" d="M 90,130 C 130,90 200,80 260,80" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+  <polygon points="182,88 170,82 176,95" fill="var(--accent)" />
+  <text class="fig-label" x="120" y="75" fill="var(--ink-soft)" font-size="12">t² + (1−t)² &gt; 0</text>
+
+  <!-- Path 2: J to I -->
+  <path class="fig-focus" d="M 260,80 C 320,80 390,90 430,130" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+  <polygon points="360,98 348,90 352,103" fill="var(--accent)" />
+  <text class="fig-label" x="315" y="75" fill="var(--ink-soft)" font-size="12">t² + (1−t)² &gt; 0</text>
+
+  <!-- Origin / Zero determinant boundary strictly avoided below -->
+  <line class="fig-fail" x1="60" y1="210" x2="460" y2="210" stroke="var(--flag)" stroke-width="1.5" stroke-dasharray="4 4" />
+  <text class="fig-label" x="210" y="235" fill="var(--flag)" font-size="13">singular locus: det = 0</text>
+</svg>

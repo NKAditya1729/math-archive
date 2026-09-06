@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280" width="100%" height="280" aria-label="Concatenation of two paths gamma 1 and gamma 2 meeting at point y">
+  <path class="fig-region" d="M 60,140 C 70,50 180,40 300,50 C 420,60 480,100 460,200 C 440,260 320,260 200,250 C 100,240 50,200 60,140 Z" fill="var(--accent)" fill-opacity="0.10" stroke="var(--ink-soft)" stroke-width="1.5" />
+  <text class="fig-label" x="90" y="75" fill="var(--ink-soft)" font-size="16" font-style="italic">X</text>
+  <!-- First path gamma_1: x to y -->
+  <path class="fig-focus" d="M 120,170 C 150,110 190,120 240,160" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+  <polygon points="182,130 170,125 178,118" fill="var(--accent)" />
+  <!-- Second path gamma_2: y to z -->
+  <path class="fig-focus" d="M 240,160 C 290,200 350,190 390,120" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+  <polygon points="325,188 312,185 318,175" fill="var(--accent)" />
+  <!-- Points x, y, z -->
+  <circle cx="120" cy="170" r="4" fill="var(--ink)" />
+  <circle cx="240" cy="160" r="4" fill="var(--ink)" />
+  <circle cx="390" cy="120" r="4" fill="var(--ink)" />
+  <text class="fig-label" x="105" y="185" fill="var(--ink)" font-size="15" font-style="italic">x</text>
+  <text class="fig-label" x="235" y="185" fill="var(--ink)" font-size="15" font-style="italic">y</text>
+  <text class="fig-label" x="400" y="125" fill="var(--ink)" font-size="15" font-style="italic">z</text>
+  <!-- Labels for paths -->
+  <text class="fig-label" x="165" y="108" fill="var(--ink-soft)" font-size="14" font-style="italic">γ₁(2t)</text>
+  <text class="fig-label" x="335" y="215" fill="var(--ink-soft)" font-size="14" font-style="italic">γ₂(2t−1)</text>
+  <text class="fig-focus fig-label" x="245" y="120" fill="var(--accent)" font-size="15" font-weight="bold" font-style="italic">H = γ₁ ∗ γ₂</text>
+</svg>

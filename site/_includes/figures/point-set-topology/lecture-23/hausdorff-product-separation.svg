@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 320" width="100%" height="auto">
+  <!-- Background -->
+  <rect width="650" height="320" fill="#f8fafc" rx="8"/>
+
+  <!-- Product Space X x Y box -->
+  <g transform="translate(70, 40)">
+    <!-- Axes and main product boundary -->
+    <rect x="0" y="0" width="500" height="230" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" rx="6"/>
+
+    <!-- Labels for spaces -->
+    <text x="250" y="255" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#475569" text-anchor="middle">Space X</text>
+    <text x="-35" y="115" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#475569" text-anchor="middle" transform="rotate(-90, -35, 115)">Space Y</text>
+    <text x="490" y="-10" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#1e293b" text-anchor="end">X × Y</text>
+
+    <!-- Strip 1: X x V1 (around y1) -->
+    <rect x="0" y="140" width="500" height="60" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <text x="485" y="175" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#2563eb" text-anchor="end">X × V₁</text>
+
+    <!-- Strip 2: X x V2 (around y2) -->
+    <rect x="0" y="30" width="500" height="60" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <text x="485" y="65" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#059669" text-anchor="end">X × V₂</text>
+
+    <!-- Point (x1, y1) -->
+    <circle cx="160" cy="170" r="5" fill="#1e293b"/>
+    <text x="175" y="175" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b">(x₁, y₁)</text>
+
+    <!-- Point (x2, y2) -->
+    <circle cx="320" cy="60" r="5" fill="#1e293b"/>
+    <text x="335" y="65" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b">(x₂, y₂)</text>
+
+    <!-- Y-axis annotations on the left -->
+    <line x1="-8" y1="170" x2="0" y2="170" stroke="#1e293b" stroke-width="2"/>
+    <text x="-12" y="175" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">y₁</text>
+
+    <line x1="-8" y1="60" x2="0" y2="60" stroke="#1e293b" stroke-width="2"/>
+    <text x="-12" y="65" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e293b" text-anchor="end">y₂</text>
+
+    <!-- Bracket for V1 on Y axis -->
+    <line x1="-18" y1="140" x2="-18" y2="200" stroke="#3b82f6" stroke-width="2"/>
+    <text x="-24" y="175" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#2563eb" text-anchor="end">V₁</text>
+
+    <!-- Bracket for V2 on Y axis -->
+    <line x1="-18" y1="30" x2="-18" y2="90" stroke="#10b981" stroke-width="2"/>
+    <text x="-24" y="65" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#059669" text-anchor="end">V₂</text>
+  </g>
+</svg>

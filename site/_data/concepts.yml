@@ -71,6 +71,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 23
+  anchor: "definition-23-4-compact-space"
 - letter: C
   name: Complex matrix groups
   gloss: The matrix groups $M_n(\mathbb{C})$, $GL_n(\mathbb{C})$, $SL_n(\mathbb{C})$,
@@ -79,6 +80,7 @@
   course_title: Point-Set Topology
   lecture:
   - 6
+  - 22
   - 28
   anchor: "example-3-classical-complex-matrix-groups"
   symbol: "$U(n), SU(n)$"
@@ -128,6 +130,14 @@
   - 25
   - 27
   - 34
+- letter: C
+  name: Comb space
+  gloss: The planar subspace $C \subseteq \mathbb{R}^2$ formed by vertical teeth at $x = 1/n$, a horizontal base, and a vertical spine, with deleted origin; connected but not path connected.
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 20
+  anchor: "definition-20-2-comb-space"
+  symbol: "$C$"
 - letter: C
   name: Countable product space
   gloss: The Cartesian product $\mathbb{R}^\mathbb{N}$ of countably many copies of
@@ -207,8 +217,25 @@
   - 6
   - 11
   - 19
+  - 21
   anchor: "example-2-classical-real-matrix-groups"
   symbol: "$GL_n(\\mathbb{R})$"
+- letter: G
+  name: "General linear group (positive determinant)"
+  gloss: "The path-connected topological group $GL_n(\\mathbb{R})^+ = \\{A \\in M_n(\\mathbb{R}) : \\det(A) > 0\\}$."
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 21
+  anchor: "theorem-21-1-gln-plus-path-connected"
+  symbol: "$GL_n(\\mathbb{R})^+$"
+- letter: G
+  name: "General linear group (complex)"
+  gloss: "The path-connected topological group $GL_n(\\mathbb{C}) = \\{A \\in M_n(\\mathbb{C}) : \\det(A) \\ne 0\\}$."
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 22
+  anchor: "proposition-22-1-gln-c-path-connected"
+  symbol: "$GL_n(\\mathbb{C})$"
 - letter: G
   name: Generating conditions for a basis
   gloss: Conditions on a collection $\mathcal{B}$ ensuring it covers $X$ and intersections
@@ -239,6 +266,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 23
+  anchor: "definition-23-1-hausdorff-space"
 - letter: H
   name: Homeomorphism
   gloss: A bijective continuous function whose inverse is also continuous; an isomorphism
@@ -411,7 +439,10 @@
     subsets in general.
   course: point-set-topology
   course_title: Point-Set Topology
-  lecture: 20
+  lecture:
+  - 19
+  - 20
+  anchor: "definition-19-5-path-components"
 - letter: P
   name: Path connected space
   gloss: 'A space where every pair of points can be joined by a continuous path $\gamma
@@ -419,6 +450,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 19
+  anchor: "definition-19-1-path-and-path-connected-space"
 - letter: P
   name: Path in a space
   gloss: 'A continuous mapping $\gamma : [0,1] \to X$ connecting initial point $\gamma(0)$
@@ -426,6 +458,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 19
+  anchor: "definition-19-1-path-and-path-connected-space"
   symbol: "$\\gamma$"
 - letter: P
   name: Power set
@@ -562,7 +595,17 @@
   - 6
   - 11
   - 19
+  - 22
+  anchor: "theorem-22-4-sln-r-path-connected"
   symbol: "$SL_n(\\mathbb{R})$"
+- letter: S
+  name: Special linear group (complex)
+  gloss: 'The path-connected topological group $SL_n(\mathbb{C}) = \{A \in M_n(\mathbb{C}) : \det(A) = 1\}$.'
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 22
+  anchor: "theorem-22-5-sln-c-path-connected"
+  symbol: "$SL_n(\\mathbb{C})$"
 - letter: S
   name: Special orthogonal group
   gloss: The compact, connected matrix group $SO(n) = O(n) \cap SL_n(\mathbb{R})$

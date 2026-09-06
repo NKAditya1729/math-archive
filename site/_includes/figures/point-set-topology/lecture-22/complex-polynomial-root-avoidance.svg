@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 340" width="100%" height="auto">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="650" height="340" fill="#f8fafc" rx="8"/>
+
+  <!-- Complex plane title and axes -->
+  <g stroke="#cbd5e1" stroke-width="1.5">
+    <line x1="50" y1="200" x2="600" y2="200" marker-end="url(#arrow)"/>
+    <line x1="180" y1="310" x2="180" y2="30" marker-end="url(#arrow)"/>
+  </g>
+  <text x="595" y="190" font-family="system-ui, sans-serif" font-size="13" font-style="italic" fill="#64748b" text-anchor="end">Re(z)</text>
+  <text x="190" y="45" font-family="system-ui, sans-serif" font-size="13" font-style="italic" fill="#64748b">Im(z)</text>
+  <text x="615" y="45" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#1e293b" text-anchor="end">Complex Plane ℂ</text>
+
+  <!-- Straight-line segment between 0 and 1 (blocked) -->
+  <line x1="180" y1="200" x2="440" y2="200" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- Excluded polynomial roots (lambdas) -->
+  <!-- Root 1: near the straight line -->
+  <g transform="translate(300, 200)">
+    <circle cx="0" cy="0" r="5" fill="#ef4444"/>
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#ef4444" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="0" y="-18" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#b91c1c" text-anchor="middle">λ₁</text>
+  </g>
+
+  <!-- Root 2: in upper half plane -->
+  <g transform="translate(240, 120)">
+    <circle cx="0" cy="0" r="4.5" fill="#ef4444"/>
+    <text x="12" y="4" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#b91c1c">λ₂</text>
+  </g>
+
+  <!-- Root 3: in lower half plane -->
+  <g transform="translate(380, 250)">
+    <circle cx="0" cy="0" r="4.5" fill="#ef4444"/>
+    <text x="12" y="5" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#b91c1c">λ₃</text>
+  </g>
+
+  <!-- Root 4: further out -->
+  <g transform="translate(480, 130)">
+    <circle cx="0" cy="0" r="4.5" fill="#ef4444"/>
+    <text x="12" y="4" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#b91c1c">λ_r</text>
+  </g>
+
+  <!-- Avoiding path S(t) -->
+  <path d="M 180 200 C 210 240, 250 260, 280 240 C 310 220, 310 140, 350 130 C 390 120, 420 170, 440 200" 
+        fill="none" stroke="#2563eb" stroke-width="3"/>
+  <path d="M 270 242 L 285 240 L 275 228" fill="#2563eb"/>
+
+  <!-- Path label -->
+  <text x="330" y="115" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#2563eb">S(t)</text>
+  <text x="330" y="95" font-family="system-ui, sans-serif" font-size="12" fill="#475569">continuous path dodging roots</text>
+
+  <!-- Endpoints 0 and 1 -->
+  <!-- 0: S(0) = 0 -->
+  <circle cx="180" cy="200" r="6" fill="#1e293b"/>
+  <text x="170" y="222" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="end">0 = S(0)</text>
+  <text x="170" y="240" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="end">(matrix A)</text>
+
+  <!-- 1: S(1) = 1 -->
+  <circle cx="440" cy="200" r="6" fill="#1e293b"/>
+  <text x="450" y="222" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b">1 = S(1)</text>
+  <text x="450" y="240" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">(matrix I_n)</text>
+
+  <!-- Legend box -->
+  <g transform="translate(60, 270)">
+    <rect width="250" height="50" fill="#ffffff" stroke="#e2e8f0" rx="6"/>
+    <circle cx="20" cy="18" r="4" fill="#ef4444"/>
+    <text x="32" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#334155">Roots of p(t) = det(γ(t)) (at most n)</text>
+    <line x1="12" y1="36" x2="28" y2="36" stroke="#94a3b8" stroke-dasharray="3,3" stroke-width="1.5"/>
+    <text x="32" y="40" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Direct segment (possibly blocked)</text>
+  </g>
+</svg>

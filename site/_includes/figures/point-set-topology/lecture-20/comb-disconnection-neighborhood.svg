@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" width="100%" height="320" aria-label="Disconnection of U intersected with C separating gamma(t0) from gamma(delta)">
+  <!-- Rectangular neighborhood U -->
+  <rect class="fig-region" x="60" y="40" width="400" height="240" rx="8" fill="var(--accent)" fill-opacity="0.12" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="5 5" />
+  <text class="fig-label" x="80" y="70" fill="var(--ink-soft)" font-size="16" font-style="italic">U</text>
+
+  <!-- Spine Y segment inside U (x = 0) -->
+  <line class="fig-focus" x1="120" y1="40" x2="120" y2="280" stroke="var(--accent)" stroke-width="2.5" />
+  <text class="fig-label" x="100" y="95" fill="var(--accent)" font-size="14" font-style="italic">Y</text>
+
+  <!-- Point gamma(t_0) on Y -->
+  <circle cx="120" cy="160" r="4" fill="var(--accent)" />
+  <text class="fig-focus fig-label" x="40" y="165" fill="var(--accent)" font-size="14" font-weight="bold">γ(t₀)</text>
+
+  <!-- Accumulating teeth lines at x = 1/n inside U -->
+  <line class="fig-axis" x1="145" y1="40" x2="145" y2="280" stroke="var(--ink-soft)" stroke-width="0.8" />
+  <line class="fig-axis" x1="160" y1="40" x2="160" y2="280" stroke="var(--ink-soft)" stroke-width="1" />
+  <line class="fig-axis" x1="180" y1="40" x2="180" y2="280" stroke="var(--ink-soft)" stroke-width="1" />
+  <line class="fig-axis" x1="210" y1="40" x2="210" y2="280" stroke="var(--ink-soft)" stroke-width="1.2" />
+  <line class="fig-axis" x1="260" y1="40" x2="260" y2="280" stroke="var(--ink)" stroke-width="1.5" />
+  <line class="fig-axis" x1="360" y1="40" x2="360" y2="280" stroke="var(--ink)" stroke-width="1.5" />
+
+  <!-- Point gamma(delta) on a tooth x = 1/k -->
+  <circle cx="260" cy="190" r="4" fill="var(--flag)" />
+  <text class="fig-label" x="270" y="195" fill="var(--flag)" font-size="14" font-style="italic">γ(δ)</text>
+
+  <!-- Vertical separator line x = c (irrational or between teeth) separating V1 and V2 -->
+  <line class="fig-fail" x1="235" y1="40" x2="235" y2="280" stroke="var(--flag)" stroke-width="1.5" stroke-dasharray="4 4" />
+  <text class="fig-label" x="225" y="300" fill="var(--flag)" font-size="13" font-style="italic">x = c</text>
+
+  <!-- Labels for V_1 and V_2 -->
+  <text class="fig-label" x="145" y="260" fill="var(--ink)" font-size="15" font-style="italic">V₁ ∩ C</text>
+  <text class="fig-label" x="300" y="260" fill="var(--ink)" font-size="15" font-style="italic">V₂ ∩ C</text>
+</svg>

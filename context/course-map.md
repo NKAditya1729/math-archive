@@ -149,33 +149,38 @@ connected, and **closed**. Components of $\mathbb{Q}$ are points. $X$ connected
 iff one component.
 Forward reference to L19: path connectedness, path connected implies connected, matrix groups, path components.
 
-**L19.** **Path connectedness**. Path connected $\Rightarrow$ connected.
+**L19 [PROCESSED].** **Path connectedness**. Path connected $\Rightarrow$ connected.
 $[0,1]$, $\mathbb{R}^n$, $S^1$, $S^n$ path connected. Which matrix groups are:
 $GL_n$ and $O(n)$ are not (surjective determinant); $M_n$ is; $SO(n)$, $U(n)$,
 $SU(n)$ are, promised for later. **Path components**; concatenation of paths
 via the pasting lemma. Remark: path components need not be closed.
+Forward reference to L20: comb space counterexample (connected but not path connected, path component not closed).
 
-**L20.** That proposition proved. **The topologist's sine-curve-style
+**L20 [PROCESSED].** That proposition proved. **The topologist's sine-curve-style
 counterexample** $C$: the vertical segments at $x = 1/n$, the punctured
 $y$-axis segment, and the $x$-axis. Connected but not path connected; two path
 components, one connected component; path components need not be closed.
+Forward reference to L21: path connectedness of GL_n(R)^+ via elementary matrices.
 
-**L21.** **$GL_n(\mathbb{R})^+$ is path connected**, in four steps by
+**L21 [PROCESSED].** **$GL_n(\mathbb{R})^+$ is path connected**, in four steps by
 induction, using elementary matrices *(a sketch by his own description — see
 known-defects)*.
+Forward reference to L22: path connectedness of $GL_n(\mathbb{C})$ via polynomial root avoidance, and $SL_n$ groups as continuous images.
 
-**L22.** **$GL_n(\mathbb{C})$ is path connected**, by avoiding the finitely
+**L22 [PROCESSED].** **$GL_n(\mathbb{C})$ is path connected**, by avoiding the finitely
 many roots of $\det \gamma(t)$ in $\mathbb{C}$. Continuous image of a path
 connected space is path connected; hence $SL_n(\mathbb{R})$ and
 $SL_n(\mathbb{C})$.
+Forward reference to L23: Hausdorff spaces and open cover compactness.
 
 ---
 
 ## Part IV — Compactness, quotients, separation (23–40)
 
-**L23.** **Hausdorff**; products and subspaces of Hausdorff are Hausdorff.
+**L23 [PROCESSED].** **Hausdorff**; products and subspaces of Hausdorff are Hausdorff.
 **Compactness — defined only for Hausdorff spaces** (see known-defects,
 Conventions). $\mathbb{R}$ is not compact. **$[0,1]$ is compact.**
+Forward reference to L24: the Tube Lemma, products of compact spaces, closed subspaces of compact spaces.
 
 **L24.** Compactness is not inherited by subspaces. **The tube lemma** (see
 transcript-quirks — the slice is invisible). $X, Y$ compact $\Rightarrow

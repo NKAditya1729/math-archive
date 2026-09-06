@@ -27,6 +27,9 @@ used_in:
   - lecture: 17
     title: "Connectedness of Products, Union Lemma, and Stereographic Charts"
     relationship: "Supplies connectedness of intervals and continuous image preservation used to prove product spaces and spheres are connected."
+  - lecture: 19
+    title: "Path Connectedness and Path Components"
+    relationship: "Supplies the theorem that [0, 1] is connected, used to prove path-connected spaces are connected."
 notation:
   - symbol: "$S = \\lbrace x \\in [0,1] : [0,x] \\subseteq U \\rbrace$"
     gloss: 'The bounded set of points whose initial segments lie in $U$, whose supremum is $1$'

@@ -126,4 +126,14 @@ at a section nobody opened.
 L1  Munkres §12, Example 3 (finite complement topology)  — verified
 L1  Morris 1.3 (finite-closed topology)                  — verified
 L1  Mendelson ch. 3 §1                                   — verified
+L19 Munkres §24 (Path connectedness)                     — verified
+L19 Morris ch. 5 (Connectedness and paths)               — verified
+L20 Munkres §24 (The comb space and non-path-connected spaces) — verified
+L20 Morris ch. 5 (Connected spaces that are not path connected) — verified
+L21 Morris ch. 5 (Connected matrix groups)                  — verified
+L21 Munkres §24 (Connected subspaces of R^n)                — verified
+L22 Morris ch. 5 (Connected matrix groups)                  — verified
+L22 Munkres §24 (Continuous image of path-connected spaces) — verified
+L23 Munkres §17 (Hausdorff spaces), §26 (Compact spaces)    — verified
+L23 Morris ch. 7 (Compactness)                              — verified
 ```

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 260" width="100%" height="auto">
+  <defs>
+    <marker id="retract-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="650" height="260" fill="#f8fafc" rx="8"/>
+
+  <!-- Left box: Matrix A in GL_n -->
+  <g transform="translate(40, 40)">
+    <rect width="210" height="170" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <text x="105" y="25" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">A ∈ GL_n(K)</text>
+    
+    <!-- Matrix columns -->
+    <rect x="25" y="45" width="40" height="100" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5" rx="4"/>
+    <text x="45" y="98" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Col 1</text>
+
+    <rect x="75" y="45" width="35" height="100" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+    <text x="92" y="98" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Col 2</text>
+
+    <text x="125" y="98" font-family="system-ui, sans-serif" font-size="16" fill="#94a3b8">⋯</text>
+
+    <rect x="145" y="45" width="40" height="100" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+    <text x="165" y="98" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Col n</text>
+
+    <text x="105" y="160" font-family="system-ui, sans-serif" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">det(A) = d ≠ 0</text>
+  </g>
+
+  <!-- Center arrow: Operation -->
+  <g transform="translate(265, 110)">
+    <line x1="10" y1="15" x2="85" y2="15" stroke="#2563eb" stroke-width="2.5" marker-end="url(#retract-arrow)"/>
+    <text x="48" y="-5" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#2563eb" text-anchor="middle">Col 1 ↦ Col 1 / det(A)</text>
+    <text x="48" y="40" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">surjective map f</text>
+  </g>
+
+  <!-- Right box: Matrix f(A) in SL_n -->
+  <g transform="translate(390, 40)">
+    <rect width="220" height="170" rx="8" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+    <text x="110" y="25" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">f(A) ∈ SL_n(K)</text>
+
+    <!-- Scaled column 1 -->
+    <rect x="25" y="45" width="50" height="100" fill="#dcfce7" stroke="#10b981" stroke-width="1.5" rx="4"/>
+    <text x="50" y="92" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#047857" text-anchor="middle">Col 1</text>
+    <text x="50" y="110" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#047857" text-anchor="middle">/ det(A)</text>
+
+    <rect x="85" y="45" width="35" height="100" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+    <text x="102" y="98" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Col 2</text>
+
+    <text x="135" y="98" font-family="system-ui, sans-serif" font-size="16" fill="#94a3b8">⋯</text>
+
+    <rect x="155" y="45" width="40" height="100" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+    <text x="175" y="98" font-family="system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Col n</text>
+
+    <text x="110" y="160" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#047857" text-anchor="middle">det(f(A)) = (1/d) · d = 1</text>
+  </g>
+</svg>

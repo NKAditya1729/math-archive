@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 340" width="100%" height="340" aria-label="The comb space C in the plane with deleted origin">
+  <!-- Horizontal base segment (0, 1] x {0} -->
+  <line class="fig-axis" x1="100" y1="280" x2="460" y2="280" stroke="var(--ink-soft)" stroke-width="2" />
+  <!-- Origin (0,0) deleted - hollow circle -->
+  <circle cx="100" cy="280" r="5" fill="var(--surface)" stroke="var(--flag)" stroke-width="2" />
+  <text class="fig-label" x="80" y="300" fill="var(--flag)" font-size="13">(0,0)</text>
+
+  <!-- Vertical spine Y = {0} x (0, 1] -->
+  <line class="fig-focus" x1="100" y1="275" x2="100" y2="60" stroke="var(--accent)" stroke-width="2.5" />
+  <!-- Point P = (0, 1) -->
+  <circle cx="100" cy="60" r="4" fill="var(--accent)" />
+  <text class="fig-focus fig-label" x="50" y="55" fill="var(--accent)" font-size="15" font-weight="bold">P = (0,1)</text>
+  <text class="fig-label" x="78" y="160" fill="var(--accent)" font-size="15" font-style="italic">Y</text>
+
+  <!-- Vertical teeth at x = 1/n for n = 1, 2, 3, 4, 5, 6, 7, 8 -->
+  <!-- n = 1 -> x = 460 -->
+  <line class="fig-axis" x1="460" y1="280" x2="460" y2="60" stroke="var(--ink)" stroke-width="1.5" />
+  <circle cx="460" cy="60" r="3" fill="var(--ink)" />
+  <circle cx="460" cy="280" r="3" fill="var(--ink)" />
+  <text class="fig-label" x="455" y="302" fill="var(--ink-soft)" font-size="13">1</text>
+
+  <!-- n = 2 -> x = 100 + 360/2 = 280 -->
+  <line class="fig-axis" x1="280" y1="280" x2="280" y2="60" stroke="var(--ink)" stroke-width="1.5" />
+  <circle cx="280" cy="60" r="3" fill="var(--ink)" />
+  <circle cx="280" cy="280" r="3" fill="var(--ink)" />
+  <text class="fig-label" x="272" y="302" fill="var(--ink-soft)" font-size="13">1/2</text>
+
+  <!-- n = 3 -> x = 100 + 360/3 = 220 -->
+  <line class="fig-axis" x1="220" y1="280" x2="220" y2="60" stroke="var(--ink)" stroke-width="1.5" />
+  <circle cx="220" cy="60" r="3" fill="var(--ink)" />
+  <circle cx="220" cy="280" r="3" fill="var(--ink)" />
+  <text class="fig-label" x="212" y="302" fill="var(--ink-soft)" font-size="13">1/3</text>
+
+  <!-- n = 4 -> x = 100 + 360/4 = 190 -->
+  <line class="fig-axis" x1="190" y1="280" x2="190" y2="60" stroke="var(--ink)" stroke-width="1.2" />
+  <text class="fig-label" x="182" y="302" fill="var(--ink-soft)" font-size="12">1/4</text>
+
+  <!-- n = 5, 6, 7, 8, 9, 10 -->
+  <line class="fig-axis" x1="172" y1="280" x2="172" y2="60" stroke="var(--ink)" stroke-width="1.2" />
+  <line class="fig-axis" x1="160" y1="280" x2="160" y2="60" stroke="var(--ink)" stroke-width="1" />
+  <line class="fig-axis" x1="151" y1="280" x2="151" y2="60" stroke="var(--ink)" stroke-width="1" />
+  <line class="fig-axis" x1="145" y1="280" x2="145" y2="60" stroke="var(--ink)" stroke-width="0.8" />
+  <line class="fig-axis" x1="140" y1="280" x2="140" y2="60" stroke="var(--ink)" stroke-width="0.8" />
+
+  <!-- Label for accumulating teeth -->
+  <text class="fig-label" x="135" y="45" fill="var(--ink-soft)" font-size="13" font-style="italic">x = 1/n</text>
+  <!-- Label for base -->
+  <text class="fig-label" x="320" y="325" fill="var(--ink-soft)" font-size="14">base (0, 1] × {0}</text>
+</svg>

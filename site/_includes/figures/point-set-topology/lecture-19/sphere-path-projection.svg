@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" width="100%" height="320" aria-label="Radial projection of a line segment onto the unit sphere to form a path">
+  <!-- Sphere outline and equator -->
+  <circle cx="250" cy="160" r="120" fill="var(--surface)" stroke="var(--ink-soft)" stroke-width="1.5" />
+  <ellipse cx="250" cy="160" rx="120" ry="35" fill="none" stroke="var(--ink-soft)" stroke-width="1" stroke-dasharray="4 4" />
+  <!-- Center O -->
+  <circle cx="250" cy="160" r="3" fill="var(--ink-soft)" />
+  <text class="fig-label" x="235" y="165" fill="var(--ink-soft)" font-size="13" font-style="italic">O</text>
+  <!-- North Pole N and South Pole S -->
+  <circle cx="250" cy="40" r="4" fill="var(--ink)" />
+  <text class="fig-label" x="255" y="35" fill="var(--ink)" font-size="15" font-style="italic">N</text>
+  <circle cx="250" cy="280" r="4" fill="var(--ink-soft)" />
+  <text class="fig-label" x="255" y="295" fill="var(--ink-soft)" font-size="15" font-style="italic">S</text>
+  <!-- Point p on sphere -->
+  <circle cx="354" cy="100" r="4" fill="var(--ink)" />
+  <text class="fig-label" x="365" y="102" fill="var(--ink)" font-size="15" font-style="italic">p</text>
+  <!-- Chord between N and p -->
+  <line x1="250" y1="40" x2="354" y2="100" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="4 4" />
+  <text class="fig-label" x="312" y="60" fill="var(--ink-soft)" font-size="13">chord</text>
+  <!-- Projected arc on the sphere surface -->
+  <path class="fig-focus" d="M 250,40 A 120 120 0 0 1 354,100" fill="none" stroke="var(--accent)" stroke-width="2.5" />
+  <text class="fig-focus fig-label" x="315" y="35" fill="var(--accent)" font-size="15" font-weight="bold" font-style="italic">γ(t)</text>
+</svg>

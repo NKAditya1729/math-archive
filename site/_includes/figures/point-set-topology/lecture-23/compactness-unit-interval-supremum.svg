@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 260" width="100%" height="auto">
+  <!-- Background -->
+  <rect width="650" height="260" fill="#f8fafc" rx="8"/>
+
+  <g transform="translate(50, 40)">
+    <!-- Base unit interval [0, 1] -->
+    <line x1="0" y1="120" x2="550" y2="120" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Left endpoint 0 -->
+    <circle cx="0" cy="120" r="6" fill="#1e293b"/>
+    <text x="0" y="150" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">0</text>
+
+    <!-- Right endpoint 1 -->
+    <circle cx="550" cy="120" r="6" fill="#1e293b"/>
+    <text x="550" y="150" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1e293b" text-anchor="middle">1</text>
+
+    <!-- Covered interval [0, x_m] in blue -->
+    <line x1="0" y1="120" x2="310" y2="120" stroke="#3b82f6" stroke-width="6"/>
+    <circle cx="310" cy="120" r="5" fill="#2563eb"/>
+    <text x="310" y="150" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#2563eb" text-anchor="middle">x_m ∈ S</text>
+
+    <!-- Supremum x_0 -->
+    <circle cx="370" cy="120" r="6" fill="#dc2626"/>
+    <line x1="370" y1="100" x2="370" y2="135" stroke="#dc2626" stroke-width="2"/>
+    <text x="370" y="165" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#dc2626" text-anchor="middle">x₀ = sup S</text>
+
+    <!-- Neighborhood U_i0 covering x_0 and x_m -->
+    <rect x="260" y="50" width="180" height="40" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <text x="350" y="75" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#2563eb" text-anchor="middle">U_{i₀} (covers [x_m, x₀ + ε])</text>
+
+    <!-- Arrow showing extension past x_0 -->
+    <circle cx="430" cy="120" r="4" fill="#059669"/>
+    <line x1="370" y1="120" x2="430" y2="120" stroke="#10b981" stroke-width="6"/>
+    <text x="435" y="145" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#059669" text-anchor="start">x₀ + ε ∈ S</text>
+    <text x="435" y="162" font-family="system-ui, sans-serif" font-size="11" fill="#dc2626" text-anchor="start">(contradiction if x₀ &lt; 1)</text>
+
+    <!-- Bracket for [0, x_m] finite union -->
+    <path d="M 0 175 L 0 185 L 155 185 L 155 190 L 155 185 L 310 185 L 310 175" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="155" y="205" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#2563eb" text-anchor="middle">Covered by finite subcollection {U_{i₁}, ..., U_{i_k}}</text>
+  </g>
+</svg>

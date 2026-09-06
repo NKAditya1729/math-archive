@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 260" width="100%" height="260" aria-label="Block matrix clearing via elementary row and column matrices">
+  <!-- Matrix B -->
+  <rect x="50" y="70" width="100" height="100" rx="4" fill="var(--surface)" stroke="var(--ink-soft)" stroke-width="1.5" />
+  <text class="fig-label" x="65" y="95" fill="var(--accent)" font-size="14" font-weight="bold">λ</text>
+  <text class="fig-label" x="105" y="95" fill="var(--ink-soft)" font-size="13">*</text>
+  <text class="fig-label" x="65" y="135" fill="var(--ink-soft)" font-size="13">*</text>
+  <text class="fig-label" x="105" y="135" fill="var(--ink-soft)" font-size="13">D₀</text>
+  <text class="fig-label" x="90" y="195" fill="var(--ink)" font-size="14" font-style="italic">B</text>
+
+  <!-- Arrow with E1 on left and E2 on right -->
+  <line x1="170" y1="120" x2="250" y2="120" stroke="var(--ink-soft)" stroke-width="2" />
+  <polygon points="250,120 240,115 240,125" fill="var(--ink-soft)" />
+  <text class="fig-label" x="180" y="110" fill="var(--ink-soft)" font-size="13">E₁ · B · E₂</text>
+
+  <!-- Resulting block matrix C -->
+  <rect x="280" y="70" width="120" height="100" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="2" />
+  <!-- Corner lambda -->
+  <text class="fig-focus fig-label" x="300" y="98" fill="var(--accent)" font-size="15" font-weight="bold">λ</text>
+  <!-- Zeros on row 1 -->
+  <text class="fig-label" x="350" y="98" fill="var(--ink-soft)" font-size="14">0</text>
+  <!-- Zeros on col 1 -->
+  <text class="fig-label" x="300" y="145" fill="var(--ink-soft)" font-size="14">0</text>
+  <!-- Block D -->
+  <rect x="330" y="115" width="55" height="45" rx="3" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="1" />
+  <text class="fig-label" x="350" y="143" fill="var(--accent)" font-size="14" font-style="italic">D</text>
+  <text class="fig-label" x="325" y="195" fill="var(--ink)" font-size="14" font-style="italic">C = diag(λ, D)</text>
+</svg>

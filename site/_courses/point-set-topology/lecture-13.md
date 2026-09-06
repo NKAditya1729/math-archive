@@ -28,6 +28,9 @@ used_in:
   - lecture: 14
     title: "Metric Spaces, Cauchy–Schwarz, and the Metric Topology"
     relationship: "Metric topology and sequence limits build on closed sets, closures, and dense subsets."
+  - lecture: 19
+    title: "Path Connectedness and Path Components"
+    relationship: "Supplies the Pasting Lemma for closed sets used to prove concatenation of paths is continuous."
 notation:
   - symbol: "$\\text{dense}$"
     gloss: 'A subset $T \\subseteq X$ meeting every non-empty open set $U \\subseteq X$'
