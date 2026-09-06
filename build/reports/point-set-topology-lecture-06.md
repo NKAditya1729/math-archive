@@ -38,3 +38,15 @@ None. The definitions and verifications are standard and complete.
 ## Supplements
 1 supplement, approximately 10% of page length:
 1. *Convention: Product topology versus box topology* — documents the lecturer's explicit directive that all infinite products in the course carry the product topology, with a forward reference to the failure of the diagonal map under the box topology in Lecture 7 and 9.
+
+## Verification rhythm retrofit
+- **Obligation statements restored (3):**
+  - Box vs product topology comparison: *"Recall that we have proved the lemma that if X is a topological space and tau1 and tau2 are two topologies on X with bases B1 and B2... and if B1 is contained in tau2, then we get that tau1 is contained in tau2"* [`build/tmp/lecture-06-formatted.txt:75-76`].
+  - Proposition 6.4: *"Claim S is equal to tau. So the standard topology on Rn is equal to the product topology on Rn"* [`build/tmp/lecture-06-formatted.txt:104-105`].
+  - Proposition 6.3: *"To check that tau_{(Y,phi)} defines a topology on Y, we verify the three defining conditions"* [`build/tmp/lecture-06-formatted.txt:143`].
+- **Method signposting restored (1):**
+  - Proposition 6.4: *"And an easy way to prove this is to show that... show that B1 is equal to B2... so this will automatically imply that S is equal to tau"* [`build/tmp/lecture-06-formatted.txt:106, 114-115`].
+- **Closing declarations restored (3):**
+  - Box vs product: *"So using this lemma in our situation, we have B2 is contained in tau1, so this will imply that tau2 is contained in tau1"* [`build/tmp/lecture-06-formatted.txt:78`].
+  - Proposition 6.4: *"In other words, this means that on Rn, we have put two topologies... and both these topologies agree"* [`build/tmp/lecture-06-formatted.txt:117-118`].
+  - Proposition 6.3: *"So the first condition holds... therefore, the second condition is satisfied... so the third condition is also satisfied. Thus tau_{(Y,phi)} defines a topology on Y"* [`build/tmp/lecture-06-formatted.txt:143`].

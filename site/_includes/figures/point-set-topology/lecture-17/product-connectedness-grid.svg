@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 250" width="100%" height="auto">
+  <!-- Bounding box of X x Y -->
+  <rect x="70" y="40" width="310" height="170" class="fig-region" stroke-width="1.5" />
+
+  <!-- Vertical slice {x0} x Y -->
+  <line x1="170" y1="40" x2="170" y2="210" class="fig-focus" stroke-width="2" />
+
+  <!-- Horizontal slice X x {y} -->
+  <line x1="70" y1="95" x2="380" y2="95" class="fig-tick" stroke-dasharray="5,4" stroke-width="1.5" />
+
+  <!-- Points -->
+  <circle cx="170" cy="155" r="3.5" class="fig-focus" />
+  <circle cx="170" cy="95" r="3.5" class="fig-focus" />
+
+  <!-- Axes ticks and labels -->
+  <text x="170" y="228" class="fig-tick" text-anchor="middle">x₀</text>
+  <text x="58" y="159" class="fig-tick" text-anchor="end">y₀</text>
+  <text x="58" y="99" class="fig-tick" text-anchor="end">y</text>
+
+  <text x="170" y="28" class="fig-focus" text-anchor="middle">{x₀} × Y</text>
+  <text x="390" y="99" class="fig-tick" text-anchor="start">X × {y}</text>
+</svg>

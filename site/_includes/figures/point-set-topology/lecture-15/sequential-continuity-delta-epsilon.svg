@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 250" width="100%" height="auto">
+  <defs>
+    <marker id="arr15" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink)" />
+    </marker>
+  </defs>
+
+  <!-- Space X -->
+  <path d="M 40 130 C 40 70, 90 50, 150 60 C 190 70, 195 180, 160 210 C 110 230, 40 190, 40 130 Z" class="fig-region" stroke-width="1.5" />
+  <!-- Preimage set -->
+  <path d="M 70 130 C 70 95, 110 85, 145 95 C 165 105, 165 165, 140 180 C 105 190, 70 165, 70 130 Z" class="fig-region" fill-opacity="0.08" stroke="var(--ink-soft)" stroke-dasharray="3,3" stroke-width="1" />
+  <!-- Delta ball around x -->
+  <circle cx="115" cy="135" r="24" class="fig-tick" fill="none" stroke-dasharray="4,3" stroke-width="1.2" />
+  <circle cx="115" cy="135" r="3.5" class="fig-focus" />
+  <circle cx="125" cy="125" r="2.5" class="fig-tick" />
+
+  <!-- Mapping arrow f -->
+  <line x1="195" y1="130" x2="245" y2="130" class="fig-axis" stroke-width="1.5" marker-end="url(#arr15)" />
+
+  <!-- Space Y -->
+  <path d="M 270 130 C 270 70, 330 50, 390 60 C 430 70, 435 180, 395 210 C 340 230, 270 190, 270 130 Z" class="fig-region" stroke-width="1.5" />
+  <!-- Epsilon ball around f(x) -->
+  <circle cx="350" cy="135" r="38" class="fig-tick" fill="none" stroke-dasharray="4,3" stroke-width="1.2" />
+  <circle cx="350" cy="135" r="3.5" class="fig-focus" />
+  <circle cx="365" cy="122" r="2.5" class="fig-tick" />
+
+  <!-- Labels -->
+  <text x="60" y="75" class="fig-label" text-anchor="middle">X</text>
+  <text x="105" y="139" class="fig-focus" text-anchor="end">x</text>
+  <text x="133" y="121" class="fig-tick" text-anchor="start">xₙ</text>
+  <text x="115" y="174" class="fig-tick" text-anchor="middle">B(x)</text>
+
+  <text x="220" y="118" class="fig-label" text-anchor="middle">f</text>
+
+  <text x="410" y="75" class="fig-label" text-anchor="middle">Y</text>
+  <text x="338" y="139" class="fig-focus" text-anchor="end">f(x)</text>
+  <text x="375" y="119" class="fig-tick" text-anchor="start">f(xₙ)</text>
+  <text x="350" y="190" class="fig-tick" text-anchor="middle">B(f(x))</text>
+</svg>

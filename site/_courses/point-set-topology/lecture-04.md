@@ -56,19 +56,15 @@ $$\bigcup_{W \in \mathcal{B}} W = X.$$
 {% include block.html type="lemma" title="Lemma 4.1 (Union of basis elements)" content=lem_union_basis %}
 
 {% capture lem_union_proof %}
-We establish mutual inclusion between the two sets.
+It is clear that the union $\bigcup_{W \in \mathcal{B}} W \subseteq X$, as $\mathcal{B}$ is a subset of $\tau$, which is a subset of the power set of $X$; so $W \in \mathcal{B}$ implies $W \subseteq X$, and we are just taking the union.
 
-1. **$\bigcup_{W \in \mathcal{B}} W \subseteq X$:**
-   By definition of a basis ([Definition 3.6 in Lecture 3]({{ site.baseurl }}/point-set-topology/lecture-03/#definition-3-6-basis-for-a-topology)), $\mathcal{B} \subseteq \tau$. Since $\tau \subseteq \mathcal{P}(X)$, every element $W \in \mathcal{B}$ is a subset of $X$. The union of subsets of $X$ is necessarily a subset of $X$, so $\bigcup_{W \in \mathcal{B}} W \subseteq X$.
+So we only need to prove the reverse inclusion ($X \subseteq \bigcup_{W \in \mathcal{B}} W$).
 
-2. **$X \subseteq \bigcup_{W \in \mathcal{B}} W$:**
-   Let $x \in X$ be an arbitrary point. By axiom (T1) of a topology, the full space $X$ belongs to $\tau$. We may therefore choose $U = X \in \tau$. Since $x \in X = U$ and $\mathcal{B}$ is a basis for $\tau$, the defining condition of a basis asserts that there exists some element $W_x \in \mathcal{B}$ such that
-   $$x \in W_x \subseteq X.$$
-   Because $W_x$ is one of the members of the collection $\mathcal{B}$, the point $x$ belongs to the union:
-   $$x \in W_x \subseteq \bigcup_{W \in \mathcal{B}} W.$$
-   Since $x \in X$ was chosen arbitrarily, this shows that $X \subseteq \bigcup_{W \in \mathcal{B}} W$.
+Let $x \in X$ be an element. Then, taking $U = X$ (note that $U = X$ is in $\tau$ by axiom (T1)), we can use the defining property of the basis. There is a $W \in \mathcal{B}$—let us denote it $W_x$—such that $x \in W_x$, and obviously $W_x \subseteq X = U$.
 
-Combining both inclusions, we conclude that $\bigcup_{W \in \mathcal{B}} W = X$. $\blacksquare$
+Thus we get that this union contains $x$ for all $x \in X$. Thus $X$ is contained in the union, because one of these $W$'s is $W_x$.
+
+This completes the proof of the lemma. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Lemma 4.1" content=lem_union_proof %}
 
@@ -108,62 +104,40 @@ Notice the essential distinction between [Definition 3.6 in Lecture 3]({{ site.b
 {% include block.html type="supplement" title="The generating conditions versus the basis definition" content=supp_gen_vs_basis %}
 
 {% capture prop_gen_proof %}
-To prove that $\tau$ is a topology on $X$, we must check the three defining axioms: (T1), (T2), and (T3).
+In order to prove this proposition, we have to check that $\tau$ satisfies the three conditions which define a topology. Let us check these one by one.
 
-### Condition (T1): Empty set and whole space
+**(T1).** The empty set is in $\tau$: this is vacuously true, since there is no point $x$ in the empty set, and so therefore there is nothing to check.
 
-- **The empty set $\varnothing$:** There are no points in $\varnothing$. Hence the condition that for every $x \in \varnothing$ there exists $W \in \mathcal{B}$ with $x \in W \subseteq \varnothing$ is vacuously true. Thus $\varnothing \in \tau$.
-- **The full set $X$:** Let $x \in X$. By property (1) of the hypothesis, $\bigcup_{W \in \mathcal{B}} W = X$. Therefore, $x$ belongs to at least one element of $\mathcal{B}$; call it $W$. Then $x \in W$, and since $\mathcal{B} \subseteq \mathcal{P}(X)$, $W \subseteq X$. Taking this $W$ witnesses that $X \in \tau$.
+The full set $X$ is in $\tau$. Why is this? As $\bigcup_{W \in \mathcal{B}} W = X$, given any $x \in X$, it is in one of these $W \in \mathcal{B}$ such that $x \in W$. And obviously $W \subseteq X$.
 
-Thus condition (T1) holds.
+Thus, we have proved that both the empty set and $X$ are in $\tau$. So this proves the first condition. ✓
 
-### Condition (T2): Finite intersections
+**(T2).** Let's look at the second condition. Here we want to say that finite intersections of elements of $\tau$ are in $\tau$. So suppose $U_1, U_2, \dots, U_n \in \tau$. Then we need to show that the intersection $\bigcap_{i=1}^n U_i$ is in $\tau$.
 
-Let $U_1, U_2, \dots, U_n \in \tau$ be finitely many subsets of $X$ belonging to $\tau$. We must show that their intersection
-$$\bigcap_{i=1}^n U_i \in \tau.$$
-If the intersection $\bigcap_{i=1}^n U_i$ is empty, it belongs to $\tau$ by condition (T1). Otherwise, choose an arbitrary point
-$$x \in \bigcap_{i=1}^n U_i.$$
-By definition of intersection, $x \in U_i$ for each $i \in \lbrace 1, 2, \dots, n \rbrace$. Because each $U_i \in \tau$, the definition of $\tau$ implies that for each $i$, there exists an element $W_i \in \mathcal{B}$ such that
-$$x \in W_i \subseteq U_i.$$
-Since $x \in W_i$ for all $i = 1, \dots, n$, it follows that
-$$x \in \bigcap_{i=1}^n W_i.$$
+For this, we choose $x \in \bigcap_{i=1}^n U_i$. Then for each $i$, as $U_i \in \tau$ and $x \in U_i$, there is $W_i \in \mathcal{B}$ such that $x \in W_i$ and $W_i \subseteq U_i$.
 
-We now claim that property (2) extends from pairs of basic sets to any finite number of basic sets:
+So we claim that property (2) implies the following condition, which we call (2$'$):
+> **Condition (2$'$).** If $x \in \bigcap_{i=1}^n W_i$ for finitely many $W_1, \dots, W_n \in \mathcal{B}$, then there is a $W \in \mathcal{B}$ such that $x \in W$ and $W \subseteq \bigcap_{i=1}^n W_i$.
 
-> **Condition (2$'$).** Let $W_1, W_2, \dots, W_n \in \mathcal{B}$ be finitely many elements of $\mathcal{B}$. If $x \in \bigcap_{i=1}^n W_i$, then there exists an element $W \in \mathcal{B}$ such that
-> $$x \in W \subseteq \bigcap_{i=1}^n W_i.$$
+Property (2) is the same as (2$'$) when $n = 2$. For general $n$, the fact that (2) implies (2$'$) follows by an easy induction argument, which is left as an exercise ([Exercise 4.1](#exercise-4-1-generalization-of-condition-2-by-induction)).
 
-When $n = 1$, we simply take $W = W_1$. When $n = 2$, this is precisely property (2) of the hypothesis. For general $n \ge 2$, the result follows by a straightforward mathematical induction on $n$ ([Exercise 4.1](#exercise-4-1-generalization-of-condition-2-by-induction)).
+Then, using (2$'$), we get that there is $W \in \mathcal{B}$ which contains $x$, such that
+$$x \in W \subseteq \bigcap_{i=1}^n W_i \subseteq \bigcap_{i=1}^n U_i.$$
 
-Applying Condition (2$'$), there exists an element $W \in \mathcal{B}$ such that
-$$x \in W \subseteq \bigcap_{i=1}^n W_i.$$
-Since $W_i \subseteq U_i$ for each $i$, we have $\bigcap_{i=1}^n W_i \subseteq \bigcap_{i=1}^n U_i$. Combining these inclusions gives
-$$x \in W \subseteq \bigcap_{i=1}^n U_i.$$
-This verifies that $\bigcap_{i=1}^n U_i$ satisfies the defining property of $\tau$, so $\bigcap_{i=1}^n U_i \in \tau$. Thus condition (T2) holds.
+Thus, this intersection $\bigcap_{i=1}^n U_i$ is in $\tau$, as it satisfies the property defining $\tau$. So the second condition holds. ✓
 
-### Condition (T3): Arbitrary unions
+**(T3).** And finally, we have to check the third condition. Given a set $I$ and subsets $U_i \subseteq X$ such that each $U_i \in \tau$, we need to show that the union $\bigcup_{i \in I} U_i$ is in $\tau$.
 
-Let $I$ be an arbitrary index set, and let $\lbrace U_i \rbrace_{i \in I}$ be a family of subsets belonging to $\tau$. We must show that
-$$\bigcup_{i \in I} U_i \in \tau.$$
-Let $x \in \bigcup_{i \in I} U_i$. By definition of union, there exists some index $j \in I$ such that $x \in U_j$.
+Once again, we do the same. Let $x$ be an element in the union: $x \in \bigcup_{i \in I} U_i$. Then $x \in U_j$ for some $j \in I$. And since $U_j \in \tau$, this implies there exists some $W \in \mathcal{B}$ such that $x \in W$ and $W \subseteq U_j$, which in turn is going to be contained in this union:
+$$x \in W \subseteq U_j \subseteq \bigcup_{i \in I} U_i.$$
 
-Since $U_j \in \tau$, the definition of $\tau$ provides an element $W \in \mathcal{B}$ such that
-$$x \in W \subseteq U_j.$$
-Since $U_j \subseteq \bigcup_{i \in I} U_i$, it follows that
-$$x \in W \subseteq \bigcup_{i \in I} U_i.$$
-Thus every point in the union admits a basic witness in $\mathcal{B}$ contained within the union. Hence $\bigcup_{i \in I} U_i \in \tau$, proving condition (T3).
+So this shows that the union satisfies the defining property for $\tau$, and so is contained in $\tau$.
 
-All three axioms (T1)–(T3) are satisfied, so $\tau$ is a topology on $X$.
+This completes the proof that $\tau$ is a topology on $X$. ✓
 
----
+Next, we also need to show that $\mathcal{B}$ is a basis for $\tau$. That is, for every $U \in \tau$ and $x \in U$, we need to show there exists $W \in \mathcal{B}$ such that $x \in W$ and $W \subseteq U$. But this follows immediately from the definition of $U$ being in $\tau$ (and taking $W = W_0 \in \mathcal{B}$ shows $\mathcal{B} \subseteq \tau$).
 
-### Verification that $\mathcal{B}$ is a basis for $\tau$
-
-To establish that $\mathcal{B}$ is a basis for $\tau$, we must verify two things:
-1. **$\mathcal{B} \subseteq \tau$:** Let $W_0 \in \mathcal{B}$. To show $W_0 \in \tau$, let $x \in W_0$. We can simply choose $W = W_0 \in \mathcal{B}$. Then $x \in W \subseteq W_0$. This shows that $W_0 \in \tau$, so $\mathcal{B} \subseteq \tau$.
-2. **The basis condition:** For every $U \in \tau$ and every $x \in U$, there must exist $W \in \mathcal{B}$ such that $x \in W \subseteq U$. But this is the exact defining condition of $\tau$.
-
-Therefore, $\mathcal{B}$ is a basis for $\tau$. $\blacksquare$
+This completes the proof of the proposition. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Proposition 4.2" content=prop_gen_proof %}
 

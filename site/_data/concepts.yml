@@ -54,6 +54,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 11
+  anchor: "definition-11-1-closed-subset"
 - letter: C
   name: Closure
   gloss: The intersection of all closed sets containing $A$; points $x$ where every
@@ -62,6 +63,7 @@
   course_title: Point-Set Topology
   lecture: 12
   symbol: "$\\overline{A}$"
+  anchor: "definition-12-2-closure-of-a-subset"
 - letter: C
   name: Compact space
   gloss: A space where every open cover has a finite subcover (this course includes
@@ -88,6 +90,7 @@
   course_title: Point-Set Topology
   lecture: 18
   symbol: "$X_i$"
+  anchor: "definition-18-3-connected-components"
 - letter: C
   name: Connected space
   gloss: A space that cannot be written as a disjoint union of two non-empty open
@@ -95,6 +98,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 15
+  anchor: "definition-15-3-connected-and-disconnected-spaces"
 - letter: C
   name: Continuous arithmetic operations
   gloss: 'Addition $A(x,y) = x+y$ and multiplication $M(x,y) = xy$ on $\mathbb{R}^2 \to \mathbb{R}$, as well as inversion on $\mathbb{R}^\times$, are continuous under standard topologies.'
@@ -150,6 +154,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 13
+  anchor: "definition-13-1-dense-subset"
 - letter: D
   name: Diagonal map
   gloss: 'The map $\Delta : X \to X \times X$ defined by $x \mapsto (x,x)$.'
@@ -241,6 +246,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 10
+  anchor: "definition-10-3-homeomorphism"
 - letter: I
   name: Induction with a group action
   gloss: Establishing a base case for low dimensions or subgroups, and using translation
@@ -280,6 +286,7 @@
   course_title: Point-Set Topology
   lecture: 14
   symbol: "$d(x,y), \\lVert x \\rVert_2$"
+  anchor: "definition-14-1-metric-space-and-metric"
 - letter: M
   name: Metric convergence
   gloss: 'A sequence $(x_n)$ converging to $x$ in a metric space: $d(x_n, x) \to 0$
@@ -288,6 +295,7 @@
   course_title: Point-Set Topology
   lecture: 14
   symbol: "$x_n \\to x$"
+  anchor: "definition-14-5-sequence-convergence"
 - letter: M
   name: Metric space
   gloss: A set equipped with a non-negative distance function satisfying identity
@@ -295,6 +303,7 @@
   course: point-set-topology
   course_title: Point-Set Topology
   lecture: 14
+  anchor: "definition-14-1-metric-space-and-metric"
 - letter: M
   name: Metrisable space
   gloss: A topological space whose topology is induced by some metric.
@@ -389,6 +398,13 @@
   course_title: Point-Set Topology
   lecture: 2
   anchor: "condition-t3-arbitrary-unions"
+- letter: P
+  name: Pasting lemma
+  gloss: 'A map $f : X \to Y$ on $X = A \cup B$ ($A, B$ closed) is continuous if and only if both restrictions $f|_A$ and $f|_B$ are continuous.'
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 13
+  anchor: "theorem-13-7-the-pasting-lemma"
 - letter: P
   name: Path components
   gloss: The equivalence classes of points under path connectivity; need not be closed
@@ -585,6 +601,7 @@
   - 16
   - 20
   - 23
+  anchor: "proposition-16-1-connectedness-unit-interval"
 - letter: T
   name: The two-case split
   gloss: Proof technique separating cases where at least one subset is empty from
@@ -634,6 +651,13 @@
   lecture: 1
   symbol: "$\\tau = \\{\\varnothing, X\\}$"
   anchor: example-1-trivial-topology
+- letter: U
+  name: Union lemma
+  gloss: The union of connected subspaces having non-empty intersection is connected.
+  course: point-set-topology
+  course_title: Point-Set Topology
+  lecture: 17
+  anchor: "lemma-17-4-the-union-lemma"
 - letter: U
   name: Unit spheres
   gloss: The spheres $S^1 \subseteq \mathbb{R}^2$ and $S^n \subseteq \mathbb{R}^{n+1}$

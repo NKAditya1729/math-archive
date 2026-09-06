@@ -125,33 +125,27 @@ subsets, and the three conditions are the only constraints on that choice.
 > This collection has exactly two elements. Then $\tau$ is a topology on $X$,
 > called the **trivial topology**.
 
-**Proof.** We check the three conditions.
+**Proof.** Let us check the three defining conditions.
 
-**(T1).** By construction $\tau$ contains $\varnothing$ and contains $X$. ✓
+**(T1).** The first condition was that $\tau$ should contain the empty set and $X$. Clearly $\tau$ contains the empty set $\varnothing$ and the set $X$. So the first condition is satisfied. ✓
 
-**(T2).** Let $U_1, \dots, U_n \in \tau$. Each $U_i$ is either $\varnothing$ or
-$X$, since those are the only elements of $\tau$. Two cases.
+**(T2).** The second condition for being a topology was that if we take finitely many elements $U_1, U_2, \dots, U_n$ in $\tau$, then their intersection $\bigcap_{i=1}^n U_i$ should be in $\tau$.
 
-*Case (a): some $U_i$ is $\varnothing$.* Then
-$\bigcap_{i=1}^{n} U_i = \varnothing$, because an intersection is contained in
-each of its terms. And $\varnothing \in \tau$.
+In this case, an element of $\tau$ is either the empty set or the full set $X$.
+- *Case (a):* First consider the case where any one of the $U_i$ is the empty set. Then the intersection $\bigcap_{i=1}^n U_i = \varnothing$, and so is in $\tau$.
+- *Case (b):* If this does not happen, the only other possibility is that all the $U_i$ are equal to $X$. In this case also, the intersection $\bigcap_{i=1}^n U_i = X$, and so is in $\tau$.
 
-*Case (b): no $U_i$ is $\varnothing$.* The only remaining possibility is that
-$U_i = X$ for every $i$. Then $\bigcap_{i=1}^{n} U_i = X \in \tau$.
+Therefore, the second condition is also satisfied. ✓
 
-In both cases the intersection lies in $\tau$. ✓
+**(T3).** Finally, let us check the third condition. The third condition says that let $I$ be any set, and assume that for each $i \in I$ we are given an element $U_i \in \tau$. We need to show that the arbitrary union $\bigcup_{i \in I} U_i$ is in $\tau$.
 
-**(T3).** Let $I$ be any set and let $U_i \in \tau$ for each $i \in I$. Again
-each $U_i$ is $\varnothing$ or $X$. Two cases.
+Since each $U_i$ is either $\varnothing$ or $X$, we again consider two cases:
+- *Case (a):* If all the $U_i$ are empty sets, then the union $\bigcup_{i \in I} U_i = \varnothing$, which is in $\tau$.
+- *Case (b):* Otherwise, there exists some index $j \in I$ such that $U_j = X$. Then the union $\bigcup_{i \in I} U_i = X$, which is in $\tau$.
 
-*Case (a): every $U_i$ is $\varnothing$.* Then
-$\bigcup_{i \in I} U_i = \varnothing \in \tau$.
+Therefore, the third condition is also satisfied. ✓
 
-*Case (b): some $U_j = X$.* Then $X \subseteq \bigcup_{i \in I} U_i \subseteq X$,
-so the union equals $X$, and $X \in \tau$. ✓
-
-All three conditions hold, so $\tau = \lbrace\varnothing, X\rbrace$ is a topology on
-$X$. $\blacksquare$
+This shows that $\tau = \lbrace\varnothing, X\rbrace$ satisfies all three defining conditions to be a topology on $X$. Thus $\tau$ defines a topology on $X$, and this is called the trivial topology. $\blacksquare$
 
 ---
 
@@ -163,22 +157,19 @@ $X$. $\blacksquare$
 > the whole power set. Then $\tau$ is a topology on $X$, called the
 > **discrete topology**.
 
-**Proof.** Again we check the three conditions, and each is immediate for the
-same reason: everything in sight is a subset of $X$, and $\tau$ contains
-*every* subset of $X$.
+**Proof.** Once again, to check that $\tau$ defines a topology on $X$, we need to check that $\tau$ satisfies the three defining conditions. Let us check them one by one.
 
-**(T1).** $\varnothing$ and $X$ are subsets of $X$, hence elements of
-$\mathcal{P}(X) = \tau$. ✓
+**(T1).** Clearly, $\tau$ contains the empty set $\varnothing$ and $X$ because $\tau$ is all of the power set $\mathcal{P}(X)$, and the power set contains $\varnothing$ and $X$. So this condition is satisfied. ✓
 
-**(T2).** Let $U_1, \dots, U_n \in \tau$. Their intersection
-$\bigcap_{i=1}^{n} U_i$ is a subset of $X$, so it belongs to $\mathcal{P}(X)$,
-which is $\tau$. ✓
+**(T2).** The second condition is that if we take finitely many subsets $U_1, U_2, \dots, U_n$ of $X$ which are in $\tau$, then their intersection should be in $\tau$:
+$$\bigcap_{i=1}^n U_i \in \tau.$$
+This condition is also satisfied because the intersection $\bigcap_{i=1}^n U_i$ is a subset of $X$. It is in the power set $\mathcal{P}(X)$, which is equal to $\tau$. So therefore, the second condition is also satisfied. ✓
 
-**(T3).** Let $I$ be any set and $U_i \in \tau$ for $i \in I$. The union
-$\bigcup_{i \in I} U_i$ is a subset of $X$, so it belongs to
-$\mathcal{P}(X) = \tau$. ✓
+**(T3).** Similarly, the third condition is satisfied. Let $I$ be any set, and suppose we are given for each $i \in I$ a subset $U_i \subseteq X$ which is in $\tau$. Then we need to show that the union is in $\tau$:
+$$\bigcup_{i \in I} U_i \in \tau.$$
+Again, exactly as in the previous point, this is clear, as the union $\bigcup_{i \in I} U_i$ is a subset of $X$ and so is a member of the power set $\mathcal{P}(X)$, which is equal to $\tau$. So the third condition is also satisfied. ✓
 
-Hence $\tau = \mathcal{P}(X)$ is a topology on $X$. $\blacksquare$
+Therefore, $\tau = \mathcal{P}(X)$ satisfies all three conditions and defines a topology on $X$, which is called the discrete topology. $\blacksquare$
 
 > [!SUPPLEMENT]
 > **The two extremes.** These first two examples are the smallest and the
@@ -199,45 +190,33 @@ This one is, in the lecturer's words, a little more interesting.
 > $$\tau = \lbrace\, U \subseteq X \;:\; U = \varnothing \ \text{ or } \ X \setminus U \text{ is a finite set} \,\rbrace.$$
 > Then $\tau$ is a topology on $X$, called the **finite complement topology**.
 
-**Proof.**
+**Proof.** For this $\tau$, let us check that it satisfies the three defining conditions for a topology.
 
-**(T1).** $\varnothing \in \tau$ directly, by the first clause of the
-definition. For $X$: the complement $X \setminus X = \varnothing$ is a finite
-set, of cardinality zero, so $X$ satisfies the second clause and $X \in \tau$. ✓
+**(T1).** Recall that the first condition we need to check was that $\varnothing$ and $X$ are in $\tau$. Clearly $\varnothing \in \tau$ by the definition of $\tau$. And also, since the complement $X \setminus X = \varnothing$ is a finite set of cardinality zero, $X$ satisfies the second clause, which implies that $X \in \tau$. Therefore, the first condition is satisfied. ✓
 
-**(T2).** Let $U_1, \dots, U_n \in \tau$. Two cases.
+**(T2).** The second condition was the following: if $U_1, U_2, \dots, U_n$ are elements in $\tau$, then we need to show that their intersection is also in $\tau$:
+$$\bigcap_{i=1}^n U_i \in \tau.$$
+Let us first consider the case where one of the $U_i$ is empty. In this case, the intersection $\bigcap_{i=1}^n U_i = \varnothing$, and so is in $\tau$.
 
-*Case (a): some $U_i = \varnothing$.* Then $\bigcap_{i=1}^{n} U_i = \varnothing
-\in \tau$.
+If this does not happen, the other possibility is that $U_i$ is non-empty for all $i = 1, \dots, n$. In this case, for each $i$, the complement $X \setminus U_i$ is a finite set. Now let us consider the complement of this finite intersection. Some simple set theory shows that this is equal to:
+$$X \setminus \bigcap_{i=1}^n U_i = \bigcup_{i=1}^n \bigl(X \setminus U_i\bigr).$$
+As each $X \setminus U_i$ is a finite set, their finite union is also a finite set. Thus $X \setminus \bigcap_{i=1}^n U_i$ is a finite set, which implies that $\bigcap_{i=1}^n U_i \in \tau$.
 
-*Case (b): $U_i \neq \varnothing$ for every $i = 1, \dots, n$.* Then by the
-definition of $\tau$, each complement $X \setminus U_i$ is a finite set. Now
+So this shows that $\tau$ satisfies the second condition for being a topology. ✓
 
-$$X \setminus \bigcap_{i=1}^{n} U_i \;=\; \bigcup_{i=1}^{n} \bigl(X \setminus U_i\bigr),$$
+**(T3).** Finally, let us check the third condition. Let $I$ be any set, and suppose that for each $i \in I$ we are given a subset $U_i \in \tau$. We have to check that the arbitrary union is in $\tau$:
+$$\bigcup_{i \in I} U_i \in \tau.$$
+Once again, we consider two cases:
+- *Case (a):* First consider the case when all the $U_i$ are the empty set. In this case, clearly the union $\bigcup_{i \in I} U_i = \varnothing$, which is in $\tau$.
+- *Case (b):* If this does not happen, the other possibility is that there is at least one index $j \in I$ for which $U_j$ is non-empty. This implies that $X \setminus U_j$ is a finite set. As before, let us consider the complement of the union:
+$$X \setminus \bigcup_{i \in I} U_i = \bigcap_{i \in I} \bigl(X \setminus U_i\bigr).$$
+This intersection is obviously contained in each of these subsets, so in particular:
+$$X \setminus \bigcup_{i \in I} U_i \subseteq X \setminus U_j,$$
+which is a finite set. A subset of a finite set is finite, so $X \setminus \bigcup_{i \in I} U_i$ is a finite set, which implies that $\bigcup_{i \in I} U_i \in \tau$.
 
-which is a union of finitely many finite sets, and hence is finite. So
-$X \setminus \bigcap_{i=1}^n U_i$ is finite, which gives
-$\bigcap_{i=1}^{n} U_i \in \tau$. ✓
+Therefore, $\tau$ satisfies the third condition also. ✓
 
-**(T3).** Let $I$ be any set and $U_i \in \tau$ for each $i \in I$. Two cases.
-
-*Case (a): every $U_i = \varnothing$.* Then $\bigcup_{i \in I} U_i = \varnothing
-\in \tau$.
-
-*Case (b): some $U_j \neq \varnothing$.* Then $X \setminus U_j$ is a finite set.
-Now
-
-$$X \setminus \bigcup_{i \in I} U_i \;=\; \bigcap_{i \in I} \bigl(X \setminus U_i\bigr),$$
-
-and an intersection is contained in each of its terms, so in particular
-
-$$X \setminus \bigcup_{i \in I} U_i \;\subseteq\; X \setminus U_j,$$
-
-which is finite. A subset of a finite set is finite, so
-$X \setminus \bigcup_{i \in I} U_i$ is finite, and therefore
-$\bigcup_{i \in I} U_i \in \tau$. ✓
-
-All three conditions hold, so $\tau$ is a topology on $X$. $\blacksquare$
+Thus we see that $\tau$ satisfies all three conditions which define a topology on $X$, called the finite complement topology. $\blacksquare$
 
 > [!SUPPLEMENT]
 > **The set-theoretic step used twice.** Both (T2) and (T3) above turn on one

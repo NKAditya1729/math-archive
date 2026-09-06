@@ -1,0 +1,54 @@
+<svg viewBox="0 0 680 240" role="img" aria-labelledby="t-mat"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="t-mat">Matrix groups cut out by preimages of open and closed sets under continuous maps</title>
+  <defs>
+    <marker id="arrow-mat" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="var(--ink)" />
+    </marker>
+  </defs>
+
+  <!-- Left box: M_n(R) -->
+  <g transform="translate(20, 20)">
+    <rect x="0" y="0" width="220" height="195" fill="var(--paper)" stroke="var(--rule)" stroke-width="1.5" rx="6" />
+    <text x="110" y="25" class="fig-label" text-anchor="middle">M_n(ℝ) ≅ ℝ^{n²}</text>
+
+    <!-- GL_n(R) (Focal open) -->
+    <rect x="15" y="42" width="190" height="38" class="fig-region" rx="4" />
+    <text x="110" y="66" class="fig-focus" text-anchor="middle">GL_n(ℝ) (open)</text>
+
+    <!-- SL_n(R) -->
+    <rect x="15" y="92" width="190" height="38" class="fig-region-fail" rx="4" />
+    <text x="110" y="116" class="fig-fail" text-anchor="middle">SL_n(ℝ) (closed)</text>
+
+    <!-- O(n) -->
+    <rect x="15" y="142" width="190" height="38" class="fig-region-fail" rx="4" />
+    <text x="110" y="166" class="fig-fail" text-anchor="middle">O(n) (closed)</text>
+  </g>
+
+  <!-- Middle arrows -->
+  <line x1="255" y1="80" x2="385" y2="80" class="fig-axis" marker-end="url(#arrow-mat)" />
+  <text x="320" y="70" class="fig-label" text-anchor="middle">det</text>
+
+  <line x1="255" y1="160" x2="385" y2="160" class="fig-axis" marker-end="url(#arrow-mat)" />
+  <text x="320" y="150" class="fig-label" text-anchor="middle">A ↦ AᵀA</text>
+
+  <!-- Right: Targets in R and M_n(R) -->
+  <g transform="translate(400, 20)">
+    <!-- Codomain R -->
+    <rect x="0" y="0" width="260" height="110" fill="var(--paper)" stroke="var(--rule)" stroke-width="1.5" rx="6" />
+    <text x="130" y="25" class="fig-label" text-anchor="middle">Target ℝ</text>
+
+    <rect x="15" y="38" width="230" height="28" class="fig-region" rx="4" />
+    <text x="130" y="57" class="fig-tick" text-anchor="middle">ℝ ∖ {0} (open)</text>
+
+    <rect x="15" y="72" width="230" height="28" class="fig-region-fail" rx="4" />
+    <text x="130" y="91" class="fig-fail" text-anchor="middle">{1} (closed)</text>
+
+    <!-- Codomain M_n(R) -->
+    <rect x="0" y="125" width="260" height="70" fill="var(--paper)" stroke="var(--rule)" stroke-width="1.5" rx="6" />
+    <text x="130" y="148" class="fig-label" text-anchor="middle">Target M_n(ℝ)</text>
+
+    <rect x="15" y="158" width="230" height="28" class="fig-region-fail" rx="4" />
+    <text x="130" y="177" class="fig-fail" text-anchor="middle">{I_n} (closed)</text>
+  </g>
+</svg>

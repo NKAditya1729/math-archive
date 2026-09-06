@@ -2,7 +2,9 @@ source/*/references/
 *.pdf
 *.epub
 build/tmp/
+build/scratch/
 _site/
+site/_site/
 .jekyll-cache/
 .DS_Store
 **/.DS_Store

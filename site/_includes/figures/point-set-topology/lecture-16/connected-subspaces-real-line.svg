@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 180" width="100%" height="auto">
+  <!-- Base axis -->
+  <line x1="40" y1="100" x2="420" y2="100" class="fig-axis" stroke-width="1.5" />
+
+  <!-- Left and right segments -->
+  <line x1="90" y1="100" x2="224" y2="100" class="fig-region" stroke="var(--ink)" stroke-width="2.5" />
+  <line x1="236" y1="100" x2="370" y2="100" class="fig-region" stroke="var(--ink)" stroke-width="2.5" />
+
+  <!-- Ticks for a and b -->
+  <line x1="90" y1="92" x2="90" y2="108" class="fig-tick" stroke-width="1.5" />
+  <line x1="370" y1="92" x2="370" y2="108" class="fig-tick" stroke-width="1.5" />
+
+  <!-- Missing point c -->
+  <circle cx="230" cy="100" r="4" fill="var(--bg)" stroke="var(--flag)" stroke-width="2" />
+
+  <!-- Labels -->
+  <text x="90" y="125" class="fig-tick" text-anchor="middle">a = inf Y</text>
+  <text x="150" y="80" class="fig-tick" text-anchor="middle">Y ∩ (-∞, c)</text>
+  <text x="230" y="75" class="fig-fail" text-anchor="middle">c ∉ Y</text>
+  <text x="310" y="80" class="fig-tick" text-anchor="middle">Y ∩ (c, ∞)</text>
+  <text x="370" y="125" class="fig-tick" text-anchor="middle">b = sup Y</text>
+</svg>

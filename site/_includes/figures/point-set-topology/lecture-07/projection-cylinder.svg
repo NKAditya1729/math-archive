@@ -1,39 +1,29 @@
-<svg viewBox="0 0 540 260" role="img" aria-labelledby="fig-proj-cyl-title"
+<svg viewBox="0 0 540 270" role="img" aria-labelledby="fig-proj-cyl-title"
      xmlns="http://www.w3.org/2000/svg" class="fig">
-  <title id="fig-proj-cyl-title">Coordinate projection and cylinder sets: the preimage p_j^{-1}(U) restricts only the j-th coordinate, leaving all other coordinates unconstrained.</title>
-  <style>
-    .axis { stroke: var(--ink); stroke-width: 1.5; }
-    .strip { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 4 3; fill: var(--accent); fill-opacity: 0.15; }
-    .arrow { stroke: var(--ink); stroke-width: 1.5; fill: none; }
-    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; fill: var(--ink); text-anchor: middle; }
-    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--ink); text-anchor: middle; }
-    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
-  </style>
+  <title id="fig-proj-cyl-title">Open cylinder as projection preimage: the preimage p_j^{-1}(U) of an open set U in coordinate space X_j is an open cylinder restricting only the j-th factor.</title>
+  <defs>
+    <marker id="arrow-proj" viewBox="0 0 10 10" refX="5" refY="8" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 2 L 5 8 L 9 2 z" fill="var(--ink)" />
+    </marker>
+  </defs>
 
-  <!-- Background -->
-  <rect width="540" height="260" fill="var(--paper)" />
+  <!-- Product Space Frame -->
+  <rect x="50" y="25" width="440" height="150" rx="8" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="5 4" fill="none" />
+  <text x="70" y="50" class="fig-label">∏_{i ∈ I} X_i</text>
 
-  <!-- Axes for Product Space: horizontal X_j, vertical \prod_{i \ne j} X_i -->
-  <line x1="60" y1="200" x2="380" y2="200" class="axis" />
-  <polygon points="380,196 390,200 380,204" fill="var(--ink)" />
-  <text x="405" y="205" class="label-italic">X_j</text>
+  <!-- Open cylinder: vertical strip where j-th coordinate is in U (Focal) -->
+  <rect x="220" y="25" width="100" height="150" class="fig-region" stroke-dasharray="4 3" />
+  <text x="270" y="105" class="fig-focus" text-anchor="middle">p_j⁻¹(U)</text>
 
-  <line x1="80" y1="220" x2="80" y2="30" class="axis" />
-  <polygon points="76,30 80,20 84,30" fill="var(--ink)" />
-  <text x="80" y="15" class="label-italic">∏_{i ≠ j} X_i</text>
+  <!-- Projection Arrow down to coordinate space X_j -->
+  <line x1="270" y1="185" x2="270" y2="215" class="fig-axis" marker-end="url(#arrow-proj)" />
+  <text x="285" y="205" class="fig-label">p_j</text>
 
-  <!-- Strip p_j^{-1}(U): vertical band from x=170 to 270, spanning all y from 35 to 200 -->
-  <rect x="170" y="35" width="100" height="165" class="strip" />
-  <text x="220" y="115" class="label-accent">p_j⁻¹(U) = U × ∏_{i ≠ j} X_i</text>
+  <!-- Coordinate space X_j axis -->
+  <line x1="50" y1="235" x2="490" y2="235" class="fig-axis" />
+  <text x="505" y="240" class="fig-label">X_j</text>
 
-  <!-- Target space X_j line below -->
-  <line x1="170" y1="200" x2="270" y2="200" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" />
-  <text x="220" y="225" class="label-accent">U ⊆ X_j</text>
-
-  <!-- Projection Arrow downwards -->
-  <path d="M 430,90 C 460,120 460,160 430,190" class="arrow" />
-  <polygon points="426,183 425,193 434,191" fill="var(--ink)" />
-  <text x="475" y="145" class="label-italic" style="font-weight: bold;">p_j</text>
-
-  <text x="270" y="250" class="label">Preimage of open set U in X_j is an open cylinder in the product topology.</text>
+  <!-- Target open set U on X_j axis -->
+  <line x1="220" y1="235" x2="320" y2="235" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" />
+  <text x="270" y="255" class="fig-tick" text-anchor="middle">U</text>
 </svg>

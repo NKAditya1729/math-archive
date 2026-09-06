@@ -32,7 +32,7 @@ notation:
   - symbol: "$\\mathbb{R}^\\times$"
     gloss: "The punctured real line $\\mathbb{R} \\setminus \\lbrace 0\\rbrace$ equipped with the subspace topology"
 prev: lecture-07
-next:
+next: lecture-09
 ---
 
 # Lecture 8 — The Basis Criterion for Continuity and Continuous Operations
@@ -57,22 +57,17 @@ If $f^{-1}(V) \in \tau_X$ for every basic open set $V \in \mathcal{B}$, then $f$
 {% include block.html type="lemma" title="Lemma 8.1 (Basis Criterion for Continuity)" content=lem_basis_criterion %}
 
 {% capture lem_basis_criterion_proof %}
-Let $U \subseteq Y$ be an arbitrary open set ($U \in \tau_Y$).
+So let $U \subseteq Y$ be an open set ($U \in \tau_Y$). We want to check that $f$ is continuous, so we will show that $f^{-1}(U)$ is open in $X$.
 
-Since $\mathcal{B}$ is a basis for $\tau_Y$ ([Definition 3.6]({{ site.baseurl }}/point-set-topology/lecture-03/#definition-3-6-basis-for-a-topology)), for every point $y \in U$ there exists a basic open set $V_y \in \mathcal{B}$ such that
-$$y \in V_y \subseteq U.$$
-Taking the union over all points $y \in U$, we have
+Since $\mathcal{B}$ is a basis for the topology on $Y$, for each $y \in U$ there exists a basic open set $V_y \in \mathcal{B}$ such that $y \in V_y$ and $V_y \subseteq U$. Therefore, this shows that we can write $U$ as a union over all the $y$'s:
 $$U = \bigcup_{y \in U} V_y.$$
 
-By elementary set theory, preimages distribute over arbitrary unions:
+Then it is a straightforward check in set theory that preimages distribute over unions:
 $$f^{-1}(U) = f^{-1}\left(\bigcup_{y \in U} V_y\right) = \bigcup_{y \in U} f^{-1}(V_y).$$
 
-By hypothesis, for each $y \in U$, because $V_y \in \mathcal{B}$, the preimage $f^{-1}(V_y)$ is an open set in $X$ ($f^{-1}(V_y) \in \tau_X$).
+Each of these $f^{-1}(V_y)$ is open as $V_y \in \mathcal{B}$ and by hypothesis our assumption is that $f^{-1}(V)$ is open for every $V \in \mathcal{B}$. And as arbitrary union of open sets is open, this implies that $f^{-1}(U)$ is open.
 
-By axiom (T3) of a topological space ([Definition 1.1]({{ site.baseurl }}/point-set-topology/lecture-01/#definition-1-1-topology-topological-space)), the arbitrary union of open sets in $X$ is open in $X$. Therefore:
-$$f^{-1}(U) = \bigcup_{y \in U} f^{-1}(V_y) \in \tau_X.$$
-
-Since $U \in \tau_Y$ was arbitrary, this establishes that $f^{-1}(U)$ is open in $X$ for every open set $U \in \tau_Y$. Hence $f$ is continuous. $\blacksquare$
+And since this happens for every open set $U$, thus $f$ is continuous. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Lemma 8.1" content=lem_basis_criterion_proof %}
 
@@ -110,46 +105,37 @@ Equip $\mathbb{R}$ and $\mathbb{R}^2$ with their standard topologies.
 {% endcapture %}
 {% include block.html type="theorem" title="Theorem 8.2 (Continuity of Addition and Multiplication)" content=thm_operations %}
 
-We prove each part by applying [Lemma 8.1](#lemma-8-1-basis-criterion-for-continuity) to the standard basis $\mathcal{B}_{\mathbb{R}} = \lbrace B_\varepsilon(z) : z \in \mathbb{R},\, \varepsilon > 0 \rbrace$. It suffices to prove that for every $z \in \mathbb{R}$ and every $\varepsilon > 0$, the preimage of $B_\varepsilon(z)$ is open in $\mathbb{R}^2$.
+We will use the above lemma to prove this theorem. By Lemma 8.1, the standard topology on $\mathbb{R}$ has basic open sets $B_\varepsilon(z)$, and it suffices to show that the inverse images of these are open.
 
 ---
 
 ### Continuity of the addition map
 
 {% capture thm82_add_proof %}
-Let $z \in \mathbb{R}$ and $\varepsilon > 0$. We show that $A^{-1}(B_\varepsilon(z))$ is open in $\mathbb{R}^2$.
+By the lemma above, it suffices to show that $A^{-1}(B_\varepsilon(z))$ is open in $\mathbb{R}^2$ for every $z \in \mathbb{R}$ and $\varepsilon > 0$.
 
 **Step 1: Local perturbation estimate.**
-Let $(x,y) \in \mathbb{R}^2$ and let $\delta > 0$. Suppose $(x',y') \in S_\delta(x,y)$.
-By definition of the open square,
-$$|x'-x| < \delta \quad \text{and} \quad |y'-y| < \delta.$$
-By the triangle inequality on $\mathbb{R}$:
-$$|A(x',y') - A(x,y)| = |(x'+y') - (x+y)| = |(x'-x) + (y'-y)| \le |x'-x| + |y'-y| < \delta + \delta = 2\delta.$$
+Let $(x,y) \in \mathbb{R}^2$ and recall that $S_\delta(x,y)$ consists of those $(x',y') \in \mathbb{R}^2$ such that $|x'-x| < \delta$ and $|y'-y| < \delta$.
 
-Setting $\delta = \varepsilon/2$, this becomes
-$$|A(x',y') - A(x,y)| < 2\left(\frac{\varepsilon}{2}\right) = \varepsilon.$$
-Since $A(x,y) = x+y$, this implies that $A(x',y') \in B_\varepsilon(x+y)$ for all $(x',y') \in S_{\varepsilon/2}(x,y)$. In terms of preimages,
+Note that if $(x',y') \in S_\delta(x,y)$, then:
+$$|A(x',y') - A(x,y)| = |(x'+y') - (x+y)| \le |x'-x| + |y'-y| < 2\delta.$$
+So this implies that for $(x',y') \in S_\delta(x,y)$, the value $A(x',y') \in B_{2\delta}(x+y)$. In terms of preimages, setting $\delta = \varepsilon/2$, this shows that
 $$S_{\varepsilon/2}(x,y) \subseteq A^{-1}(B_\varepsilon(x+y)).$$
+To see this, we check that if $(x',y') \in S_{\varepsilon/2}(x,y)$, then $A(x',y') \in B_\varepsilon(x+y)$.
 
 **Step 2: Preimages of basic open intervals are open.**
-Now let $(x,y) \in A^{-1}(B_\varepsilon(z))$ be an arbitrary point. Then
-$$A(x,y) = x+y \in B_\varepsilon(z).$$
-Since $B_\varepsilon(z) = (z-\varepsilon, z+\varepsilon)$ is an open interval in $\mathbb{R}$, by the nested interval property (property $(\ast)$ from [Lecture 2]({{ site.baseurl }}/point-set-topology/lecture-02/#definition-2-2-property)), there exists a radius $\varepsilon' > 0$ such that
+Now let $(x,y) \in A^{-1}(B_\varepsilon(z))$. This means $A(x,y) = x+y \in B_\varepsilon(z)$.
+
+Since $B_\varepsilon(z)$ is open, there is an $\varepsilon' > 0$ such that
 $$B_{\varepsilon'}(x+y) \subseteq B_\varepsilon(z).$$
-(Explicitly, one may set $\varepsilon' = \varepsilon - |(x+y)-z| > 0$).
+From Step 1, we have
+$$S_{\varepsilon'/2}(x,y) \subseteq A^{-1}(B_{\varepsilon'}(x+y)) \subseteq A^{-1}(B_\varepsilon(z)).$$
 
-Applying Step 1 with $\varepsilon'$ in place of $\varepsilon$, we have
-$$S_{\varepsilon'/2}(x,y) \subseteq A^{-1}(B_{\varepsilon'}(x+y)).$$
-Because $B_{\varepsilon'}(x+y) \subseteq B_\varepsilon(z)$, taking preimages preserves inclusions:
-$$A^{-1}(B_{\varepsilon'}(x+y)) \subseteq A^{-1}(B_\varepsilon(z)).$$
-Combining these two inclusions yields:
-$$S_{\varepsilon'/2}(x,y) \subseteq A^{-1}(B_\varepsilon(z)).$$
+Thus, for every point $(x,y) \in A^{-1}(B_\varepsilon(z))$, we have found an $\varepsilon' > 0$ such that the basic open square $S_{\varepsilon'/2}(x,y)$ around $(x,y)$ is contained in $A^{-1}(B_\varepsilon(z))$.
 
-Thus, for every point $(x,y) \in A^{-1}(B_\varepsilon(z))$, there exists $\varepsilon' > 0$ such that the basic open square $S_{\varepsilon'/2}(x,y)$ centered at $(x,y)$ is entirely contained in $A^{-1}(B_\varepsilon(z))$.
+This implies that $A^{-1}(B_\varepsilon(z))$ is open in $\mathbb{R}^2$.
 
-By [Definition 2.3]({{ site.baseurl }}/point-set-topology/lecture-02/#definition-2-3-open-square-in-r2) of the standard topology on $\mathbb{R}^2$, the preimage $A^{-1}(B_\varepsilon(z))$ is open in $\mathbb{R}^2$.
-
-By [Lemma 8.1](#lemma-8-1-basis-criterion-for-continuity), the addition map $A$ is continuous. $\blacksquare$
+So this shows that the addition map $A$ is continuous. ✓
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Theorem 8.2, Part 1 (Addition)" content=thm82_add_proof %}
 
@@ -200,9 +186,9 @@ Setting $\delta = \frac{\varepsilon'}{|x| + |y| + 1}$, the inclusion from Step 2
 $$S_\delta(x,y) \subseteq M^{-1}(B_{\varepsilon'}(xy)) \subseteq M^{-1}(B_\varepsilon(z)).$$
 Thus, for every point $(x,y) \in M^{-1}(B_\varepsilon(z))$, the basic open square $S_\delta(x,y)$ centered at $(x,y)$ is completely contained in $M^{-1}(B_\varepsilon(z))$.
 
-Hence $M^{-1}(B_\varepsilon(z))$ is open in $\mathbb{R}^2$.
+This implies that $M^{-1}(B_\varepsilon(z))$ is open in $\mathbb{R}^2$.
 
-By [Lemma 8.1](#lemma-8-1-basis-criterion-for-continuity), the multiplication map $M$ is continuous. $\blacksquare$
+So this shows that the multiplication map is also continuous. This completes the proof of the theorem. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Theorem 8.2, Part 2 (Multiplication)" content=thm82_mult_proof %}
 
@@ -284,7 +270,9 @@ is continuous with respect to the subspace topology on $\mathbb{R}^\times$.
 {% include block.html type="theorem" title="Theorem 8.4 (Continuity of Inversion on the Punctured Real Line)" content=thm_inversion %}
 
 {% capture thm_inversion_proof %}
-By [Lemma 8.1](#lemma-8-1-basis-criterion-for-continuity) applied to the basis $\mathcal{B}_{\mathbb{R}^\times}$ ([Lemma 8.3](#lemma-8-3-subspace-basis-for-the-punctured-real-line)), it suffices to prove that for every $x \in \mathbb{R}^\times$ and every $\varepsilon$ with $0 < \varepsilon < |x|$, the preimage $f^{-1}(B_\varepsilon(x))$ is open in $\tau_{\mathbb{R}^\times}$.
+Claim: this map is continuous. Let us prove this claim.
+
+Since $\mathcal{B}_{\mathbb{R}^\times}$ is a basis for the subspace topology on $\mathbb{R}^\times$ ([Lemma 8.3](#lemma-8-3-subspace-basis-for-the-punctured-real-line)), by [Lemma 8.1](#lemma-8-1-basis-criterion-for-continuity) it suffices to check that $f^{-1}(B_\varepsilon(x))$ is open in $\tau_{\mathbb{R}^\times}$ when $\varepsilon < |x|$.
 
 The basic open set is $B_\varepsilon(x) = (x-\varepsilon, x+\varepsilon)$. We compute its preimage:
 $$t \in f^{-1}(B_\varepsilon(x)) \iff f(t) \in B_\varepsilon(x) \iff x-\varepsilon < \frac{1}{t} < x+\varepsilon.$$
@@ -318,7 +306,7 @@ which by definition of the subspace topology means that $(a,b)$ is open in $\mat
 
 Thus $f^{-1}(B_\varepsilon(x)) \in \tau_{\mathbb{R}^\times}$ for every basis element $B_\varepsilon(x) \in \mathcal{B}_{\mathbb{R}^\times}$.
 
-By [Lemma 8.1](#lemma-8-1-basis-criterion-for-continuity), $f$ is continuous. $\blacksquare$
+So this proves that $f$ is continuous. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Theorem 8.4" content=thm_inversion_proof %}
 

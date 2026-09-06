@@ -1,0 +1,27 @@
+<svg viewBox="0 0 640 240" role="img" aria-labelledby="t-cl-closed"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="t-cl-closed">Proof that the closure cl(A) is closed: every point in the complement has an open neighborhood disjoint from A</title>
+
+  <!-- Space X -->
+  <rect x="30" y="20" width="580" height="200" rx="8" fill="var(--paper)" stroke="var(--rule)" stroke-width="1.5" />
+  <text x="50" y="45" class="fig-label">X</text>
+
+  <!-- Closure cl(A) (Focal) -->
+  <ellipse cx="200" cy="120" rx="140" ry="70" class="fig-region" />
+  <text x="170" y="80" class="fig-focus">cl(A)</text>
+
+  <!-- Inner set A -->
+  <ellipse cx="180" cy="130" rx="90" ry="45" fill="var(--accent)" fill-opacity="0.12" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4" />
+  <text x="175" y="135" class="fig-label">A</text>
+
+  <!-- Complement X \ cl(A) -->
+  <text x="440" y="60" class="fig-label">X ∖ cl(A)</text>
+
+  <!-- Point x in complement -->
+  <circle cx="450" cy="120" r="4" fill="var(--ink)" />
+  <text x="456" y="115" class="fig-label">x</text>
+
+  <!-- Open neighborhood U_x around x disjoint from A -->
+  <circle cx="450" cy="120" r="50" fill="var(--ink-soft)" fill-opacity="0.06" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="4 3" />
+  <text x="450" y="185" class="fig-tick" text-anchor="middle">U_x ⊆ X ∖ cl(A)</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 210" width="100%" height="auto">
+  <!-- Left panel: disconnected space X = U ∪ V -->
+  <path d="M 50 110 C 50 75, 80 65, 120 70 C 135 85, 135 135, 120 150 C 80 155, 50 145, 50 110 Z" class="fig-region" stroke-width="1.5" />
+  <path d="M 155 110 C 155 75, 185 65, 225 70 C 240 85, 240 135, 225 150 C 185 155, 155 145, 155 110 Z" class="fig-region" stroke-width="1.5" />
+
+  <text x="90" y="115" class="fig-label" text-anchor="middle">U</text>
+  <text x="195" y="115" class="fig-label" text-anchor="middle">V</text>
+
+  <!-- Divider -->
+  <line x1="265" y1="30" x2="265" y2="180" class="fig-tick" stroke-dasharray="4,4" stroke-width="1" />
+
+  <!-- Right panel: connected space -->
+  <path d="M 300 110 C 300 65, 360 55, 410 70 C 440 90, 430 145, 395 160 C 340 170, 300 150, 300 110 Z" class="fig-region" stroke-width="1.5" />
+  <text x="365" y="115" class="fig-focus" text-anchor="middle">X</text>
+</svg>

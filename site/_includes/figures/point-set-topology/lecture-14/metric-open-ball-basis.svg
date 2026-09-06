@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="100%" height="auto">
+  <!-- Region U -->
+  <path d="M 80 130 C 80 60, 180 40, 270 50 C 360 60, 410 110, 390 180 C 370 230, 260 240, 170 230 C 100 220, 80 180, 80 130 Z" class="fig-region" stroke-width="1.5" />
+
+  <!-- Ball B_eps(x) -->
+  <circle cx="220" cy="140" r="50" class="fig-region" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3" />
+
+  <!-- Radius segment -->
+  <line x1="220" y1="140" x2="270" y2="140" class="fig-tick" stroke-width="1.2" />
+
+  <!-- Center point x -->
+  <circle cx="220" cy="140" r="3.5" class="fig-focus" />
+
+  <!-- Labels -->
+  <text x="120" y="80" class="fig-label" text-anchor="middle">U</text>
+  <text x="210" y="145" class="fig-focus" text-anchor="end">x</text>
+  <text x="245" y="133" class="fig-tick" text-anchor="middle">ε</text>
+  <text x="220" y="208" class="fig-tick" text-anchor="middle">B(x)</text>
+</svg>

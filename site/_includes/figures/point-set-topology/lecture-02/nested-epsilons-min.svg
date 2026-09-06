@@ -10,59 +10,43 @@
     </marker>
   </defs>
 
-  <style>
-    .axis { stroke: var(--ink); stroke-width: 1.5; }
-    .outer-interval { stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 4 3; fill: var(--ink-soft); fill-opacity: 0.08; }
-    .inner-interval { stroke: var(--accent); stroke-width: 2.5; fill: var(--accent); fill-opacity: 0.22; }
-    .dim-line { stroke: var(--ink-soft); stroke-width: 1; stroke-dasharray: 2 2; }
-    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; fill: var(--ink); text-anchor: middle; }
-    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--ink); text-anchor: middle; }
-    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
-  </style>
-
-  <!-- Background -->
-  <rect width="640" height="220" fill="var(--paper)" />
-
   <!-- Real line axis -->
-  <line x1="40" y1="105" x2="600" y2="105" class="axis" marker-start="url(#arrow-left-3)" marker-end="url(#arrow-right-3)" />
-  <text x="615" y="110" class="label-italic">ℝ</text>
-
-  <!-- Center point x -->
-  <!-- Let x be at 320 -->
+  <line x1="40" y1="105" x2="600" y2="105" class="fig-axis" marker-start="url(#arrow-left-3)" marker-end="url(#arrow-right-3)" />
+  <text x="615" y="110" class="fig-label">ℝ</text>
 
   <!-- Outer interval 1: eps_1 = 180 px (from 140 to 500) -->
-  <rect x="140" y="85" width="360" height="40" rx="4" class="outer-interval" />
-  <line x1="140" y1="85" x2="140" y2="125" stroke="var(--ink-soft)" stroke-width="2" />
-  <line x1="500" y1="85" x2="500" y2="125" stroke="var(--ink-soft)" stroke-width="2" />
-  <text x="140" y="75" class="label-italic" style="fill: var(--ink-soft);">x − ε₁</text>
-  <text x="500" y="75" class="label-italic" style="fill: var(--ink-soft);">x + ε₁</text>
-  <text x="470" y="142" class="label-italic" style="font-size: 12px; fill: var(--ink-soft);">⊆ U₁</text>
+  <rect x="140" y="85" width="360" height="40" rx="4" fill="var(--ink-soft)" fill-opacity="0.06" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="4 3" />
+  <line x1="140" y1="85" x2="140" y2="125" stroke="var(--ink-soft)" stroke-width="1.5" />
+  <line x1="500" y1="85" x2="500" y2="125" stroke="var(--ink-soft)" stroke-width="1.5" />
+  <text x="140" y="75" class="fig-tick" text-anchor="middle">x − ε₁</text>
+  <text x="500" y="75" class="fig-tick" text-anchor="middle">x + ε₁</text>
+  <text x="470" y="142" class="fig-tick" font-size="12px" text-anchor="middle">⊆ U₁</text>
 
   <!-- Outer interval 2: eps_2 = 120 px (from 200 to 440) -->
   <rect x="200" y="90" width="240" height="30" rx="4" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="3 3" fill="none" />
   <line x1="200" y1="90" x2="200" y2="120" stroke="var(--ink-soft)" stroke-width="1.5" />
   <line x1="440" y1="90" x2="440" y2="120" stroke="var(--ink-soft)" stroke-width="1.5" />
-  <text x="200" y="60" class="label-italic" style="fill: var(--ink-soft);">x − ε₂</text>
-  <text x="440" y="60" class="label-italic" style="fill: var(--ink-soft);">x + ε₂</text>
-  <text x="415" y="142" class="label-italic" style="font-size: 12px; fill: var(--ink-soft);">⊆ U₂</text>
+  <text x="200" y="60" class="fig-tick" text-anchor="middle">x − ε₂</text>
+  <text x="440" y="60" class="fig-tick" text-anchor="middle">x + ε₂</text>
+  <text x="415" y="142" class="fig-tick" font-size="12px" text-anchor="middle">⊆ U₂</text>
 
-  <!-- Smallest interval: eps = min(eps_i) = 65 px (from 255 to 385) -->
-  <rect x="255" y="92" width="130" height="26" rx="3" class="inner-interval" />
+  <!-- Smallest interval: eps = min(eps_i) = 65 px (from 255 to 385) (Focal) -->
+  <rect x="255" y="92" width="130" height="26" rx="3" class="fig-region" />
   <line x1="255" y1="105" x2="385" y2="105" stroke="var(--accent)" stroke-width="4" />
   <line x1="255" y1="85" x2="255" y2="125" stroke="var(--accent)" stroke-width="2.5" />
   <line x1="385" y1="85" x2="385" y2="125" stroke="var(--accent)" stroke-width="2.5" />
 
   <!-- Center point mark -->
   <circle cx="320" cy="105" r="4.5" fill="var(--ink)" />
-  <text x="320" y="145" class="label-italic" style="font-size: 16px; font-weight: bold;">x</text>
+  <text x="320" y="145" class="fig-label" text-anchor="middle">x</text>
 
   <!-- Inner interval labels -->
-  <line x1="255" y1="125" x2="255" y2="165" class="dim-line" />
-  <text x="255" y="180" class="label-accent">x − ε</text>
+  <line x1="255" y1="125" x2="255" y2="165" class="fig-tick" stroke-dasharray="2 2" />
+  <text x="255" y="180" class="fig-focus" text-anchor="middle">x − ε</text>
 
-  <line x1="385" y1="125" x2="385" y2="165" class="dim-line" />
-  <text x="385" y="180" class="label-accent">x + ε</text>
+  <line x1="385" y1="125" x2="385" y2="165" class="fig-tick" stroke-dasharray="2 2" />
+  <text x="385" y="180" class="fig-tick" text-anchor="middle">x + ε</text>
 
   <!-- Summary text below -->
-  <text x="320" y="206" class="label-italic" style="font-size: 13px; fill: var(--ink-soft);">ε = min{ε₁, ε₂, …, εₙ} &gt; 0 ensures (x − ε, x + ε) ⊆ ⋂ Uᵢ</text>
+  <text x="320" y="206" class="fig-caption-inline" text-anchor="middle">ε = min{ε₁, …, εₙ}</text>
 </svg>

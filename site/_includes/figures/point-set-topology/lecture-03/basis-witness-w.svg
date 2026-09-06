@@ -1,35 +1,21 @@
 <svg viewBox="0 0 640 280" role="img" aria-labelledby="fig-basis-witness-title"
      xmlns="http://www.w3.org/2000/svg" class="fig">
   <title id="fig-basis-witness-title">The defining condition of a basis: for any open set U and point x in U, there exists a basic element W in B such that x belongs to W and W is contained in U.</title>
-  <style>
-    .open-u { stroke: var(--ink-soft); stroke-width: 2; stroke-dasharray: 6 4; fill: var(--ink-soft); fill-opacity: 0.07; }
-    .basic-w { stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 4 3; fill: var(--accent); fill-opacity: 0.22; }
-    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; fill: var(--ink); text-anchor: middle; }
-    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--ink); text-anchor: middle; }
-    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
-    .label-soft { font-family: 'Source Serif 4', Georgia, serif; font-size: 13px; font-style: italic; fill: var(--ink-soft); }
-  </style>
-
-  <!-- Background -->
-  <rect width="640" height="280" fill="var(--paper)" />
 
   <!-- Ambient open set U -->
-  <path d="M 120 140 C 120 60, 240 40, 360 45 C 480 50, 540 100, 520 180 C 500 250, 380 250, 260 240 C 160 230, 120 200, 120 140 Z" class="open-u" />
-  <text x="490" y="80" class="label-italic" style="fill: var(--ink-soft); font-size: 18px; font-weight: 600;">U ∈ τ</text>
+  <path d="M 120 140 C 120 60, 240 40, 360 45 C 480 50, 540 100, 520 180 C 500 250, 380 250, 260 240 C 160 230, 120 200, 120 140 Z" fill="var(--ink-soft)" fill-opacity="0.06" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="6 4" />
+  <!-- Label for U safely inside blob -->
+  <text x="180" y="100" class="fig-label">U</text>
 
-  <!-- Basic element W ∈ B containing point x -->
-  <!-- Let W be a shape centered around (300, 140) -->
-  <rect x="240" y="95" width="120" height="90" rx="6" class="basic-w" />
+  <!-- Basic element W in B containing point x (Focal) -->
+  <rect x="240" y="95" width="120" height="90" rx="6" class="fig-region" stroke-dasharray="4 3" />
 
   <!-- Point x at (290, 140) -->
   <circle cx="290" cy="140" r="4.5" fill="var(--ink)" />
-  <text x="290" y="162" class="label-italic" style="font-weight: bold;">x</text>
+  <text x="290" y="162" class="fig-label" text-anchor="middle">x</text>
 
   <!-- Leader callout to basic element W -->
-  <path d="M 360 120 L 420 95 L 450 95" fill="none" stroke="var(--accent)" stroke-width="1.2" />
-  <text x="455" y="99" class="label-accent" text-anchor="start">W ∈ ℬ</text>
-  <text x="455" y="117" class="label-soft" text-anchor="start">x ∈ W ⊆ U</text>
-
-  <!-- Summary description at bottom -->
-  <text x="320" y="265" class="label-soft" text-anchor="middle">Every point of every open set is witnessed by a basic member: x ∈ W ⊆ U.</text>
+  <path d="M 360 120 L 410 95 L 440 95" fill="none" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="445" y="99" class="fig-focus">W ∈ ℬ</text>
+  <text x="445" y="117" class="fig-tick">x ∈ W ⊆ U</text>
 </svg>

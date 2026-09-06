@@ -39,3 +39,18 @@ None. The arguments and proofs are completely clear and elementary.
 2 supplements, approximately 15% of page length:
 1. *The generating conditions versus the basis definition* — contrasts Definition 3.6 (where a topology already exists) with Proposition 4.2 (where no topology exists beforehand), explaining why condition (2) is necessary to ensure closure under finite intersections.
 2. *Relative openness versus ambient openness* — clarifies that open sets in a subspace $Y$ need not be open in the ambient space $X$, using the non-example $[0, 1/2) \subseteq [0,1) \subseteq \mathbb{R}$.
+
+## Verification rhythm retrofit
+- **Obligation statements restored (4):**
+  - Lemma 4.1 reverse inclusion: *"So we only need to prove that... the reverse inclusion"* [`build/tmp/lecture-04-formatted.txt:14-15`].
+  - Proposition 4.2, Condition (T2): *"Here we want to say that finite intersections of elements of tau are in tau. So suppose U one, U two, up to U n are in tau. Then we need to show that the intersection U i's is in tau"* [`build/tmp/lecture-04-formatted.txt:54-56`].
+  - Proposition 4.2, Condition (T3): *"And finally, we have to check the third condition. So given a set I and subsets Ui of X such that Ui is in tau, we need to show that the union I in I is in tau"* [`build/tmp/lecture-04-formatted.txt:72-73`].
+  - Proposition 4.2 basis verification: *"We also need to show that B is a basis for tau. Which means that we need to show that... that is, for every U in tau and X in U, we need to show there exists W in B such that X is in W and W is in U"* [`build/tmp/lecture-04-formatted.txt:85-88`].
+- **Method signposting restored (2):**
+  - Proposition 4.2 opening: *"In order to prove this proposition, we have to check that tau satisfies the three conditions which define a topology. So let's check these one by one"* [`build/tmp/lecture-04-formatted.txt:41-42`].
+  - Proposition 4.2, Condition (T3): *"Once again, we do the same"* [`build/tmp/lecture-04-formatted.txt:74`].
+- **Closing declarations restored (4):**
+  - Lemma 4.1: *"Thus, we get that this union contains x for all x in X. Thus, X is contained in the union... this completes the proof of the lemma"* [`build/tmp/lecture-04-formatted.txt:24-27`].
+  - Proposition 4.2, Condition (T1): *"Thus, we have proved that both the empty set and X are in tau. So this proves the first condition"* [`build/tmp/lecture-04-formatted.txt:51-52`].
+  - Proposition 4.2, Condition (T2): *"So thus, this intersection Ui is in tau, as it satisfies the property defining tau"* [`build/tmp/lecture-04-formatted.txt:71`].
+  - Proposition 4.2, Condition (T3) and overall: *"This completes the proof that tau is a topology on X... This completes the proof of the proposition"* [`build/tmp/lecture-04-formatted.txt:83, 91`].

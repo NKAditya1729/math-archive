@@ -87,57 +87,67 @@ $\mathbb{R}^2 \to \mathbb{R}$ are continuous, by explicit $\varepsilon$
 estimates. Subspace basis on $\mathbb{R}^\times$; $x \mapsto 1/x$ on $\mathbb{R}^\times$ is continuous.
 Forward reference to L9: composition, restriction, maps into products, and algebraic combinations $f+g, fg, f/g$.
 
-**L9.** Composition; restriction to a subspace; corestriction to a subspace
+**L9 [PROCESSED].** Composition; restriction to a subspace; corestriction to a subspace
 containing the image. **Maps into a product** are continuous iff each component
 is — and the remark that this fails for the box topology. Consequences:
-$f+g$, $fg$, and $f/g$ where $g$ never vanishes.
+$f+g$, $fg$, and $f/g$ where $g$ never vanishes; $C(X, \mathbb{R})$ forms a ring.
+Forward reference to L10: standard $=$ product topology on $\mathbb{R}^n$, projection $\mathbb{R}^n \setminus H' \to H$, and homeomorphisms.
 
-**L10.** Standard $=$ product topology on $\mathbb{R}^n$, proved. Worked
+**L10 [PROCESSED].** Standard $=$ product topology on $\mathbb{R}^n$, proved. Worked
 example: the projection $\mathbb{R}^n \setminus H' \to H$ from a point, in
-coordinates, shown continuous. **Homeomorphism** defined, with two exercises.
+coordinates, shown continuous. Stereographic projection $S^{n-1} \setminus \{P\} \cong \mathbb{R}^{n-1}$. **Homeomorphism** defined, with exercises.
+Forward reference to L11: closed sets, dual axioms, preimages of closed sets, $GL_n(\mathbb{R})$ open, matrix groups and spheres closed.
 
-**L11.** **Closed sets**; the three dual properties; a topology may be
+**L11 [PROCESSED].** **Closed sets**; the three dual properties; a topology may be
 specified by its closed sets. Continuity via preimages of closed sets. Worked
 examples using continuity: $S^1$, $S^n$, $SL_n$, $O(n)$ closed;
 $GL_n(\mathbb{R})$ open. Lemma: points are closed in $\mathbb{R}^m$ (exercise).
+Forward reference to L12: solved point exercise, definition of closure $\overline{A}$, closure of $(0,1)$ and open disc, $A$ closed $\iff A = \overline{A}$, and idempotence.
 
-**L12.** That exercise solved. **Closure** defined. Closure of $(0,1)$ and of
+**L12 [PROCESSED].** That exercise solved. **Closure** defined. Closure of $(0,1)$ and of
 the open disc. $\overline{A}$ is closed; $A$ closed $\iff A = \overline{A}$;
 $\overline{\overline{B}} = \overline{B}$. Two exercises; the remark that
 $\overline{A}$ is the smallest closed set containing $A$.
+Forward reference to L13: dense subsets, $A$ dense in $\overline{A}$, open in open is open, closed in closed is closed, and the pasting lemma.
 
-**L13.** **Dense** subsets; $A$ is dense in $\overline{A}$. Open in open is
+**L13 [PROCESSED].** **Dense** subsets; $A$ is dense in $\overline{A}$. Open in open is
 open; closed subsets of a subspace are $Z \cap A$; closed in closed is closed.
 **The pasting lemma** for two closed pieces, with $\max$ and $\min$ on
 $\mathbb{R}^2$ as the application.
+Forward reference to L14: metric spaces, Euclidean metric, Cauchy–Schwarz, metric topology, and sequence convergence.
 
-**L14.** **Metric spaces**. The Euclidean metric; Cauchy–Schwarz and the
+**L14 [PROCESSED].** **Metric spaces**. The Euclidean metric; Cauchy–Schwarz and the
 triangle inequality *(board-heavy — see known-defects)*. The metric topology.
 **Convergence**. Lemma: $x \in \overline{A}$ iff some sequence in $A$ converges
 to $x$.
+Forward reference to L15: sequential criterion for closed sets and continuity, turn to Part III, definition of connectedness.
 
-**L15.** Closed $\iff$ closed under limits of sequences. **Sequential criterion
+**L15 [PROCESSED].** Closed $\iff$ closed under limits of sequences. **Sequential criterion
 for continuity** between metric spaces. Then the turn to Part III:
 homeomorphism as sameness, the classification question, **connectedness**
 defined. $U$ dense and connected $\Rightarrow X$ connected; $A$ connected
 $\Rightarrow \overline{A}$ connected.
+Forward reference to L16: connectedness of $[0,1]$ via supremum, $\mathbb{R}$ connected, intervals as connected subsets of $\mathbb{R}$.
 
 ---
 
 ## Part III — Connectedness (16–22)
 
-**L16.** $[0,1]$ is connected, by the supremum argument. $\mathbb{R}$ is
+**L16 [PROCESSED].** $[0,1]$ is connected, by the supremum argument. $\mathbb{R}$ is
 connected. **The connected subsets of $\mathbb{R}$ are the intervals.**
 Continuous image of a connected space is connected.
+Forward reference to L17: connectedness of products, $\mathbb{R}^n$, union lemma, stereographic charts on spheres.
 
-**L17.** $X \times Y$ connected; $\mathbb{R}^n$ connected. No surjection
+**L17 [PROCESSED].** $X \times Y$ connected; $\mathbb{R}^n$ connected. No surjection
 $[0,1] \to [0,1] \sqcup [3,4]$. Homeomorphic spaces are equiconnected. Lemma:
 $T_1, T_2$ connected with $T_1 \cap T_2 \neq \varnothing$ $\Rightarrow$
 $T_1 \cup T_2$ connected. $S^n$ connected via two stereographic charts.
+Forward reference to L18: connected components as equivalence classes, components of $\mathbb{Q}$, path connectedness.
 
-**L18.** **Connected components** as equivalence classes. Each is maximal,
+**L18 [PROCESSED].** **Connected components** as equivalence classes. Each is maximal,
 connected, and **closed**. Components of $\mathbb{Q}$ are points. $X$ connected
 iff one component.
+Forward reference to L19: path connectedness, path connected implies connected, matrix groups, path components.
 
 **L19.** **Path connectedness**. Path connected $\Rightarrow$ connected.
 $[0,1]$, $\mathbb{R}^n$, $S^1$, $S^n$ path connected. Which matrix groups are:

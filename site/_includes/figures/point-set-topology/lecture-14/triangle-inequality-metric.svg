@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 230" width="100%" height="auto">
+  <!-- Edges -->
+  <line x1="80" y1="160" x2="230" y2="50" class="fig-axis" stroke-width="1.5" />
+  <line x1="230" y1="50" x2="380" y2="160" class="fig-axis" stroke-width="1.5" />
+  <line x1="80" y1="160" x2="380" y2="160" class="fig-focus" stroke-width="2" stroke-dasharray="6,4" />
+
+  <!-- Vertices -->
+  <circle cx="80" cy="160" r="4" class="fig-label" />
+  <circle cx="230" cy="50" r="4" class="fig-label" />
+  <circle cx="380" cy="160" r="4" class="fig-label" />
+
+  <!-- Vertex Labels -->
+  <text x="65" y="165" class="fig-label" text-anchor="end">x</text>
+  <text x="230" y="32" class="fig-label" text-anchor="middle">y</text>
+  <text x="395" y="165" class="fig-label" text-anchor="start">z</text>
+
+  <!-- Distance annotations -->
+  <text x="140" y="95" class="fig-tick" text-anchor="end">d(x, y)</text>
+  <text x="320" y="95" class="fig-tick" text-anchor="start">d(y, z)</text>
+  <text x="230" y="185" class="fig-focus" text-anchor="middle">d(x, z)</text>
+</svg>

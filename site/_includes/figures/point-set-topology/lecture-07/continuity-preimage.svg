@@ -1,42 +1,29 @@
-<svg viewBox="0 0 560 250" role="img" aria-labelledby="fig-cont-preimage-title"
+<svg viewBox="0 0 560 260" role="img" aria-labelledby="fig-cont-preimage-title"
      xmlns="http://www.w3.org/2000/svg" class="fig">
-  <title id="fig-cont-preimage-title">Definition of continuity: a map f from X to Y is continuous if the preimage of every open set V in Y is an open set in X.</title>
-  <style>
-    .space-x { stroke: var(--ink-soft); stroke-width: 1.5; fill: none; }
-    .space-y { stroke: var(--ink-soft); stroke-width: 1.5; fill: none; }
-    .open-v { stroke: var(--accent-2, #3b6e8c); stroke-width: 2; stroke-dasharray: 4 3; fill: var(--accent-2, #3b6e8c); fill-opacity: 0.15; }
-    .open-u { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 3; fill: var(--accent); fill-opacity: 0.18; }
-    .arrow { stroke: var(--ink); stroke-width: 1.5; fill: none; }
-    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; fill: var(--ink); text-anchor: middle; }
-    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--ink); text-anchor: middle; }
-    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
-    .label-v { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--accent-2, #3b6e8c); font-weight: 600; text-anchor: middle; }
-  </style>
+  <title id="fig-cont-preimage-title">Topological continuity: a map f between spaces X and Y is continuous if and only if the preimage of every open set V in Y is open in X.</title>
+  <defs>
+    <marker id="arrow-map" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="var(--ink)" />
+    </marker>
+  </defs>
 
-  <!-- Background -->
-  <rect width="560" height="250" fill="var(--paper)" />
+  <!-- Left Space: X -->
+  <rect x="30" y="30" width="200" height="190" rx="10" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="5 4" fill="none" />
+  <text x="50" y="55" class="fig-label">X</text>
 
-  <!-- Space X (Left) -->
-  <rect x="30" y="30" width="200" height="180" rx="15" class="space-x" />
-  <text x="50" y="55" class="label-italic" style="font-weight: bold;">X</text>
+  <!-- Preimage f^{-1}(V) in X (Focal) -->
+  <ellipse cx="130" cy="135" rx="55" ry="45" class="fig-region" stroke-dasharray="4 3" />
+  <text x="130" y="140" class="fig-focus" text-anchor="middle">f⁻¹(V)</text>
 
-  <!-- Space Y (Right) -->
-  <rect x="330" y="30" width="200" height="180" rx="15" class="space-y" />
-  <text x="350" y="55" class="label-italic" style="font-weight: bold;">Y</text>
-
-  <!-- Mapping Arrow f : X -> Y -->
-  <path d="M 240,110 C 270,95 290,95 320,110" class="arrow" />
-  <polygon points="320,105 328,113 318,115" fill="var(--ink)" />
-  <text x="280" y="90" class="label-italic" style="font-weight: bold;">f</text>
+  <!-- Right Space: Y -->
+  <rect x="330" y="30" width="200" height="190" rx="10" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="5 4" fill="none" />
+  <text x="350" y="55" class="fig-label">Y</text>
 
   <!-- Open set V in Y -->
-  <ellipse cx="435" cy="125" rx="55" ry="45" class="open-v" />
-  <text x="435" y="130" class="label-v">V ∈ τ_Y</text>
+  <ellipse cx="430" cy="135" rx="55" ry="45" fill="var(--accent)" fill-opacity="0.12" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 3" />
+  <text x="430" y="140" class="fig-label" text-anchor="middle">V</text>
 
-  <!-- Preimage f^{-1}(V) in X -->
-  <ellipse cx="130" cy="125" rx="55" ry="45" class="open-u" />
-  <text x="130" y="130" class="label-accent">f⁻¹(V) ∈ τ_X</text>
-
-  <!-- Bottom description -->
-  <text x="280" y="235" class="label">f is continuous ⟺ ∀ V ∈ τ_Y,  f⁻¹(V) ∈ τ_X</text>
+  <!-- Mapping Arrow f: X -> Y -->
+  <line x1="240" y1="120" x2="315" y2="120" class="fig-axis" marker-end="url(#arrow-map)" />
+  <text x="277" y="110" class="fig-label" text-anchor="middle">f</text>
 </svg>

@@ -1,0 +1,48 @@
+<svg viewBox="0 0 680 260" role="img" aria-labelledby="t-strips"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="t-strips">Preimages of open intervals under coordinate projections as open strips in R^2</title>
+
+  <!-- Left panel: Projection p2 onto y-axis -->
+  <g transform="translate(20, 20)">
+    <!-- Strip R x (a,b) -->
+    <rect x="20" y="70" width="260" height="70" class="fig-region" stroke-dasharray="5 5" />
+
+    <!-- Axes -->
+    <line x1="20" y1="180" x2="280" y2="180" class="fig-axis" />
+    <line x1="140" y1="210" x2="140" y2="20" class="fig-axis" />
+    <text x="270" y="195" class="fig-tick">x</text>
+    <text x="148" y="30" class="fig-tick">y</text>
+
+    <!-- Interval (a,b) on y-axis -->
+    <line x1="140" y1="70" x2="140" y2="140" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round" />
+    <circle cx="140" cy="140" r="2.5" fill="var(--accent)" />
+    <circle cx="140" cy="70" r="2.5" fill="var(--accent)" />
+    <text x="148" y="144" class="fig-tick">a</text>
+    <text x="148" y="74" class="fig-tick">b</text>
+
+    <text x="140" y="105" class="fig-focus" text-anchor="middle">p₂⁻¹((a,b)) = ℝ × (a,b)</text>
+    <text x="140" y="235" class="fig-caption-inline" text-anchor="middle">Horizontal strip</text>
+  </g>
+
+  <!-- Right panel: Projection p1 onto x-axis -->
+  <g transform="translate(360, 20)">
+    <!-- Strip (a,b) x R -->
+    <rect x="70" y="20" width="70" height="190" class="fig-region" stroke-dasharray="5 5" />
+
+    <!-- Axes -->
+    <line x1="20" y1="180" x2="280" y2="180" class="fig-axis" />
+    <line x1="140" y1="210" x2="140" y2="20" class="fig-axis" />
+    <text x="270" y="195" class="fig-tick">x</text>
+    <text x="148" y="30" class="fig-tick">y</text>
+
+    <!-- Interval (a,b) on x-axis -->
+    <line x1="70" y1="180" x2="140" y2="180" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round" />
+    <circle cx="70" cy="180" r="2.5" fill="var(--accent)" />
+    <circle cx="140" cy="180" r="2.5" fill="var(--accent)" />
+    <text x="68" y="196" class="fig-tick">a</text>
+    <text x="138" y="196" class="fig-tick">b</text>
+
+    <text x="105" y="105" class="fig-focus" text-anchor="middle">p₁⁻¹((a,b)) = (a,b) × ℝ</text>
+    <text x="140" y="235" class="fig-caption-inline" text-anchor="middle">Vertical strip</text>
+  </g>
+</svg>

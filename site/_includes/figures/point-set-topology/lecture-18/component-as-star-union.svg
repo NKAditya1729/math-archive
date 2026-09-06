@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" width="100%" height="auto">
+  <!-- Component boundary Xi -->
+  <path d="M 60 120 C 60 50, 150 35, 230 40 C 310 35, 400 50, 400 120 C 400 190, 310 205, 230 200 C 150 205, 60 190, 60 120 Z" class="fig-region" stroke-width="1.5" />
+
+  <!-- Subsets Ty connecting x to y -->
+  <path d="M 210 120 C 160 110, 110 100, 120 85 C 130 70, 180 90, 210 120 Z" class="fig-region" fill-opacity="0.12" stroke="var(--ink-soft)" stroke-dasharray="3,3" stroke-width="1" />
+  <path d="M 210 120 C 250 95, 300 75, 320 85 C 335 95, 280 120, 210 120 Z" class="fig-region" fill-opacity="0.12" stroke="var(--ink-soft)" stroke-dasharray="3,3" stroke-width="1" />
+  <path d="M 210 120 C 230 145, 250 175, 260 165 C 270 150, 240 130, 210 120 Z" class="fig-region" fill-opacity="0.12" stroke="var(--ink-soft)" stroke-dasharray="3,3" stroke-width="1" />
+
+  <!-- Points -->
+  <circle cx="210" cy="120" r="3.5" class="fig-focus" />
+  <circle cx="120" cy="85" r="2.5" class="fig-tick" />
+  <circle cx="320" cy="85" r="2.5" class="fig-tick" />
+  <circle cx="260" cy="165" r="2.5" class="fig-tick" />
+
+  <!-- Labels -->
+  <text x="80" y="65" class="fig-label" text-anchor="middle">Xᵢ</text>
+  <text x="210" y="138" class="fig-focus" text-anchor="middle">x</text>
+  <text x="120" y="73" class="fig-tick" text-anchor="middle">y₁</text>
+  <text x="320" y="73" class="fig-tick" text-anchor="middle">y₂</text>
+  <text x="260" y="182" class="fig-tick" text-anchor="middle">y₃</text>
+</svg>

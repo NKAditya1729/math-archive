@@ -58,6 +58,13 @@ Now write the lecture content, unit by unit, from the transcript alone.
 No books open, no web. You are transcribing a person's argument into
 mathematics, not writing about the topic.
 
+Maintain the **verification rhythm** throughout:
+- **State the obligation** before the proof ("we need to check that…", "then their intersection should be in $\tau$").
+- **Preserve recall statements, case announcements, and method signposting** ("recall that…", "so first consider the case where…", "let's check them one by one").
+- **Discharge the obligation in his order of reasons**, never re-deriving in the opposite direction.
+- **Declare satisfaction afterwards** ("so therefore the second condition is also satisfied").
+- **Never open a proof by summarising why it will work** (e.g., "each is immediate for the same reason" is strictly prohibited in the lecture body).
+
 Working method for each unit:
 
 1. Read the transcript for that unit twice.
@@ -241,6 +248,7 @@ Run these six checks explicitly and record the result in the report:
 4. No sentence of lecture content is untraceable to the transcript.
 5. No supplement contains material from later in the course.
 6. Every `$` and `$$` closes; no stray `\begin{align}`; KaTeX check passes.
+7. For every proof, does each condition have its obligation stated before the argument and its satisfaction declared after?
 
 If any check fails, fix it before writing the report.
 

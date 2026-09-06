@@ -47,3 +47,17 @@ None. The argument is recoverable in full from the transcript and board cues.
 2. *Why included endpoints obstruct property $(\ast)$* — geometric explanation of why boundary points fail $(\ast)$.
 3. *Where finiteness in (T2) is essential* — demonstrates how infinite intersections of open intervals can shrink to singletons $\lbrace 0\rbrace \notin \tau$.
 4. *Convention: Notation for property $(\ast)$* — documents the lecturer's explicit comment on using $(\ast)$ across dimensions and notes our disambiguation $(\ast_{\mathbb{R}})$, $(\ast_{\mathbb{R}^2})$.
+
+## Verification rhythm retrofit
+- **Obligation statements restored (3):**
+  - Condition (T1) recall statement & target: *"Recall that the first condition was that phi, the empty set, and the entire set should be in tau"* [`build/tmp/lecture-02-formatted.txt:54-55`].
+  - Condition (T2) obligation & verification target: *"So for the second condition, we need that if U one, U two, up to U n in tau are finitely many subsets of R, then their intersection... should also be in tau. So let us check that this condition is satisfied... we need to check that this intersection Ui satisfies property star"* [`build/tmp/lecture-02-formatted.txt:61-63`].
+  - Condition (T3) obligation & verification target: *"And finally, we have to check one more condition... then we need to show that the union Ui, i belongs to I, is in tau. That is, it satisfies property star"* [`build/tmp/lecture-02-formatted.txt:86-90`].
+- **Method signposting restored (2):**
+  - Opening method: *"So let's check these one by one"* [`build/tmp/lecture-02-formatted.txt:53`].
+  - Transition in (T3): *"Once again, this is easy: so we apply the same method that we used in the second case"* [`build/tmp/lecture-02-formatted.txt:91-92`].
+- **Closing declarations restored (4):**
+  - Condition (T1): *"So therefore, this first defining condition for being a topology is satisfied"* [`build/tmp/lecture-02-formatted.txt:60`].
+  - Condition (T2): *"So this shows that this intersection Ui satisfies property star. Therefore, the second condition for being a topology, this is also satisfied"* [`build/tmp/lecture-02-formatted.txt:83-85`].
+  - Condition (T3): *"Thus, this, we have proved that this union satisfies our property star. That is, thus this union is also in tau. So therefore, tau also satisfies the third condition"* [`build/tmp/lecture-02-formatted.txt:102-105`].
+  - Overall proof closing: *"All this implies that tau defines a topology on R, which we call the standard topology"* [`build/tmp/lecture-02-formatted.txt:106`].

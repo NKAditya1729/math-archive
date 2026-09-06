@@ -1,47 +1,33 @@
 <svg viewBox="0 0 560 260" role="img" aria-labelledby="fig-square-axis-title"
      xmlns="http://www.w3.org/2000/svg" class="fig">
   <title id="fig-square-axis-title">Open squares in the plane intersecting the horizontal x-axis: a square centered far from the axis misses it entirely, while a square meeting the axis intersects it in an open interval.</title>
-  <style>
-    .axis { stroke: var(--ink); stroke-width: 1.5; }
-    .square-miss { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 4 3; fill: var(--ink-soft); fill-opacity: 0.08; }
-    .square-hit { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 4 3; fill: var(--accent); fill-opacity: 0.12; }
-    .trace { stroke: var(--accent); stroke-width: 4; stroke-linecap: round; }
-    .trace-end { stroke: var(--accent); stroke-width: 1.5; fill: var(--paper); }
-    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; fill: var(--ink); text-anchor: middle; }
-    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--ink); text-anchor: middle; }
-    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
-  </style>
-
-  <!-- Background -->
-  <rect width="560" height="260" fill="var(--paper)" />
 
   <!-- Axes: x-axis at y = 160 -->
-  <line x1="30" y1="160" x2="520" y2="160" class="axis" />
+  <line x1="30" y1="160" x2="520" y2="160" class="fig-axis" />
   <polygon points="520,156 530,160 520,164" fill="var(--ink)" />
-  <text x="542" y="165" class="label-italic">Y</text>
+  <text x="542" y="165" class="fig-label">Y</text>
 
   <!-- y-axis at x = 80 -->
-  <line x1="80" y1="230" x2="80" y2="30" class="axis" stroke-dasharray="3 3" stroke-opacity="0.5" />
+  <line x1="80" y1="230" x2="80" y2="30" class="fig-axis" stroke-dasharray="3 3" stroke-opacity="0.5" />
   <polygon points="76,30 80,20 84,30" fill="var(--ink)" />
 
-  <!-- Square 1: Disjoint from axis (miss) centered at (180, 70), side 70 (eps = 35) -->
-  <rect x="145" y="35" width="70" height="70" class="square-miss" />
+  <!-- Square 1: Disjoint from axis centered at (180, 70), side 70 -->
+  <rect x="145" y="35" width="70" height="70" fill="var(--ink-soft)" fill-opacity="0.06" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="4 3" />
   <circle cx="180" cy="70" r="3" fill="var(--ink)" />
-  <text x="180" y="62" class="label-italic">(a_1, b_1)</text>
-  <text x="180" y="25" class="label">S_{ε_1}(a_1, b_1) ∩ Y = ∅</text>
+  <text x="180" y="62" class="fig-tick" text-anchor="middle">(a_1, b_1)</text>
+  <text x="180" y="25" class="fig-tick" text-anchor="middle">S_{ε_1}</text>
 
-  <!-- Square 2: Centered on the axis at (360, 160), side 100 (eps = 50) -->
-  <rect x="310" y="110" width="100" height="100" class="square-hit" />
-  <circle cx="360" cy="160" r="3" fill="var(--accent)" />
-  <text x="360" y="145" class="label-accent">(a_2, 0)</text>
+  <!-- Square 2: Centered on the axis at (360, 160), side 100 -->
+  <rect x="310" y="110" width="100" height="100" class="fig-region" stroke-dasharray="4 3" />
+  <circle cx="360" cy="160" r="3.5" fill="var(--accent)" />
+  <text x="360" y="145" class="fig-focus" text-anchor="middle">(a_2, 0)</text>
 
   <!-- Intersection trace on the x-axis: interval (310, 410) -->
-  <line x1="310" y1="160" x2="410" y2="160" class="trace" />
-  <circle cx="310" cy="160" r="4" class="trace-end" />
-  <circle cx="410" cy="160" r="4" class="trace-end" />
+  <line x1="310" y1="160" x2="410" y2="160" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" />
+  <circle cx="310" cy="160" r="4" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5" />
+  <circle cx="410" cy="160" r="4" fill="var(--paper)" stroke="var(--accent)" stroke-width="1.5" />
 
-  <!-- Labels for the intersection -->
-  <text x="360" y="235" class="label-accent">S_{ε_2}(a_2, 0) ∩ Y = (a_2 − ε_2, a_2 + ε_2)</text>
-  <text x="310" y="180" class="label-accent">a_2 − ε_2</text>
-  <text x="410" y="180" class="label-accent">a_2 + ε_2</text>
+  <!-- Labels for the intersection endpoints -->
+  <text x="310" y="180" class="fig-tick" text-anchor="middle">a_2 − ε_2</text>
+  <text x="410" y="180" class="fig-tick" text-anchor="middle">a_2 + ε_2</text>
 </svg>

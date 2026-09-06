@@ -39,3 +39,17 @@ None. The arguments, lemmas, and proofs are completely clear and self-contained.
 1. *Finer and coarser topologies* — defines the terminology of finer/stronger and coarser/weaker topologies associated with the containment $\tau_1 \subseteq \tau_2$.
 2. *Generalization: Hyperplane subspaces in Euclidean space* — explains how the coordinate hyperplane embedding $\mathbb{R}^2 \hookrightarrow \mathbb{R}^n$ inherits the Euclidean topology by identical reasoning.
 3. *Basic rectangles versus general open sets* — explains why general open sets in $X \times Y$ (such as open circular discs in $\mathbb{R}^2$) are not single Cartesian products $U \times V$, but rather unions of such rectangles.
+
+## Verification rhythm retrofit
+- **Obligation statements restored (3):**
+  - Lemma 5.1: *"So let us prove this. Our aim... a subset of X which is open in tau one... we will show that U is open in tau two"* [`build/tmp/lecture-05-formatted.txt:35-38`].
+  - Proposition 5.4: *"We want to show S is equal to tau Y. And by the corollary, it is enough to show that B sub Y is equal to C"* [`build/tmp/lecture-05-formatted.txt:86-87`].
+  - Lemma 5.5: *"Recall the two conditions we needed to check were the following: A, when we take the union of all W in B, then we get the entire set... and the second condition is, suppose W1 and W2 are in B, and x is an element in the intersection. Then there is a W in B such that x is in W, and W is contained in W1 intersection W2... So let's just check that these two conditions are gonna be satisfied"* [`build/tmp/lecture-05-formatted.txt:149-157`].
+- **Method signposting restored (2):**
+  - Proposition 5.4 basis reduction: *"We want to show that S is equal to tau sub Y, and therefore, we will apply this corollary. So let us check that B sub Y is indeed equal to C"* [`build/tmp/lecture-05-formatted.txt:89-91`].
+  - Proposition 5.4 case split: *"There are only two possibilities... either intersected Y is the empty set or S epsilon a,b intersected with Y is exactly B epsilon a"* [`build/tmp/lecture-05-formatted.txt:101-104`].
+- **Closing declarations restored (4):**
+  - Lemma 5.1: *"Therefore, we have proved that given any U in tau one, it is in tau two. This implies that tau one is contained in tau two, which completes the proof of the lemma"* [`build/tmp/lecture-05-formatted.txt:53-55`].
+  - Proposition 5.4: *"So therefore, we have proved both inclusions, which implies that both these bases are equal, which implies that the subspace topology is equal to the standard topology on R"* [`build/tmp/lecture-05-formatted.txt:116-117`].
+  - Lemma 5.5 Condition (A): *"So this proves A. This proves that A is indeed true"* [`build/tmp/lecture-05-formatted.txt:164-165`].
+  - Lemma 5.5 Condition (B) and overall: *"So this proves that B satisfies the two conditions to generate a topology... this completes the proof of the lemma"* [`build/tmp/lecture-05-formatted.txt:189-193`].

@@ -1,0 +1,29 @@
+<svg viewBox="0 0 640 260" role="img" aria-labelledby="t-proj"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="t-proj">Central projection from point P on hyperplane H prime to hyperplane H</title>
+
+  <!-- Hyperplane H' (x_n = 1) -->
+  <line x1="60" y1="70" x2="520" y2="70" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="6 4" />
+  <text x="535" y="74" class="fig-tick">H′</text>
+
+  <!-- Hyperplane H (x_n = 0) -->
+  <line x1="60" y1="190" x2="520" y2="190" class="fig-axis" />
+  <text x="535" y="194" class="fig-label">H</text>
+
+  <!-- Point P on H' -->
+  <circle cx="260" cy="70" r="4.5" fill="var(--ink)" />
+  <text x="250" y="55" class="fig-label" text-anchor="middle">P</text>
+
+  <!-- Ray from P through x to Q -->
+  <line x1="260" y1="70" x2="452" y2="190" stroke="var(--accent)" stroke-width="1.8" />
+  <line x1="452" y1="190" x2="484" y2="210" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3" />
+  <line x1="260" y1="70" x2="228" y2="50" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3" />
+
+  <!-- Point x -->
+  <circle cx="340" cy="120" r="4" fill="var(--ink)" />
+  <text x="355" y="118" class="fig-label">x</text>
+
+  <!-- Point Q = phi(x) on H (Focal) -->
+  <circle cx="452" cy="190" r="4.5" fill="var(--accent)" />
+  <text x="452" y="215" class="fig-focus" text-anchor="middle">Q = φ(x)</text>
+</svg>

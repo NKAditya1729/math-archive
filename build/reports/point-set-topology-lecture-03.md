@@ -47,3 +47,19 @@ None. The arguments and exercises are fully recoverable from the transcript and 
 2. *The same topology has many descriptions* — emphasizes that different geometric local shapes (squares vs balls) generate the exact same topology.
 3. *Openness is a relative property* — cautions that being an open set is relative to the choice of topology on $X$, never an intrinsic property of the subset.
 4. *One condition for a basis, not two* — explains why a subcollection of an already given topology requires only the local witness condition, distinguishing it from the two generating conditions for an abstract collection in Lecture 4.
+
+## Verification rhythm retrofit
+- **Obligation statements restored (4):**
+  - Example 5, Condition (T1): *"The first condition is, phi and R2 should be in tau"* [`build/tmp/lecture-03-formatted.txt:10`].
+  - Example 5, Condition (T2): *"The second condition requires that if we take finitely many elements in tau, then their intersection, then the intersection U_i is in tau"* [`build/tmp/lecture-03-formatted.txt:18`].
+  - Example 5, Condition (T3): *"Condition three was given a set I and for each I in I an element U_i in tau. And then we need to check that the union U_i is also in tau. We need to check that the union satisfies this property star"* [`build/tmp/lecture-03-formatted.txt:32-35`].
+  - Basis Example 1 ($\mathbb{R}$): *"First of all, we claim that every interval A, B is open in the standard topology on R... that is every interval A, B is in tau... And we want to check that B satisfies this condition"* [`build/tmp/lecture-03-formatted.txt:125-127, 142`].
+- **Method signposting restored (3):**
+  - Example 5 opening: *"So let us check that tau satisfies the conditions defining a topology"* [`build/tmp/lecture-03-formatted.txt:9`].
+  - Example 5, Condition (T2): *"And the same proof as in R"* [`build/tmp/lecture-03-formatted.txt:20`].
+  - Basis Examples 2 & 3: *"This can be checked in the same way that we checked for R"* [`build/tmp/lecture-03-formatted.txt:159, 160`].
+- **Closing declarations restored (4):**
+  - Example 5, Condition (T1): *"So obviously the first condition is satisfied"* [`build/tmp/lecture-03-formatted.txt:16`].
+  - Example 5, Condition (T2): *"Thus the intersection satisfies this property star... therefore, thus the intersection U_i is in tau. So therefore, tau satisfies condition two"* [`build/tmp/lecture-03-formatted.txt:29-31`].
+  - Example 5, Condition (T3): *"Thus, the union satisfies property star, and so is in tau. So this shows that tau also satisfies the third condition to define a topology"* [`build/tmp/lecture-03-formatted.txt:40-41`].
+  - Basis Example 1 ($\mathbb{R}$): *"The conclusion is that thus B is indeed a subset of tau... So this shows that B is a basis for tau"* [`build/tmp/lecture-03-formatted.txt:140, 155`].

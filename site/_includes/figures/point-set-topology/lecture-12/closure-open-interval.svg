@@ -1,0 +1,31 @@
+<svg viewBox="0 0 680 240" role="img" aria-labelledby="t-int-cl"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="t-int-cl">The closure of the open interval (0,1) is the closed interval [0,1]</title>
+
+  <!-- Number line -->
+  <line x1="40" y1="120" x2="640" y2="120" class="fig-axis" />
+  <text x="630" y="140" class="fig-tick">ℝ</text>
+
+  <!-- Interval A = (0, 1) (Focal) -->
+  <line x1="240" y1="120" x2="440" y2="120" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" />
+  <!-- Open endpoints -->
+  <circle cx="240" cy="120" r="4.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2" />
+  <circle cx="440" cy="120" r="4.5" fill="var(--paper)" stroke="var(--accent)" stroke-width="2" />
+  <text x="240" y="145" class="fig-label" text-anchor="middle">0</text>
+  <text x="440" y="145" class="fig-label" text-anchor="middle">1</text>
+  <text x="340" y="105" class="fig-focus" text-anchor="middle">A = (0, 1)</text>
+
+  <!-- Exterior point x < 0 -->
+  <circle cx="120" cy="120" r="3.5" fill="var(--ink)" />
+  <text x="120" y="145" class="fig-label" text-anchor="middle">x</text>
+  <line x1="80" y1="120" x2="160" y2="120" stroke="var(--flag)" stroke-width="2" stroke-dasharray="3 2" />
+  <text x="120" y="95" class="fig-fail" text-anchor="middle">B_ε(x) ∩ A = ∅</text>
+
+  <!-- Boundary point 0 meets A -->
+  <line x1="200" y1="120" x2="280" y2="120" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3" />
+  <text x="240" y="180" class="fig-tick" text-anchor="middle">0 ∈ cl(A)</text>
+
+  <!-- Boundary point 1 meets A -->
+  <line x1="400" y1="120" x2="480" y2="120" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3" />
+  <text x="440" y="180" class="fig-tick" text-anchor="middle">1 ∈ cl(A)</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 170" width="100%" height="auto">
+  <!-- Number line -->
+  <line x1="40" y1="95" x2="420" y2="95" class="fig-axis" stroke-width="1.5" />
+
+  <!-- Rays -->
+  <line x1="60" y1="95" x2="224" y2="95" class="fig-tick" stroke="var(--ink)" stroke-width="2" />
+  <line x1="236" y1="95" x2="400" y2="95" class="fig-tick" stroke="var(--ink)" stroke-width="2" />
+
+  <!-- Points a, b, c -->
+  <circle cx="130" cy="95" r="3.5" class="fig-label" />
+  <circle cx="330" cy="95" r="3.5" class="fig-label" />
+  <circle cx="230" cy="95" r="4" fill="var(--bg)" stroke="var(--flag)" stroke-width="2" />
+
+  <!-- Labels -->
+  <text x="130" y="122" class="fig-label" text-anchor="middle">a ∈ ℚ</text>
+  <text x="230" y="75" class="fig-fail" text-anchor="middle">c ∉ ℚ</text>
+  <text x="330" y="122" class="fig-label" text-anchor="middle">b ∈ ℚ</text>
+
+  <text x="90" y="75" class="fig-tick" text-anchor="middle">(-∞, c)</text>
+  <text x="370" y="75" class="fig-tick" text-anchor="middle">(c, ∞)</text>
+</svg>

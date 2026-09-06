@@ -1,0 +1,35 @@
+<svg viewBox="0 0 660 260" role="img" aria-labelledby="t-disc-cl"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="t-disc-cl">The closure of the open unit disc is the closed unit disc</title>
+
+  <!-- Left: Open disc A -->
+  <g transform="translate(20, 20)">
+    <line x1="20" y1="110" x2="240" y2="110" class="fig-axis" />
+    <line x1="130" y1="210" x2="130" y2="10" class="fig-axis" />
+    <circle cx="130" cy="110" r="70" class="fig-region" stroke-dasharray="4 4" />
+    <text x="130" y="115" class="fig-label" text-anchor="middle">A</text>
+    <text x="130" y="235" class="fig-caption-inline" text-anchor="middle">Open disc</text>
+
+    <!-- Exterior point with disjoint square -->
+    <rect x="180" y="160" width="30" height="30" class="fig-region-fail" />
+    <circle cx="195" cy="175" r="2.5" fill="var(--ink)" />
+    <text x="215" y="200" class="fig-fail">S_ε ∩ A = ∅</text>
+  </g>
+
+  <!-- Right: Closure cl(A) = closed disc (Focal) -->
+  <g transform="translate(360, 20)">
+    <line x1="20" y1="110" x2="240" y2="110" class="fig-axis" />
+    <line x1="130" y1="210" x2="130" y2="10" class="fig-axis" />
+    <!-- Solid boundary circle -->
+    <circle cx="130" cy="110" r="70" class="fig-region" />
+    <circle cx="130" cy="110" r="70" stroke="var(--accent)" stroke-width="2.5" fill="none" />
+
+    <text x="130" y="115" class="fig-focus" text-anchor="middle">cl(A)</text>
+    <text x="130" y="235" class="fig-caption-inline" text-anchor="middle">Closed disc</text>
+
+    <!-- Boundary point: square always meets A -->
+    <rect x="165" y="46" width="30" height="30" fill="var(--accent)" fill-opacity="0.25" stroke="var(--accent)" stroke-width="1.5" />
+    <circle cx="180" cy="61" r="3" fill="var(--accent)" />
+    <text x="200" y="65" class="fig-tick">S_ε ∩ A ≠ ∅</text>
+  </g>
+</svg>

@@ -111,15 +111,17 @@ Then $i : (Y, \tau_Y) \to (X, \tau_X)$ is continuous.
 {% include block.html type="proposition" title="Proposition 7.2 (Continuity of the Subspace Inclusion)" content=prop_incl_cont %}
 
 {% capture prop_incl_proof %}
-Let $U \subseteq X$ be an open subset in the ambient space ($U \in \tau_X$). We must show that $i^{-1}(U)$ is open in $Y$ with respect to the subspace topology $\tau_Y$.
+What do we have to do to prove that $i$ is continuous? By definition, we must show that for any open subset $U \subseteq X$ ($U \in \tau_X$), the preimage $i^{-1}(U)$ is open in $\tau_Y$.
 
-By definition of the preimage:
-$$i^{-1}(U) = \lbrace y \in Y \;:\; i(y) \in U \rbrace = \lbrace y \in Y \;:\; y \in U \rbrace = U \cap Y.$$
+What is $i^{-1}(U)$? By definition of the preimage:
+$$i^{-1}(U) = \lbrace y \in Y \;:\; i(y) \in U \rbrace.$$
+But $i$ is simply the inclusion map, so this is the same as saying that $y \in U$:
+$$i^{-1}(U) = \lbrace y \in Y \;:\; y \in U \rbrace = U \cap Y.$$
 By [Definition 4.3 in Lecture 4]({{ site.baseurl }}/point-set-topology/lecture-04/#definition-4-3-subspace-topology), the subspace topology $\tau_Y$ consists precisely of all intersections of open sets in $X$ with $Y$:
 $$\tau_Y = \lbrace U \cap Y \;:\; U \in \tau_X \rbrace.$$
 Therefore, $i^{-1}(U) = U \cap Y \in \tau_Y$.
 
-Hence the preimage of every open set in $X$ is open in $Y$, so the inclusion map $i$ is continuous. $\blacksquare$
+So this shows that the inclusion map $i$ is continuous. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Proposition 7.2" content=prop_incl_proof %}
 
@@ -139,16 +141,15 @@ In other words, the subspace topology $\tau_Y$ is the **coarsest (smallest)** to
 {% include block.html type="proposition" title="Proposition 7.3 (Subspace Topology is the Coarsest Making Inclusion Continuous)" content=prop_subspace_min %}
 
 {% capture prop_subspace_min_proof %}
-Let $V \in \tau_Y$ be an arbitrary open set in the subspace topology.
-By definition of $\tau_Y$, there exists an open set $U \in \tau_X$ such that
-$$V = U \cap Y.$$
-As shown in Proposition 7.2, $U \cap Y = i^{-1}(U)$. Thus
-$$V = i^{-1}(U).$$
-Now we use our hypothesis: the inclusion map $i : (Y,\tau) \to (X,\tau_X)$ is given to be continuous. By Definition 7.1, the preimage of the open set $U \in \tau_X$ under $i$ must be open in the topology $\tau$ on $Y$:
-$$i^{-1}(U) \in \tau.$$
-Since $V = i^{-1}(U)$, this implies $V \in \tau$.
+We are given that $\tau$ is a topology on $Y$ such that the inclusion map $i : (Y,\tau) \to (X,\tau_X)$ is continuous, and we need to show that $\tau_Y \subseteq \tau$.
 
-Since $V \in \tau_Y$ was arbitrary, this establishes that $\tau_Y \subseteq \tau$. $\blacksquare$
+We start with any $V \in \tau_Y$. By definition of the subspace topology, there is an open set $U \in \tau_X$ such that
+$$V = U \cap Y.$$
+As we have seen, $U \cap Y$ is precisely equal to $i^{-1}(U)$, so $V = i^{-1}(U)$.
+
+Now, as $i : (Y,\tau) \to (X,\tau_X)$ is continuous, this implies that $i^{-1}(U)$ is open in $\tau$—that is, $i^{-1}(U) \in \tau$. But $i^{-1}(U) = V$, so this implies that $V \in \tau$.
+
+Thus we have proved that $\tau_Y \subseteq \tau$. In other words, the subspace topology on a subset $Y$ is the smallest topology which makes the inclusion map continuous. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Proposition 7.3" content=prop_subspace_min_proof %}
 
@@ -176,22 +177,23 @@ is continuous.
    alt="Product space with a vertical strip representing the preimage p_j^{-1}(U) projecting down onto the interval U in X_j." %}
 
 {% capture prop_proj_proof %}
-Let $U \subseteq X_j$ be an open subset ($U \in \tau_j$). We must show that $p_j^{-1}(U)$ is open in $\tau_{\text{prod}}$.
+What do we have to do to prove continuity? We have to take an open subset in $X_j$ and show that the inverse image of that open subset is open in the product topology.
 
-By definition of the preimage:
-$$p_j^{-1}(U) = \lbrace (x_i)_{i \in I} \in \prod_{i \in I} X_i \;:\; p_j\bigl((x_i)_{i \in I}\bigr) \in U \rbrace = \lbrace (x_i)_{i \in I} \;:\; x_j \in U \rbrace.$$
-In terms of Cartesian products, this can be written as
-$$p_j^{-1}(U) = \prod_{i \in I} U_i, \qquad \text{where } U_j = U, \text{ and } U_i = X_i \text{ for all } i \ne j.$$
+For this, let $U \subseteq X_j$ be an open subset ($U \in \tau_j$).
+
+What is $p_j^{-1}(U)$? It is a subset of the product $\prod_{i \in I} X_i$, consisting of those tuples $(x_i)_{i \in I}$ such that the $j$-th coordinate is in $U$:
+$$p_j^{-1}(U) = \lbrace (x_i)_{i \in I} \in \prod_{i \in I} X_i \;:\; x_j \in U \rbrace.$$
+So we can write $p_j^{-1}(U)$ as a product $\prod_{i \in I} U_i$, where $U_j = U$, and $U_i = X_i$ for all $i \ne j$.
+
 We examine whether this set belongs to the defining basis $\mathcal{B}_2$ of the product topology:
 1. For each coordinate $i$, $U_i$ is open in $X_i$: $U_j = U \in \tau_j$, and for $i \ne j$, $U_i = X_i \in \tau_i$.
-2. The set of coordinates where $U_i \ne X_i$ consists of at most the single index $j$:
-   $$\lbrace i \in I \;:\; U_i \ne X_i \rbrace \subseteq \lbrace j \rbrace,$$
-   which has cardinality at most $1$, and is therefore finite.
+2. The collection of indices for which $U_i \ne X_i$ contains only one element, which is $j$:
+   $$\lbrace i \in I \;:\; U_i \ne X_i \rbrace = \lbrace j \rbrace,$$
+   which has finite cardinality.
 
-Thus $p_j^{-1}(U)$ is a basic open cylinder in $\mathcal{B}_2$.
-Since $\mathcal{B}_2 \subseteq \tau_{\text{prod}}$, it follows that $p_j^{-1}(U) \in \tau_{\text{prod}}$.
+Therefore, this preimage $p_j^{-1}(U)$ belongs to $\mathcal{B}_2$. And since $\mathcal{B}_2 \subseteq \tau_{\text{prod}}$, this implies that $p_j^{-1}(U) \in \tau_{\text{prod}}$.
 
-Therefore, each coordinate projection $p_j$ is continuous. $\blacksquare$
+Thus the projection maps $p_j$ are continuous. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Proposition 7.4" content=prop_proj_proof %}
 
@@ -213,7 +215,9 @@ In other words, the product topology $\tau_{\text{prod}}$ is the **coarsest (sma
 {% include block.html type="proposition" title="Proposition 7.5 (Product Topology is the Coarsest Making All Projections Continuous)" content=prop_prod_min %}
 
 {% capture prop_prod_min_proof %}
-By [Lemma 5.1 (The Comparison Lemma)]({{ site.baseurl }}/point-set-topology/lecture-05/#lemma-5-1-the-comparison-lemma), to prove $\tau_{\text{prod}} \subseteq \tau$, it is sufficient to show that the defining basis $\mathcal{B}_2$ of $\tau_{\text{prod}}$ is contained in $\tau$:
+Our aim is to show that the product topology is contained in our topology $\tau$: we need to show that $\tau_{\text{prod}} \subseteq \tau$.
+
+Using the earlier result we had proved ([Lemma 5.1, the Comparison Lemma]({{ site.baseurl }}/point-set-topology/lecture-05/#lemma-5-1-the-comparison-lemma)), it suffices to show that the defining basis $\mathcal{B}_2$ for the product topology is contained in $\tau$:
 $$\mathcal{B}_2 \subseteq \tau.$$
 
 Let $W \in \mathcal{B}_2$ be an arbitrary basic open cylinder:
@@ -221,19 +225,15 @@ $$W = \prod_{i \in I} U_i, \qquad U_i \in \tau_i \text{ for all } i \in I,$$
 where the set of restricted indices $J = \lbrace i \in I : U_i \ne X_i \rbrace$ is finite.
 
 We express $W$ in terms of preimages under the coordinate projections:
-
-> **Key Identity.** For any basic cylinder $W = \prod_{i \in I} U_i \in \mathcal{B}_2$ with finite restricted index set $J$:
-> $$\prod_{i \in I} U_i = \bigcap_{j \in J} p_j^{-1}(U_j).$$
-
-*(Proof of Key Identity: A point $x = (x_i)_{i \in I}$ belongs to $\prod_{i \in I} U_i$ if and only if $x_i \in U_i$ for all $i \in I$. When $i \notin J$, $U_i = X_i$, so $x_i \in X_i$ is automatically satisfied. Thus $x \in \prod U_i$ if and only if $x_j \in U_j$ for all $j \in J$, which is equivalent to $x \in p_j^{-1}(U_j)$ for all $j \in J$, that is, $x \in \bigcap_{j \in J} p_j^{-1}(U_j)$).*
-
+$$\prod_{i \in I} U_i = \bigcap_{j \in J} p_j^{-1}(U_j).$$
 Now inspect this expression in the topology $\tau$:
-- For each $j \in J$, $U_j \in \tau_j$. Since the projection $p_j$ is continuous with respect to $\tau$, the preimage $p_j^{-1}(U_j)$ belongs to $\tau$.
-- The set $J$ is **finite**. Since $\tau$ is a topology, it satisfies axiom (T2): finite intersections of open sets are open. Therefore,
+- For each $j \in J$, $U_j \in \tau_j$. Since the projection map $p_j$ is given to be continuous with respect to $\tau$, the preimage $p_j^{-1}(U_j)$ is open in $\tau$ ($p_j^{-1}(U_j) \in \tau$).
+- The index set $J$ is **finite**. Since $\tau$ is a topology and finite intersections of open sets are open by condition (T2), the finite intersection belongs to $\tau$:
   $$W = \bigcap_{j \in J} p_j^{-1}(U_j) \in \tau.$$
 
-This proves that every basic cylinder $W \in \mathcal{B}_2$ belongs to $\tau$, so $\mathcal{B}_2 \subseteq \tau$.
-By the Comparison Lemma, $\tau_{\text{prod}} \subseteq \tau$. $\blacksquare$
+This implies that $\mathcal{B}_2 \subseteq \tau$. This implies that $\tau_{\text{prod}} \subseteq \tau$.
+
+Therefore, in view of the above, we see that this product topology is the smallest topology we can put on $\prod_{i \in I} X_i$ for which all the projection maps are continuous. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Proposition 7.5" content=prop_prod_min_proof %}
 

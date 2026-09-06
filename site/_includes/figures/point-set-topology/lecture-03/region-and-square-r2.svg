@@ -1,38 +1,21 @@
 <svg viewBox="0 0 640 320" role="img" aria-labelledby="fig-region-square-title"
      xmlns="http://www.w3.org/2000/svg" class="fig">
   <title id="fig-region-square-title">A region U_i in the plane satisfying property (*), showing an interior point (a,b) surrounded by an open square S_{epsilon_i}(a,b) that fits entirely inside U_i.</title>
-  <style>
-    .blob { stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 6 4; fill: var(--accent); fill-opacity: 0.10; }
-    .square-box { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 3; fill: var(--accent); fill-opacity: 0.22; }
-    .dim-line { stroke: var(--ink-soft); stroke-width: 1; stroke-dasharray: 2 2; }
-    .label { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; fill: var(--ink); text-anchor: middle; }
-    .label-italic { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--ink); text-anchor: middle; }
-    .label-accent { font-family: 'Source Serif 4', Georgia, serif; font-size: 15px; font-style: italic; fill: var(--accent); font-weight: 600; text-anchor: middle; }
-    .label-soft { font-family: 'Source Serif 4', Georgia, serif; font-size: 13px; font-style: italic; fill: var(--ink-soft); }
-  </style>
-
-  <!-- Background -->
-  <rect width="640" height="320" fill="var(--paper)" />
 
   <!-- Organic region U_i in R^2 -->
-  <path d="M 140 160 C 140 70, 240 50, 360 60 C 480 70, 520 120, 510 200 C 500 270, 390 280, 280 270 C 180 260, 140 220, 140 160 Z" class="blob" />
+  <path d="M 140 160 C 140 70, 240 50, 360 60 C 480 70, 520 120, 510 200 C 500 270, 390 280, 280 270 C 180 260, 140 220, 140 160 Z" class="fig-region" stroke-dasharray="6 4" />
 
-  <!-- Label for U_i -->
-  <text x="470" y="90" class="label-accent" style="font-size: 18px;">U_i ⊆ ℝ²</text>
+  <!-- Label for U_i placed safely inside blob (Focal) -->
+  <text x="210" y="110" class="fig-focus">U_i</text>
 
-  <!-- Center point (a,b) inside U_i at (310, 165) -->
   <!-- Square S_{eps_i}(a,b) with side length 80 px (eps_i = 40 px) from x=270 to 350, y=125 to 205 -->
-  <rect x="270" y="125" width="80" height="80" class="square-box" />
+  <rect x="270" y="125" width="80" height="80" fill="var(--accent)" fill-opacity="0.25" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3" />
 
   <!-- Center point (a,b) -->
   <circle cx="310" cy="165" r="4.5" fill="var(--ink)" />
-  <text x="310" y="190" class="label-italic" style="font-weight: bold;">(a,b)</text>
+  <text x="310" y="185" class="fig-label" text-anchor="middle">(a, b)</text>
 
   <!-- Callout for square -->
-  <path d="M 350 140 L 410 115 L 450 115" fill="none" stroke="var(--accent)" stroke-width="1.2" />
-  <text x="455" y="119" class="label-accent" text-anchor="start">S_{ε_i}(a,b) ⊆ U_i</text>
-  <text x="455" y="137" class="label-soft" text-anchor="start">breathing room around (a,b)</text>
-
-  <!-- Annotation explaining property (*) -->
-  <text x="320" y="300" class="label-soft" text-anchor="middle">Every point (a,b) in U_i admits an open square S_{ε_i}(a,b) contained entirely within U_i.</text>
+  <path d="M 350 140 L 410 115 L 440 115" fill="none" stroke="var(--accent)" stroke-width="1.2" />
+  <text x="445" y="119" class="fig-tick">S_{ε_i}(a, b) ⊆ U_i</text>
 </svg>

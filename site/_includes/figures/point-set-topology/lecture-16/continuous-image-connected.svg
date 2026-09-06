@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" width="100%" height="auto">
+  <defs>
+    <marker id="arr16" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink)" />
+    </marker>
+  </defs>
+
+  <!-- Space X -->
+  <path d="M 40 120 C 40 60, 90 45, 150 55 C 190 65, 190 175, 150 195 C 100 210, 40 180, 40 120 Z" class="fig-region" stroke-width="1.5" />
+  <line x1="45" y1="120" x2="185" y2="120" class="fig-tick" stroke-dasharray="4,3" stroke-width="1" />
+
+  <!-- Preimage labels -->
+  <text x="60" y="65" class="fig-focus" text-anchor="middle">X</text>
+  <text x="115" y="95" class="fig-tick" text-anchor="middle">f⁻¹(U)</text>
+  <text x="115" y="155" class="fig-tick" text-anchor="middle">f⁻¹(V)</text>
+
+  <!-- Mapping arrow f -->
+  <line x1="195" y1="120" x2="245" y2="120" class="fig-axis" stroke-width="1.5" marker-end="url(#arr16)" />
+  <text x="220" y="108" class="fig-label" text-anchor="middle">f</text>
+
+  <!-- Space Y -->
+  <path d="M 265 120 C 265 55, 330 40, 395 50 C 435 60, 435 185, 395 200 C 330 215, 265 185, 265 120 Z" class="fig-region" fill-opacity="0.05" stroke-dasharray="3,3" stroke-width="1" />
+
+  <!-- Subsets U and V meeting f(X) -->
+  <path d="M 290 85 C 290 65, 330 60, 370 65 C 385 75, 385 105, 370 110 C 330 115, 290 105, 290 85 Z" class="fig-region" stroke-width="1.2" />
+  <path d="M 290 155 C 290 135, 330 130, 370 135 C 385 145, 385 175, 370 180 C 330 185, 290 175, 290 155 Z" class="fig-region" stroke-width="1.2" />
+
+  <!-- Labels -->
+  <text x="415" y="65" class="fig-label" text-anchor="middle">Y</text>
+  <text x="330" y="90" class="fig-tick" text-anchor="middle">U</text>
+  <text x="330" y="160" class="fig-tick" text-anchor="middle">V</text>
+  <text x="400" y="125" class="fig-label" text-anchor="start">f(X)</text>
+</svg>

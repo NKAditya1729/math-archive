@@ -38,3 +38,15 @@ None. The arguments and proofs are completely clear and self-contained.
 ## Supplements
 1 supplement, approximately 10% of page length:
 1. *Why preimages rather than forward images?* — explains why continuity is defined via preimages rather than forward open images, giving counterexamples of constant functions and $x \mapsto x^2$.
+
+## Verification rhythm retrofit
+- **Obligation statements restored (4):**
+  - Proposition 7.2: *"What do we have to do to prove that i is continuous? ... What is i inverse U? ... But i is simply the inclusion"* [`build/tmp/lecture-07-formatted.txt:51-53`].
+  - Proposition 7.3: *"We are given that tau is a topology on Y such that the inclusion map is continuous, and we need to show that tau sub Y is contained in tau"* [`build/tmp/lecture-07-formatted.txt:72`].
+  - Proposition 7.4: *"What do we have to do to prove continuity? We have to take an open subset in X_j and show that the inverse image of that open subset is open in the product topology"* [`build/tmp/lecture-07-formatted.txt:116-117`].
+  - Proposition 7.5: *"Our aim is to show that... we need to show that the product topology is contained in our topology tau... it suffices to show that this basis B for the product topology is contained in tau"* [`build/tmp/lecture-07-formatted.txt:175-177`].
+- **Closing declarations restored (4):**
+  - Proposition 7.2: *"So this shows that i is continuous. This inclusion map is continuous"* [`build/tmp/lecture-07-formatted.txt:55-56`].
+  - Proposition 7.3: *"So thus we have proved that tau sub Y is contained in tau... the subspace topology on a subset Y is the smallest topology which makes the inclusion map continuous"* [`build/tmp/lecture-07-formatted.txt:94-96`].
+  - Proposition 7.4: *"Therefore, this implies that thus the projection maps are continuous"* [`build/tmp/lecture-07-formatted.txt:148`].
+  - Proposition 7.5: *"So this implies that B is contained in tau. This implies that tau product is contained in tau. So therefore, in view of the above, we see that this product topology is the smallest topology... for which all the projection maps are continuous"* [`build/tmp/lecture-07-formatted.txt:188-191`].

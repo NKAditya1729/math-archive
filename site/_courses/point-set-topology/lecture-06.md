@@ -180,7 +180,7 @@ We apply [Corollary 5.2 in Lecture 5]({{ site.baseurl }}/point-set-topology/lect
    Since $S_\varepsilon(x) \in \mathcal{B}_1 \subseteq S$, this shows that around every point of $R$ there is a basic open set of $S$ contained in $R$. Thus $R$ satisfies property $(\ast)$ on $\mathbb{R}^n$, so $R \in S$.
    Hence $\mathcal{B}_2 \subseteq S$. By the Comparison Lemma, $\tau \subseteq S$.
 
-Combining both inclusions gives $S = \tau$. $\blacksquare$
+Combining both inclusions gives $S = \tau$. In other words, on $\mathbb{R}^n$ we have two topologies—the standard topology and the product topology—and both these topologies agree. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Proposition 6.4" content=prop_rn_proof %}
 
@@ -225,16 +225,19 @@ Then:
 {% include block.html type="proposition" title="Proposition 6.3 (Transporting a Topology along a Bijection)" content=prop_transport %}
 
 {% capture prop_transport_proof %}
-We check the three topology axioms for $\tau_{(Y,\varphi)}$ using the properties of set preimages:
-- **(T1):** Since $\varnothing, X \in \tau_X$, we have $\varphi^{-1}(\varnothing) = \varnothing \in \tau_{(Y,\varphi)}$ and $\varphi^{-1}(X) = Y \in \tau_{(Y,\varphi)}$ (because $\varphi$ is surjective).
-- **(T2):** If $V_1, \dots, V_k \in \tau_{(Y,\varphi)}$, write $V_j = \varphi^{-1}(U_j)$ with $U_j \in \tau_X$. Since preimages preserve intersections:
-  $$\bigcap_{j=1}^k V_j = \bigcap_{j=1}^k \varphi^{-1}(U_j) = \varphi^{-1}\left(\bigcap_{j=1}^k U_j\right).$$
-  Since $\tau_X$ satisfies (T2), $\bigcap_{j=1}^k U_j \in \tau_X$, so the intersection belongs to $\tau_{(Y,\varphi)}$.
-- **(T3):** If $\lbrace V_j \rbrace_{j \in J} \subseteq \tau_{(Y,\varphi)}$, write $V_j = \varphi^{-1}(U_j)$. Preimages preserve arbitrary unions:
-  $$\bigcup_{j \in J} V_j = \bigcup_{j \in J} \varphi^{-1}(U_j) = \varphi^{-1}\left(\bigcup_{j \in J} U_j\right).$$
-  Since $\tau_X$ satisfies (T3), $\bigcup_{j \in J} U_j \in \tau_X$, so the union belongs to $\tau_{(Y,\varphi)}$.
+To check that $\tau_{(Y,\varphi)}$ defines a topology on $Y$, we verify the three defining conditions:
 
-Therefore, $\tau_{(Y,\varphi)}$ is a topology on $Y$. $\blacksquare$
+**(T1).** The first condition is satisfied: since $\varnothing, X \in \tau_X$, we have $\varphi^{-1}(\varnothing) = \varnothing \in \tau_{(Y,\varphi)}$ and $\varphi^{-1}(X) = Y \in \tau_{(Y,\varphi)}$ (because $\varphi$ is surjective). So the first condition holds. ✓
+
+**(T2).** For the second condition, finite intersections of elements in $\tau_{(Y,\varphi)}$ are in $\tau_{(Y,\varphi)}$: let $V_1, \dots, V_k \in \tau_{(Y,\varphi)}$, where each $V_j = \varphi^{-1}(U_j)$ with $U_j \in \tau_X$. Since preimages preserve intersections:
+$$\bigcap_{j=1}^k V_j = \bigcap_{j=1}^k \varphi^{-1}(U_j) = \varphi^{-1}\left(\bigcap_{j=1}^k U_j\right).$$
+Since $\tau_X$ satisfies (T2), $\bigcap_{j=1}^k U_j \in \tau_X$, so this intersection belongs to $\tau_{(Y,\varphi)}$. Therefore, the second condition is satisfied. ✓
+
+**(T3).** And for the third condition, arbitrary unions of open sets: let $\lbrace V_j \rbrace_{j \in J} \subseteq \tau_{(Y,\varphi)}$ with $V_j = \varphi^{-1}(U_j)$ for $U_j \in \tau_X$. Since preimages preserve arbitrary unions:
+$$\bigcup_{j \in J} V_j = \bigcup_{j \in J} \varphi^{-1}(U_j) = \varphi^{-1}\left(\bigcup_{j \in J} U_j\right).$$
+Since $\tau_X$ is a topology and arbitrary unions of open sets are open by condition (T3), $\bigcup_{j \in J} U_j \in \tau_X$. Therefore, the union belongs to $\tau_{(Y,\varphi)}$. So the third condition is also satisfied. ✓
+
+Thus $\tau_{(Y,\varphi)}$ defines a topology on $Y$. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Proposition 6.3" content=prop_transport_proof %}
 

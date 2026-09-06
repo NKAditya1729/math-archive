@@ -42,3 +42,16 @@ None. The mathematics delivered by the lecturer is fully correct and rigorous.
 1. *The two-way characterization* — clarifies the full equivalence $f \text{ is continuous} \iff \forall V \in \mathcal{B},\; f^{-1}(V) \in \tau_X$ and its practical utility.
 2. *The need for shrinking $\varepsilon'$* — explains why the multiplication estimate requires the initial bound $\delta \le 1$ to linearize $\delta^2$, and why assuming $\varepsilon' \le 1$ entails no loss of generality.
 3. *Reconstructed board algebra for multiplication* — provides the step-by-step 4-line derivation connecting $(x'-x)y' + x(y'-y)$ to the bound $\delta(|x|+|y|+1)$ via the triangle inequality and reverse triangle inequality.
+
+## Verification rhythm retrofit
+- **Obligation statements restored (4):**
+  - Lemma 8.1: *"And we want to check that f is continuous... So let U contained in Y be an open set"* [`build/tmp/lecture-08-formatted.txt:6, 11`].
+  - Theorem 8.2 (Addition): *"By the above lemma, so it suffices to show that A inverse of B epsilon z... are basic open sets, and we have to show that these, the inverse images of these, are open"* [`build/tmp/lecture-08-formatted.txt:31-33`].
+  - Theorem 8.2 (Multiplication): *"So by the above lemma, we need to show that M inverse of B epsilon z is open in R2"* [`build/tmp/lecture-08-formatted.txt:67-68`].
+  - Theorem 8.4 (Inversion): *"Uh, and the claim is this map is continuous. So let us prove this claim... So thus it suffices to check that f inverse of B epsilon x is open when epsilon is strictly less than mod x"* [`build/tmp/lecture-08-formatted.txt:124-125, 134-135`].
+- **Closing declarations restored (4):**
+  - Lemma 8.1: *"And since this happens for every open set U, thus f is continuous"* [`build/tmp/lecture-08-formatted.txt:18`].
+  - Theorem 8.2 (Addition): *"So therefore, by the definition of the standard topology on R two, thus A inverse of B epsilon Z is open in R two. So this shows that the addition map is continuous"* [`build/tmp/lecture-08-formatted.txt:64-65`].
+  - Theorem 8.2 (Multiplication): *"So therefore, given any point xy... This implies that M inverse of B epsilon z is open. So this shows that the multiplication map is also continuous. So this completes the proof of the theorem"* [`build/tmp/lecture-08-formatted.txt:112-115`].
+  - Theorem 8.4 (Inversion): *"So this proves that f is continuous"* [`build/tmp/lecture-08-formatted.txt:142`].
+

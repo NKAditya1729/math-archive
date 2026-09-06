@@ -54,7 +54,8 @@ what is where and what relation holds — not the visual appearance.
 
 ## Drawing conventions
 
-Use the page tokens by name so the figure re-themes automatically:
+Every figure uses shared classes from `site/assets/css/site.css`. **Never embed an
+inline `<style>` block** inside an SVG.
 
 ```svg
 <svg viewBox="0 0 640 220" role="img" aria-labelledby="t1"
@@ -64,33 +65,29 @@ Use the page tokens by name so the figure re-themes automatically:
 </svg>
 ```
 
-```css
-.fig { --stroke: var(--ink); --hl: var(--accent); --fail: var(--flag); }
-```
+### Shared CSS classes
 
-| Element | Convention |
-|---|---|
-| Axes, number lines | 1.5px `--ink`, arrowheads only if the line is unbounded |
-| The set under discussion | 2px `--accent` outline |
-| Region interior | `--accent` at 10% opacity |
-| Open boundary | dashed, 4 2 |
-| Closed boundary | solid |
-| Endpoint excluded | open circle, white fill, `--accent` stroke |
-| Endpoint included | filled disc |
-| The chosen neighbourhood | 2px `--accent`, 18% fill |
-| A failure (nothing works here) | `--flag`, dashed |
-| Labelled distance | thin line with end ticks, label above in italic |
-| Point labels | italic serif, offset up-right by 6px |
+| Class | Element / Purpose | Styling |
+|---|---|---|
+| `.fig-axis` | Axes, number lines, mapping arrows | 1.5px `--ink`, fill `none` |
+| `.fig-tick` | Axis ticks, projection dashes, tick labels | 1px `--ink-soft`, fill `none`; text in `--ink-soft` at 12px |
+| `.fig-label` | Standard mathematical text labels | `--ink`, 14px, italic serif, weight 400 |
+| `.fig-focus` | The single focal object of the figure | 2px `--accent` stroke, text in `--accent` (weight 600) |
+| `.fig-fail` | Failure cues (non-examples, escaping sets) | 2px `--flag`, dashed stroke; text in `--flag` |
+| `.fig-region` | Set or neighbourhood interior | `--accent` at 18% fill opacity, 2px `--accent` outline |
+| `.fig-region-fail`| Failing neighbourhood interior | `--flag` at 18% fill opacity, 2px dashed `--flag` outline |
+| `.fig-caption-inline`| Secondary inline annotations / notes | `--ink-soft`, 12px, upright sans serif |
 
-Open versus closed must be visually unmistakable. Half the content of this
-course is the difference between $(0,1)$ and $[0,1)$, and a beginner who
-cannot see which is which from the picture is being misled by it.
+### Color and typography hierarchy
 
-Text in SVG: 14px, `font-style: italic` for variables, `font-family: 'Source
-Serif 4', Georgia, serif` so labels match the body type. Do not attempt to
-render real LaTeX inside SVG — keep labels to single symbols and short
-expressions ($x$, $\varepsilon$, $a$, $1-x$, $U_i$, $S_\varepsilon(a,b)$).
-Anything longer belongs in the caption.
+- **Labels default to `--ink`** (`.fig-label`).
+- **Axis ticks and secondary annotations to `--ink-soft`** (`.fig-tick`, `.fig-caption-inline`).
+- **`--accent` is strictly reserved** for the single object the figure is about (`.fig-focus`, `.fig-region`).
+- **`--flag` is used only for mathematical failure** (`.fig-fail`, `.fig-region-fail`).
+- **Region fill-opacity is ~0.18** so regions read distinctly without overwhelming labels.
+- **At most ONE focal bold label per figure** (`class="fig-focus"`). Remove `font-weight: bold` / `600` from all secondary labels. Bold italic serif at 14px is illegible in clusters.
+- **Labels must be single symbols or short expressions** ($x$, $\varepsilon$, $a$, $1-x$, $U_i$, $S_\varepsilon(a,b)$). **Never embed multi-symbol formulas, set-builder definitions, or full sentences inside an SVG.** Formulas and explanations belong in the KaTeX caption.
+- **Use literal UTF-8 unicode** (`ℝ`, `×`, `φ`, `∈`, `⊆`, `∖`, `⇒`) rather than HTML entities (`&reals;`, `&times;`, etc.), which are invalid in XML. Never place double dashes `--` inside XML comments.
 
 Canvas: 640 wide for full-width figures, 320 for a pair set side by side.
 Height to suit. Always `viewBox`, never fixed `width`/`height` attributes —
@@ -237,6 +234,12 @@ duplicate it.
   rounded frame around the figure.
 - If a picture needs more than about eight labels, it is doing two jobs.
   Split it.
+- **Mandatory post-authoring text bounding-box check**: Every figure must be checked
+  by computing text bounding boxes from anchor, font size, and string length
+  against the `viewBox` boundaries (ensuring $x_{\min} \ge v_x$, $x_{\max} \le v_x + v_w$,
+  $y_{\min} \ge v_y$, $y_{\max} \le v_y + v_h$) and pairwise against other labels. Zero
+  viewBox clipping and zero pairwise text overlaps are permitted. Run
+  `python3 build/scratch/verify_figure.py <path-to-svg>` after authoring.
 
 ## Logging
 

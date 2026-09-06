@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 270" width="100%" height="auto">
+  <!-- Set A: open disc -->
+  <circle cx="170" cy="135" r="75" class="fig-region" stroke-dasharray="5,4" stroke-width="1.5" />
+
+  <!-- Boundary point x and balls -->
+  <circle cx="245" cy="135" r="45" class="fig-tick" fill="none" stroke-dasharray="3,3" stroke-width="1" />
+  <circle cx="245" cy="135" r="22" class="fig-tick" fill="none" stroke-dasharray="3,3" stroke-width="1" />
+
+  <!-- Exterior point y and disjoint ball -->
+  <circle cx="340" cy="75" r="25" class="fig-tick" fill="none" stroke-dasharray="3,3" stroke-width="1" />
+  <circle cx="340" cy="75" r="3.5" class="fig-label" />
+
+  <!-- Points x, x1, x2 -->
+  <circle cx="245" cy="135" r="4" class="fig-focus" />
+  <circle cx="215" cy="150" r="3" class="fig-tick" />
+  <circle cx="232" cy="142" r="3" class="fig-tick" />
+
+  <!-- Labels -->
+  <text x="145" y="138" class="fig-label" text-anchor="middle">A</text>
+  <text x="258" y="135" class="fig-focus" text-anchor="start">x</text>
+  <text x="206" y="154" class="fig-tick" text-anchor="end">x₁</text>
+  <text x="226" y="133" class="fig-tick" text-anchor="end">x₂</text>
+  <text x="340" y="62" class="fig-label" text-anchor="middle">y</text>
+  <text x="340" y="115" class="fig-tick" text-anchor="middle">B(y)</text>
+</svg>

@@ -577,8 +577,101 @@ figure.math-figure svg {
   margin: 0 auto;
   max-width: 100%;
   height: auto;
-  stroke: var(--accent);
+}
+
+.fig {
+  --stroke: var(--ink);
+  --hl: var(--accent);
+  --fail: var(--flag);
+}
+
+.fig text {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 14px;
+  fill: var(--ink);
+  stroke: none;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.fig text.fig-upright {
+  font-style: normal;
+}
+
+.fig-axis {
+  stroke: var(--ink);
+  stroke-width: 1.5;
   fill: none;
+}
+
+.fig-tick {
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+  fill: none;
+}
+
+text.fig-tick,
+.fig text.fig-tick {
+  fill: var(--ink-soft);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.fig-label {
+  fill: var(--ink);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.fig-focus {
+  stroke: var(--accent);
+  stroke-width: 2;
+  fill: none;
+}
+
+text.fig-focus,
+.fig text.fig-focus {
+  fill: var(--accent);
+  font-weight: 600;
+}
+
+.fig-fail {
+  stroke: var(--flag);
+  stroke-width: 2;
+  stroke-dasharray: 4 2;
+  fill: none;
+}
+
+text.fig-fail,
+.fig text.fig-fail {
+  fill: var(--flag);
+  font-weight: 400;
+}
+
+.fig-region {
+  fill: var(--accent);
+  fill-opacity: 0.18;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.fig-region-fail {
+  fill: var(--flag);
+  fill-opacity: 0.18;
+  stroke: var(--flag);
+  stroke-width: 2;
+  stroke-dasharray: 4 2;
+}
+
+.fig-caption-inline {
+  font-family: var(--sans);
+  font-size: 12px;
+  fill: var(--ink-soft);
+  font-style: normal;
+  font-weight: 400;
 }
 
 figcaption {

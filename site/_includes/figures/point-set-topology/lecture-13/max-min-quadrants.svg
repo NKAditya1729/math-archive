@@ -1,0 +1,28 @@
+<svg viewBox="0 0 640 260" role="img" aria-labelledby="t-maxmin"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="t-maxmin">The plane R^2 partitioned by the diagonal y = x into two closed pieces where max(x,y) and min(x,y) are continuous projections</title>
+
+  <!-- Region A: x >= y -->
+  <polygon points="200,230 400,30 540,30 540,230" fill="var(--accent)" fill-opacity="0.12" />
+
+  <!-- Region B: x <= y -->
+  <polygon points="200,230 400,30 60,30 60,230" fill="var(--ink-soft)" fill-opacity="0.06" />
+
+  <!-- Axes -->
+  <line x1="60" y1="130" x2="540" y2="130" class="fig-axis" />
+  <line x1="300" y1="240" x2="300" y2="20" class="fig-axis" />
+  <text x="530" y="145" class="fig-tick">x</text>
+  <text x="310" y="30" class="fig-tick">y</text>
+
+  <!-- Diagonal line y = x (Focal) -->
+  <line x1="180" y1="250" x2="420" y2="10" stroke="var(--accent)" stroke-width="2.5" />
+  <text x="425" y="25" class="fig-focus">y = x</text>
+
+  <!-- Labels for Region A -->
+  <text x="440" y="170" class="fig-label" text-anchor="middle">A = { x ≥ y }</text>
+  <text x="440" y="190" class="fig-caption-inline" text-anchor="middle">max = x, min = y</text>
+
+  <!-- Labels for Region B -->
+  <text x="160" y="80" class="fig-label" text-anchor="middle">B = { x ≤ y }</text>
+  <text x="160" y="100" class="fig-caption-inline" text-anchor="middle">max = y, min = x</text>
+</svg>

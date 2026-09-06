@@ -166,60 +166,51 @@ Then $\tau$ defines a topology on $\mathbb{R}$, called the **standard topology**
 {% endcapture %}
 {% include block.html type="example" title="Example 4 (Standard topology on R)" content=ex4_def %}
 
-To prove that $\tau$ is indeed a topology on $\mathbb{R}$, we must verify that it satisfies the three defining conditions of [Definition 1.1]({{ site.baseurl }}/point-set-topology/lecture-01/#definition-1-1-topology-topological-space): (T1), (T2), and (T3).
+To check that $\tau$ defines a topology on $\mathbb{R}$, we need to check that it satisfies the three defining conditions for a topology. Let us check these one by one.
 
 {% capture ex4_proof %}
-We check the three axioms one by one.
+**(T1).** Recall that the first condition was that $\varnothing$, the empty set, and the entire set $\mathbb{R}$ should be in $\tau$.
 
-### Condition (T1): Empty set and whole space
+Clearly, the empty set is in $\tau$ because there is nothing to check: there is no $x$ in the empty set and therefore there is no condition to check, so this is vacuously true. And it is also clear that $\mathbb{R}$ is in $\tau$, as for any $x \in \mathbb{R}$, we can simply take $\varepsilon = 1$. Then clearly $(x - 1, x + 1) \subseteq \mathbb{R}$.
 
-We must show that $\varnothing \in \tau$ and $\mathbb{R} \in \tau$.
-- **The empty set $\varnothing$:** Property $(\ast)$ requires that *for every $x \in \varnothing$*, there exists $\varepsilon > 0$ such that $(x-\varepsilon, x+\varepsilon) \subseteq \varnothing$. Since there are no elements in $\varnothing$, the condition holds vacuously. Thus $\varnothing \in \tau$.
-- **The whole set $\mathbb{R}$:** Let $x \in \mathbb{R}$ be any point. We may simply choose $\varepsilon = 1 > 0$. Clearly, the interval $(x-1, x+1)$ is a subset of $\mathbb{R}$. Since an $\varepsilon > 0$ exists for every $x \in \mathbb{R}$, $\mathbb{R}$ satisfies property $(\ast)$, so $\mathbb{R} \in \tau$.
+So therefore, this first defining condition for being a topology is satisfied. ✓
 
-Therefore, condition (T1) is satisfied.
+**(T2).** For the second condition, we need that if $U_1, U_2, \dots, U_n \in \tau$ are finitely many subsets of $\mathbb{R}$, then their intersection $\bigcap_{i=1}^n U_i$ should also be in $\tau$.
 
-### Condition (T2): Finite intersections
+Let us check that this condition is satisfied: we need to check that this intersection $\bigcap_{i=1}^n U_i$ satisfies property $(\ast)$.
 
-Let $U_1, U_2, \dots, U_n \in \tau$ be finitely many subsets of $\mathbb{R}$ that satisfy property $(\ast)$. We must show that their intersection
-$$\bigcap_{i=1}^n U_i \in \tau.$$
-That is, we must verify that the intersection satisfies property $(\ast)$.
-
-Let $x \in \bigcap_{i=1}^n U_i$. By definition of intersection, this implies that
-$$x \in U_i \quad \text{for all } i \in \lbrace 1, 2, \dots, n \rbrace.$$
-Since each $U_i \in \tau$, each $U_i$ satisfies property $(\ast)$. Therefore, for each $i \in \lbrace 1, 2, \dots, n \rbrace$, there exists a strictly positive real number $\varepsilon_i > 0$ such that
+Let us choose some $x \in \bigcap_{i=1}^n U_i$. In particular, this implies that $x \in U_i$ for all $i \in \lbrace 1, 2, \dots, n \rbrace$. Since each $U_i$ satisfies property $(\ast)$, there exists some $\varepsilon_i > 0$ such that
 $$(x - \varepsilon_i, \; x + \varepsilon_i) \subseteq U_i.$$
 
-Now define
+Now let
 $$\varepsilon = \min \lbrace \varepsilon_1, \varepsilon_2, \dots, \varepsilon_n \rbrace.$$
-Because we are taking the minimum of **finitely many** strictly positive real numbers, the smallest among them is still strictly positive: $\varepsilon > 0$.
+Clearly, $\varepsilon$ is positive because we have finitely many positive real numbers and we take the smallest one among them, so that is also going to be positive ($\varepsilon > 0$).
 
-Since $\varepsilon \le \varepsilon_i$ for each $i \in \lbrace 1, \dots, n\rbrace$, the interval of radius $\varepsilon$ is contained in the interval of radius $\varepsilon_i$:
-$$(x - \varepsilon, \; x + \varepsilon) \subseteq (x - \varepsilon_i, \; x + \varepsilon_i) \subseteq U_i \quad \text{for every } i \in \lbrace 1, \dots, n \rbrace.$$
-Because $(x - \varepsilon, x + \varepsilon)$ is contained in $U_i$ for all $i \in \lbrace 1, \dots, n\rbrace$, it is contained in their intersection:
+It is also clear that $(x - \varepsilon, x + \varepsilon) \subseteq (x - \varepsilon_i, x + \varepsilon_i)$ because $\varepsilon$ is the smallest among all these $\varepsilon_i$. This implies that
+$$(x - \varepsilon, \; x + \varepsilon) \subseteq (x - \varepsilon_i, \; x + \varepsilon_i) \subseteq U_i$$
+for all $i$. In particular, this implies that
 $$(x - \varepsilon, \; x + \varepsilon) \subseteq \bigcap_{i=1}^n U_i.$$
-This shows that $\bigcap_{i=1}^n U_i$ satisfies property $(\ast)$, so $\bigcap_{i=1}^n U_i \in \tau$. Therefore, condition (T2) is satisfied.
+
+So this shows that this intersection $\bigcap_{i=1}^n U_i$ satisfies property $(\ast)$. Therefore, the second condition for being a topology is also satisfied. ✓
 
 {% include figure.html
    src="point-set-topology/lecture-02/nested-epsilons-min.svg"
    caption="The finite minimum argument in condition (T2): choosing $\varepsilon = \min\lbrace\varepsilon_1, \dots, \varepsilon_n\rbrace$ produces an interval $(x-\varepsilon, x+\varepsilon)$ that simultaneously nests inside every $(x-\varepsilon_i, x+\varepsilon_i) \subseteq U_i$."
    alt="Nested concentric intervals on a number line around point x. The smallest interval, with radius epsilon equal to the minimum of the radii, lies inside all larger intervals." %}
 
-### Condition (T3): Arbitrary unions
+<span id="condition-t3-arbitrary-unions"></span>
+**(T3).** And finally, we have to check one more condition. Let $I$ be a set, and suppose for each $i \in I$ we are given $U_i \in \tau$. Then we need to show that the union $\bigcup_{i \in I} U_i$ is in $\tau$. That is, it satisfies property $(\ast)$.
 
-Let $I$ be an arbitrary index set, and suppose that for each $i \in I$, we are given a subset $U_i \in \tau$. We must show that their union
-$$\bigcup_{i \in I} U_i \in \tau.$$
-That is, we must verify that the union satisfies property $(\ast)$.
+Once again, this is easy: we apply the same method that we used in the second case.
 
-Let $x \in \bigcup_{i \in I} U_i$. By definition of union, there exists at least one index $j \in I$ such that
-$$x \in U_j.$$
-Since $U_j \in \tau$, the set $U_j$ satisfies property $(\ast)$. Therefore, there exists some $\varepsilon > 0$ such that
+We take any $x \in \bigcup_{i \in I} U_i$. Then there is some $j \in I$ such that $x \in U_j$. Now since $U_j$ satisfies property $(\ast)$, there is an $\varepsilon > 0$ such that
 $$(x - \varepsilon, \; x + \varepsilon) \subseteq U_j.$$
-Since $U_j \subseteq \bigcup_{i \in I} U_i$, it follows immediately that
-$$(x - \varepsilon, \; x + \varepsilon) \subseteq \bigcup_{i \in I} U_i.$$
-This shows that $\bigcup_{i \in I} U_i$ satisfies property $(\ast)$, so $\bigcup_{i \in I} U_i \in \tau$. Therefore, condition (T3) is satisfied.
+In particular, this implies that
+$$(x - \varepsilon, \; x + \varepsilon) \subseteq U_j \subseteq \bigcup_{i \in I} U_i.$$
 
-All three defining conditions hold, so $\tau$ is a topology on $\mathbb{R}$.
+Thus, we have proved that this union satisfies our property $(\ast)$. That is, this union is also in $\tau$. So therefore, $\tau$ also satisfies the third condition. ✓
+
+All this implies that $\tau$ defines a topology on $\mathbb{R}$, which we call the standard topology. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Example 4" content=ex4_proof %}
 

@@ -81,21 +81,21 @@ $$\tau_1 \subseteq \tau_2.$$
 {% include block.html type="lemma" title="Lemma 5.1 (The Comparison Lemma)" content=lem_comp %}
 
 {% capture lem_comp_proof %}
-Let $U \in \tau_1$ be an arbitrary open set in the topology $\tau_1$. We must show that $U \in \tau_2$.
+So let us prove this. Our aim: let $U \subseteq X$ be an element of $\tau_1$ (that is, open in $\tau_1$). We will show that $U$ is open in $\tau_2$ ($U \in \tau_2$).
 
-Since $\mathcal{B}_1$ is a basis for $\tau_1$, the defining condition of a basis ([Definition 3.6 in Lecture 3]({{ site.baseurl }}/point-set-topology/lecture-03/#definition-3-6-basis-for-a-topology)) asserts that for every point $x \in U$, there exists a basic set $W_x \in \mathcal{B}_1$ such that
+Since $\mathcal{B}_1$ is a basis for $\tau_1$, for every point $x \in U$, there exists a basic set $W_x \in \mathcal{B}_1$ such that
 $$x \in W_x \subseteq U.$$
-Taking the union over all points $x \in U$, we have
+So let $I$ be the collection of such $W_x$ for every $x \in U$. Then clearly $U$ is equal to the union over the elements of $I$:
 $$U = \bigcup_{x \in U} W_x.$$
-Indeed, each $W_x \subseteq U$, so $\bigcup_{x \in U} W_x \subseteq U$; and each $x \in W_x$, so $U \subseteq \bigcup_{x \in U} W_x$.
+This inclusion ($\bigcup_{x \in U} W_x \subseteq U$) is clear as each $W_x \subseteq U$. And the reverse inclusion ($U \subseteq \bigcup_{x \in U} W_x$) is clear because given any $x \in U$, it is in $W_x$.
 
-Now consider this union from the perspective of $\tau_2$:
-- By the hypothesis $\mathcal{B}_1 \subseteq \tau_2$, every basic set $W_x \in \mathcal{B}_1$ belongs to $\tau_2$.
-- Since $\tau_2$ is a topology on $X$, it satisfies axiom (T3): arbitrary unions of open sets in $\tau_2$ belong to $\tau_2$.
+Now, since each $W_x \in \mathcal{B}_1$ and $\mathcal{B}_1 \subseteq \tau_2$, this implies that $W_x \in \tau_2$—that is, each $W_x$ is open in $\tau_2$.
 
-Therefore, the union $\bigcup_{x \in U} W_x$ belongs to $\tau_2$. Since $U = \bigcup_{x \in U} W_x$, we conclude that $U \in \tau_2$.
+And since $\tau_2$ is a topology, by condition (T3) in the definition of a topology, arbitrary unions of open sets are open. This implies that
+$$\bigcup_{x \in U} W_x \in \tau_2,$$
+which implies that $U \in \tau_2$.
 
-Since $U \in \tau_1$ was arbitrary, this establishes that $\tau_1 \subseteq \tau_2$. $\blacksquare$
+Therefore, we have proved that given any $U \in \tau_1$, $U \in \tau_2$. This implies that $\tau_1 \subseteq \tau_2$, which completes the proof of the lemma. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Lemma 5.1" content=lem_comp_proof %}
 
@@ -171,30 +171,23 @@ where $S_\varepsilon(a,b) = (a-\varepsilon, a+\varepsilon) \times (b-\varepsilon
 By [Lemma 5.3](#lemma-5-3-basis-for-a-subspace), a basis for the subspace topology $\tau_Y$ is given by
 $$\mathcal{B}_Y = \lbrace S_\varepsilon(a,b) \cap Y \;:\; (a,b) \in \mathbb{R}^2, \ \varepsilon > 0 \rbrace.$$
 
-Let us compute the intersection $S_\varepsilon(a,b) \cap Y$ for an arbitrary square:
+On the other hand, let $\mathcal{C}$ be the collection of intervals $B_\varepsilon(x) = (x-\varepsilon, x+\varepsilon)$:
+$$\mathcal{C} = \lbrace (x-\varepsilon, \; x+\varepsilon) \;:\; x \in \mathbb{R}, \ \varepsilon > 0 \rbrace \cup \lbrace \varnothing \rbrace.$$
+Then $\mathcal{C}$ is a basis for the standard topology $S$ on $\mathbb{R}$.
+
+We want to show that $S = \tau_Y$. By [Corollary 5.2](#corollary-5-2-topological-equivalence-via-bases), it is enough to show that $\mathcal{B}_Y = \mathcal{C}$. Let us check that $\mathcal{B}_Y$ is indeed equal to $\mathcal{C}$.
+
+Let us examine what the elements of $\mathcal{B}_Y$ look like:
 - The horizontal axis is $Y = \lbrace (x,y) \in \mathbb{R}^2 : y = 0 \rbrace$.
-- The square requires $a-\varepsilon < x < a+\varepsilon$ and $b-\varepsilon < y < b+\varepsilon$.
-- For a point $(x,0)$ to lie in $S_\varepsilon(a,b)$, the vertical condition requires $b-\varepsilon < 0 < b+\varepsilon$, which is equivalent to $\lvert b \rvert < \varepsilon$.
+- For every square $S_\varepsilon(a,b)$, either it does not intersect the axis ($S_\varepsilon(a,b) \cap Y = \varnothing$, when $\lvert b \rvert \ge \varepsilon$), or it intersects the axis in $(a-\varepsilon, a+\varepsilon)$ (when $\lvert b \rvert < \varepsilon$).
 
-Hence there are only two possibilities:
-1. **If $\lvert b \rvert \ge \varepsilon$:** The square does not intersect the axis:
-   $$S_\varepsilon(a,b) \cap Y = \varnothing.$$
-2. **If $\lvert b \rvert < \varepsilon$:** The intersection is the set of points $(x,0)$ with $a-\varepsilon < x < a+\varepsilon$. Identifying $(x,0)$ with $x \in \mathbb{R}$, this is precisely the open interval
-   $$S_\varepsilon(a,b) \cap Y = (a-\varepsilon, \; a+\varepsilon) \subseteq \mathbb{R}.$$
+Identifying the $x$-axis with $\mathbb{R}$ via the embedding $i$, each non-empty intersection is identified with the interval $(a-\varepsilon, a+\varepsilon) \in \mathcal{C}$. Thus it is clear that $\mathcal{B}_Y \subseteq \mathcal{C}$.
 
-On the other hand, consider the standard topology $S$ on $\mathbb{R}$. By [Example 1 in Lecture 3]({{ site.baseurl }}/point-set-topology/lecture-03/#example-1-open-intervals-form-a-basis-for-r), the collection of open intervals
-$$\mathcal{C} = \lbrace (x-\varepsilon, \; x+\varepsilon) \;:\; x \in \mathbb{R}, \ \varepsilon > 0 \rbrace \cup \lbrace \varnothing \rbrace$$
-forms a basis for $S$.
+Conversely, if we take any element $(x-\varepsilon, x+\varepsilon) \in \mathcal{C}$, we can take the open square centered directly on the axis at $(x,0)$:
+$$S_\varepsilon(x, 0) \cap Y = (x-\varepsilon, \; x+\varepsilon).$$
+And the empty set is also obtained by taking a square disjoint from the axis (for instance $S_1(0,2) \cap Y = \varnothing$). Thus $\mathcal{C} \subseteq \mathcal{B}_Y$.
 
-Comparing the two collections:
-- Every non-empty element of $\mathcal{B}_Y$ is of the form $(a-\varepsilon, a+\varepsilon)$, which belongs to $\mathcal{C}$. The empty set is also in $\mathcal{C}$. Thus $\mathcal{B}_Y \subseteq \mathcal{C}$.
-- Conversely, every element $(x-\varepsilon, x+\varepsilon) \in \mathcal{C}$ can be obtained as the intersection of $Y$ with the open square centered directly on the axis at $(x,0)$:
-  $$(x-\varepsilon, \; x+\varepsilon) = S_\varepsilon(x, 0) \cap Y \in \mathcal{B}_Y.$$
-  The empty set in $\mathcal{C}$ is obtained by choosing any square disjoint from the axis (for instance $S_1(0, 2) \cap Y = \varnothing$). Thus $\mathcal{C} \subseteq \mathcal{B}_Y$.
-
-Therefore, the two basis collections are identical:
-$$\mathcal{B}_Y = \mathcal{C}.$$
-Since $\mathcal{B}_Y$ is a basis for $\tau_Y$ and $\mathcal{C}$ is a basis for $S$, [Corollary 5.2](#corollary-5-2-topological-equivalence-via-bases) implies that the topologies coincide:
+Therefore, we have proved both inclusions, which implies that both these bases are equal ($\mathcal{B}_Y = \mathcal{C}$), which implies that the subspace topology is equal to the standard topology on $\mathbb{R}$:
 $$\tau_Y = S. \quad \blacksquare$$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Proposition 5.4" content=prop_axis_proof %}
@@ -222,7 +215,7 @@ We wish to define a topology on $X \times Y$. An open set in the product will no
 {% capture lem_prod_basis %}
 Let $(X,\tau_X)$ and $(Y,\tau_Y)$ be topological spaces. Define the collection
 $$\mathcal{B} = \lbrace U \times V \;:\; U \in \tau_X, \ V \in \tau_Y \rbrace \subseteq \mathcal{P}(X \times Y).$$
-Then $\mathcal{B}$ satisfies the two generating conditions of Proposition 4.2:
+Then $\mathcal{B}$ satisfies the two conditions in the proposition on generating topologies:
 1. $\bigcup_{W \in \mathcal{B}} W = X \times Y$.
 2. For any $W_1, W_2 \in \mathcal{B}$ and any point $(a,b) \in W_1 \cap W_2$, there exists $W \in \mathcal{B}$ such that
    $$(a,b) \in W \subseteq W_1 \cap W_2.$$
@@ -235,31 +228,33 @@ Then $\mathcal{B}$ satisfies the two generating conditions of Proposition 4.2:
    alt="Two intersecting rectangles in X x Y with coordinate projections showing the intersection is formed by the intersection of horizontal projections and vertical projections." %}
 
 {% capture lem_prod_proof %}
-We verify both conditions:
+Recall the two conditions we need to check:
+- **(A):** When we take the union of all $W \in \mathcal{B}$, we get the entire set $X \times Y$.
+- **(B):** Suppose $W_1, W_2 \in \mathcal{B}$, and $(a,b)$ is an element in the intersection $W_1 \cap W_2$; then there is a $W \in \mathcal{B}$ such that $(a,b) \in W$ and $W \subseteq W_1 \cap W_2$.
 
-1. **Covering condition:**
-   By axiom (T1) for $(X,\tau_X)$ and $(Y,\tau_Y)$, we have $X \in \tau_X$ and $Y \in \tau_Y$. Therefore, the Cartesian product $X \times Y$ belongs to $\mathcal{B}$. It follows immediately that
-   $$\bigcup_{W \in \mathcal{B}} W = X \times Y.$$
-   Thus condition (1) holds.
+Let us check that these two conditions are satisfied.
 
-2. **Intersection condition:**
-   Let $W_1, W_2 \in \mathcal{B}$. By definition of $\mathcal{B}$, there exist $U_1, U_2 \in \tau_X$ and $V_1, V_2 \in \tau_Y$ such that
-   $$W_1 = U_1 \times V_1 \quad \text{and} \quad W_2 = U_2 \times V_2.$$
-   Let $(a,b) \in W_1 \cap W_2$. This means $(a,b) \in U_1 \times V_1$ and $(a,b) \in U_2 \times V_2$, which is equivalent to
-   $$a \in U_1 \cap U_2 \quad \text{and} \quad b \in V_1 \cap V_2.$$
-   Hence,
-   $$(a,b) \in (U_1 \cap U_2) \times (V_1 \cap V_2).$$
-   Notice that the intersection of two Cartesian product sets is simply the product of their component intersections:
-   $$W_1 \cap W_2 = (U_1 \times V_1) \cap (U_2 \times V_2) = (U_1 \cap U_2) \times (V_1 \cap V_2).$$
-   Now we use the fact that $\tau_X$ and $\tau_Y$ are topologies:
-   - Since $U_1, U_2 \in \tau_X$, by axiom (T2) we have $U_1 \cap U_2 \in \tau_X$.
-   - Since $V_1, V_2 \in \tau_Y$, by axiom (T2) we have $V_1 \cap V_2 \in \tau_Y$.
+**Condition (A):**
+Since $X \in \tau_X$ and $Y \in \tau_Y$, this implies from the definition of $\mathcal{B}$ that $X \times Y \in \mathcal{B}$. Therefore, clearly, the union $\bigcup_{W \in \mathcal{B}} W$ contains $X \times Y$, and of course it is a subset of $X \times Y$.
 
-   Therefore, the intersection set $(U_1 \cap U_2) \times (V_1 \cap V_2)$ is **itself an element of $\mathcal{B}$**!
+Therefore, this union is actually equal to $X \times Y$. So this proves (A); this proves that (A) is indeed true. ✓
 
-   Setting $W = (U_1 \cap U_2) \times (V_1 \cap V_2) \in \mathcal{B}$, we have
-   $$(a,b) \in W \subseteq W_1 \cap W_2$$
-   with equality $W = W_1 \cap W_2$. This verifies condition (2) in the strongest possible sense. $\blacksquare$
+**Condition (B):**
+We are given $W_1, W_2 \in \mathcal{B}$. This implies from the definition of $\mathcal{B}$ that
+$$W_1 = U_1 \times V_1 \quad \text{and} \quad W_2 = U_2 \times V_2,$$
+where $U_1, U_2 \in \tau_X$ and $V_1, V_2 \in \tau_Y$.
+
+Let $(a,b) \in W_1 \cap W_2 = (U_1 \times V_1) \cap (U_2 \times V_2)$. This implies that $a \in U_1 \cap U_2$ and $b \in V_1 \cap V_2$.
+
+Now, since $\tau_X$ and $\tau_Y$ are topologies, note that $U_1 \cap U_2 \in \tau_X$ and $V_1 \cap V_2 \in \tau_Y$ by condition (T2). Thus we have:
+$$(a,b) \in (U_1 \cap U_2) \times (V_1 \cap V_2),$$
+which is an element of $\mathcal{B}$! And this set is contained in $U_i \times V_i$ for $i = 1, 2$, so
+$$(a,b) \in (U_1 \cap U_2) \times (V_1 \cap V_2) \subseteq W_1 \cap W_2.$$
+Therefore, we can take $W = (U_1 \cap U_2) \times (V_1 \cap V_2) \in \mathcal{B}$.
+
+So given any $(a,b)$ in the intersection, we have found a $W \in \mathcal{B}$ such that $(a,b) \in W$ and $W \subseteq W_1 \cap W_2$.
+
+So this proves that $\mathcal{B}$ satisfies the two conditions to generate a topology. And so it generates a topology, which we denote $\tau_{\mathcal{B}}$, which has $\mathcal{B}$ as a basis. This completes the proof of the lemma. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Lemma 5.5" content=lem_prod_proof %}
 

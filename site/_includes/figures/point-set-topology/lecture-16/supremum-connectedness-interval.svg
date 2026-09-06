@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 180" width="100%" height="auto">
+  <!-- Base axis -->
+  <line x1="40" y1="100" x2="420" y2="100" class="fig-axis" stroke-width="1.5" />
+
+  <!-- Interval [0, a] -->
+  <line x1="60" y1="100" x2="250" y2="100" class="fig-focus" stroke-width="3" />
+  <!-- Extension [a, a + eps/2] -->
+  <line x1="250" y1="100" x2="295" y2="100" class="fig-tick" stroke-width="2" stroke-dasharray="4,3" />
+
+  <!-- Ticks -->
+  <line x1="60" y1="92" x2="60" y2="108" class="fig-tick" stroke-width="1.5" />
+  <line x1="250" y1="90" x2="250" y2="110" class="fig-focus" stroke-width="2" />
+  <line x1="295" y1="94" x2="295" y2="106" class="fig-tick" stroke-width="1.2" />
+  <line x1="400" y1="92" x2="400" y2="108" class="fig-tick" stroke-width="1.5" />
+
+  <!-- Sequence dots -->
+  <circle cx="160" cy="100" r="2.5" class="fig-tick" />
+  <circle cx="210" cy="100" r="2.5" class="fig-tick" />
+  <circle cx="232" cy="100" r="2.5" class="fig-tick" />
+
+  <!-- Labels -->
+  <text x="60" y="125" class="fig-label" text-anchor="middle">0</text>
+  <text x="195" y="125" class="fig-tick" text-anchor="middle">aₙ</text>
+  <text x="250" y="80" class="fig-focus" text-anchor="middle">a = sup S</text>
+  <text x="295" y="125" class="fig-tick" text-anchor="middle">a + ε/2</text>
+  <text x="400" y="125" class="fig-label" text-anchor="middle">1</text>
+</svg>

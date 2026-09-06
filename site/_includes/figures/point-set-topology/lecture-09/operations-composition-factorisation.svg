@@ -1,0 +1,38 @@
+<svg viewBox="0 0 560 210" role="img" aria-labelledby="fig-op-comp-title"
+     xmlns="http://www.w3.org/2000/svg" class="fig">
+  <title id="fig-op-comp-title">Factorization of arithmetic operations as composites through the product space.</title>
+  <defs>
+    <marker id="arr-op" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--ink)" />
+    </marker>
+    <marker id="arr-op-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <!-- Left: X -->
+  <rect x="30" y="80" width="60" height="50" rx="6" fill="var(--paper)" stroke="var(--rule)" stroke-width="1.5" />
+  <text x="60" y="112" class="fig-label" text-anchor="middle">X</text>
+
+  <!-- Middle: R x R -->
+  <rect x="200" y="70" width="130" height="70" rx="6" fill="var(--paper)" stroke="var(--rule)" stroke-width="1.5" />
+  <text x="265" y="102" class="fig-label" text-anchor="middle">ℝ × ℝ</text>
+  <text x="265" y="124" class="fig-tick" text-anchor="middle">product topology</text>
+
+  <!-- Right: R -->
+  <rect x="440" y="80" width="70" height="50" rx="6" fill="var(--paper)" stroke="var(--rule)" stroke-width="1.5" />
+  <text x="475" y="112" class="fig-label" text-anchor="middle">ℝ</text>
+
+  <!-- Arrow 1: X -> R x R (F = (f, g)) (Focal) -->
+  <line x1="90" y1="105" x2="190" y2="105" stroke="var(--accent)" stroke-width="2" marker-end="url(#arr-op-blue)" />
+  <text x="140" y="95" class="fig-focus" text-anchor="middle">F = (f, g)</text>
+
+  <!-- Arrows 2: R x R -> R (A and M) -->
+  <!-- Upper curve for addition A -->
+  <path d="M 330 95 C 365 75, 400 75, 430 95" fill="none" class="fig-axis" marker-end="url(#arr-op)" />
+  <text x="380" y="70" class="fig-label" text-anchor="middle">A(u, v)</text>
+
+  <!-- Lower curve for multiplication M -->
+  <path d="M 330 115 C 365 135, 400 135, 430 115" fill="none" class="fig-axis" marker-end="url(#arr-op)" />
+  <text x="380" y="152" class="fig-label" text-anchor="middle">M(u, v)</text>
+</svg>

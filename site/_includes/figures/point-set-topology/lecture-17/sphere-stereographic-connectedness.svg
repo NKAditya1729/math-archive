@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 250" width="100%" height="auto">
+  <!-- Sphere circle -->
+  <circle cx="230" cy="120" r="75" class="fig-region" stroke-width="1.5" />
+
+  <!-- Equator: back dashed, front solid -->
+  <path d="M 155 120 A 75 22 0 0 1 305 120" class="fig-tick" fill="none" stroke-dasharray="4,3" stroke-width="1.2" />
+  <path d="M 155 120 A 75 22 0 0 0 305 120" class="fig-axis" fill="none" stroke-width="1.2" />
+
+  <!-- North and South poles -->
+  <circle cx="230" cy="45" r="4" fill="var(--bg)" stroke="var(--flag)" stroke-width="1.8" />
+  <circle cx="230" cy="195" r="4" fill="var(--bg)" stroke="var(--flag)" stroke-width="1.8" />
+
+  <!-- Labels -->
+  <text x="230" y="32" class="fig-tick" text-anchor="middle">N</text>
+  <text x="230" y="215" class="fig-tick" text-anchor="middle">S</text>
+  <text x="320" y="115" class="fig-focus" text-anchor="start">Sⁿ</text>
+  <text x="145" y="124" class="fig-tick" text-anchor="end">Sⁿ \ {N, S}</text>
+</svg>

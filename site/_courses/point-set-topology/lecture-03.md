@@ -68,28 +68,20 @@ Then $\tau$ defines a topology on $\mathbb{R}^2$, called the **standard topology
 {% endcapture %}
 {% include block.html type="example" title="Example 5 (Standard topology on R2)" content=ex5_claim %}
 
-We now verify that $\tau$ satisfies the three defining conditions of a topology ([Definition 1.1]({{ site.baseurl }}/point-set-topology/lecture-01/#definition-1-1-topology-topological-space)).
+We now verify that $\tau$ satisfies the conditions defining a topology ([Definition 1.1]({{ site.baseurl }}/point-set-topology/lecture-01/#definition-1-1-topology-topological-space)).
 
 {% capture ex5_proof %}
-We check the three axioms one by one.
+**(T1).** The first condition is that $\varnothing$ and $\mathbb{R}^2$ should be in $\tau$.
 
-### Condition (T1): Empty set and whole space
+As in the example of the standard topology on $\mathbb{R}$, $\varnothing \in \tau$ is vacuously true because there are no points in the empty set. And similarly, $\mathbb{R}^2 \in \tau$ is also clear because if we take any point $(a,b) \in \mathbb{R}^2$, we can take $S_1(a,b)$, which is obviously contained in $\mathbb{R}^2$.
 
-We must show that $\varnothing \in \tau$ and $\mathbb{R}^2 \in \tau$.
-- **The empty set $\varnothing$:** There are no points in $\varnothing$, so the condition that every point admits an open square contained in $\varnothing$ is vacuously true. Thus $\varnothing \in \tau$.
-- **The whole space $\mathbb{R}^2$:** For any point $(a,b) \in \mathbb{R}^2$, we can simply choose $\varepsilon = 1 > 0$. Clearly, the open square $S_1(a,b)$ is contained in $\mathbb{R}^2$. Thus $\mathbb{R}^2$ satisfies property $(\ast)$, so $\mathbb{R}^2 \in \tau$.
+So obviously the first condition is satisfied. ✓
 
-Therefore, condition (T1) is satisfied.
+**(T2).** Let's look at the second condition. The second condition requires that if we take finitely many elements $U_1, U_2, \dots, U_n$ in $\tau$, then their intersection $\bigcap_{i=1}^n U_i$ is in $\tau$.
 
-### Condition (T2): Finite intersections
-
-Let $U_1, U_2, \dots, U_n \in \tau$ be finitely many subsets of $\mathbb{R}^2$ satisfying property $(\ast)$. We must show that their intersection
-$$\bigcap_{i=1}^n U_i \in \tau.$$
-That is, we must verify that the intersection satisfies property $(\ast)$.
-
-Let $(a,b) \in \bigcap_{i=1}^n U_i$. By definition of intersection,
-$$(a,b) \in U_i \quad \text{for all } i \in \lbrace 1, 2, \dots, n \rbrace.$$
-Since each $U_i \in \tau$, each $U_i$ satisfies property $(\ast)$. Thus, for each $i \in \lbrace 1, \dots, n\rbrace$, there exists $\varepsilon_i > 0$ such that
+To check this, once again, let us take a point $(a,b)$ in this intersection:
+$$(a,b) \in \bigcap_{i=1}^n U_i.$$
+By the same proof as in $\mathbb{R}$, since $(a,b) \in U_i$ and $U_i$ satisfies property $(\ast)$, there is an $\varepsilon_i > 0$ such that
 $$S_{\varepsilon_i}(a,b) \subseteq U_i.$$
 
 {% include figure.html
@@ -97,31 +89,25 @@ $$S_{\varepsilon_i}(a,b) \subseteq U_i.$$
    caption="A region $U_i \subseteq \mathbb{R}^2$ satisfying property $(\ast)$: around any point $(a,b) \in U_i$, there exists an open square $S_{\varepsilon_i}(a,b)$ lying entirely inside $U_i$."
    alt="A region U_i in the plane with an interior point (a,b) surrounded by a dashed open square that fits completely inside the region." %}
 
-Now define
+We take $\varepsilon$ to be equal to the minimum of $\varepsilon_1, \varepsilon_2, \dots, \varepsilon_n$:
 $$\varepsilon = \min \lbrace \varepsilon_1, \varepsilon_2, \dots, \varepsilon_n \rbrace.$$
-Because we are taking the minimum of **finitely many** strictly positive numbers, $\varepsilon > 0$.
-
-Since $\varepsilon \le \varepsilon_i$ for each $i$, the open square $S_\varepsilon(a,b)$ is contained within $S_{\varepsilon_i}(a,b)$:
+Clearly, $S_\varepsilon(a,b) \subseteq S_{\varepsilon_i}(a,b)$ for each $i$. Therefore,
 $$S_\varepsilon(a,b) \subseteq S_{\varepsilon_i}(a,b) \subseteq U_i \quad \text{for all } i \in \lbrace 1, 2, \dots, n \rbrace.$$
-Because $S_\varepsilon(a,b)$ is contained in each $U_i$, it is contained in their intersection:
+This shows that $S_\varepsilon(a,b)$ is contained in the intersection:
 $$S_\varepsilon(a,b) \subseteq \bigcap_{i=1}^n U_i.$$
-This proves that $\bigcap_{i=1}^n U_i$ satisfies property $(\ast)$, so $\bigcap_{i=1}^n U_i \in \tau$. Therefore, condition (T2) is satisfied.
 
-### Condition (T3): Arbitrary unions
+Thus the intersection satisfies this property $(\ast)$. Therefore, thus the intersection $\bigcap_{i=1}^n U_i$ is in $\tau$. So therefore, $\tau$ satisfies condition two. ✓
 
-Let $I$ be an arbitrary index set, and suppose that for each $i \in I$, we are given $U_i \in \tau$. We must show that
-$$\bigcup_{i \in I} U_i \in \tau.$$
-That is, we must show that the union satisfies property $(\ast)$.
+**(T3).** And let's quickly check that it also satisfies condition three. Condition three was: given a set $I$, and for each $i \in I$ an element $U_i \in \tau$, then we need to check that the union $\bigcup_{i \in I} U_i$ is also in $\tau$.
 
-Let $(a,b) \in \bigcup_{i \in I} U_i$. By definition of union, there exists some index $j \in I$ such that
-$$(a,b) \in U_j.$$
-Since $U_j \in \tau$, the set $U_j$ satisfies property $(\ast)$. Therefore, there exists $\varepsilon > 0$ such that
-$$S_\varepsilon(a,b) \subseteq U_j.$$
-Since $U_j \subseteq \bigcup_{i \in I} U_i$, it follows immediately that
-$$S_\varepsilon(a,b) \subseteq \bigcup_{i \in I} U_i.$$
-Thus $\bigcup_{i \in I} U_i$ satisfies property $(\ast)$, so $\bigcup_{i \in I} U_i \in \tau$. Therefore, condition (T3) is satisfied.
+We need to check that the union satisfies this property $(\ast)$.
 
-All three defining conditions hold, so $\tau$ defines a topology on $\mathbb{R}^2$, called the **standard topology** on $\mathbb{R}^2$.
+Let $(a,b)$ be an element in the union, which implies that $(a,b) \in U_j$ for some $j \in I$. This implies that there is an $\varepsilon > 0$ such that the square $S_\varepsilon(a,b)$ of side length $2\varepsilon$ around $(a,b)$ is contained in $U_j$, as $U_j \in \tau$ and so satisfies property $(\ast)$. And this implies that
+$$S_\varepsilon(a,b) \subseteq U_j \subseteq \bigcup_{i \in I} U_i.$$
+
+Thus, the union satisfies property $(\ast)$, and so is in $\tau$. So this shows that $\tau$ also satisfies the third condition to define a topology. ✓
+
+Therefore, $\tau$ defines a topology on $\mathbb{R}^2$, which we call the standard topology. $\blacksquare$
 {% endcapture %}
 {% include block.html type="proof" title="Proof of Example 5" content=ex5_proof %}
 
@@ -281,13 +267,15 @@ $$\mathcal{B} = \lbrace (a,b) \subseteq \mathbb{R} \;:\; a, b \in \mathbb{R} \cu
 
 **Claim.** $\mathcal{B}$ is a basis for $\tau$.
 
-**Proof.** First, we verify that $\mathcal{B} \subseteq \tau$: every open interval $(a,b)$ belongs to $\tau$ (that is, every open interval is an open set). This follows by the exact same reasoning used in Lecture 2 to show that $(0,1)$ satisfies property $(\ast)$ ([Exercise 3.4](#exercise-3-4-open-intervals-belong-to-tau)). Thus $\mathcal{B} \subseteq \tau$.
+**Proof.** First of all, we claim that every interval $(a,b)$ is open in the standard topology on $\mathbb{R}$—that is, every interval $(a,b)$ is in $\tau$. By the same method used in Lecture 2 to show that $(0,1)$ satisfies property $(\ast)$ ([Exercise 3.4](#exercise-3-4-open-intervals-belong-to-tau)), each interval $(a,b)$ satisfies property $(\ast)$. The conclusion is that thus $\mathcal{B}$ is indeed a subset of $\tau$.
 
-Now we check the defining condition of [Definition 3.6](#definition-3-6-basis-for-a-topology). Let $U \in \tau$ and let $x \in U$. Because $U$ satisfies property $(\ast)$, there exists $\varepsilon > 0$ such that
+Now we check that $\mathcal{B}$ satisfies the defining condition of a basis ([Definition 3.6](#definition-3-6-basis-for-a-topology)).
+
+Let $U \in \tau$. Then $U$ satisfies property $(\ast)$, which implies that for any $x \in U$, there exists $\varepsilon > 0$ such that
 $$(x - \varepsilon, \; x + \varepsilon) \subseteq U.$$
-Define $W = (x - \varepsilon, x + \varepsilon)$. Then $W \in \mathcal{B}$ (it is an open interval), $x \in W$, and $W \subseteq U$.
+So let $W = (x - \varepsilon, x + \varepsilon)$. Then $x \in W$, $W$ is an open interval and therefore an element of the set $\mathcal{B}$, and clearly $W \subseteq U$.
 
-Therefore, $\mathcal{B}$ satisfies the defining condition of Definition 3.6, so $\mathcal{B}$ is a basis for the standard topology on $\mathbb{R}$.
+So this shows that $\mathcal{B}$ is a basis for the standard topology $\tau$ on $\mathbb{R}$. $\blacksquare$
 {% endcapture %}
 {% include block.html type="example" title="Example 1 (Open intervals form a basis for R)" content=ex_basis_r %}
 
@@ -299,7 +287,9 @@ $$\mathcal{B}_2 = \lbrace S_\varepsilon(a,b) \subseteq \mathbb{R}^2 \;:\; (a,b) 
 
 **Claim.** $\mathcal{B}_2$ is a basis for the standard topology on $\mathbb{R}^2$.
 
-**Proof.** Each open square $S_\varepsilon(a,b)$ satisfies property $(\ast)$, so $\mathcal{B}_2 \subseteq \tau$. Furthermore, if $U \in \tau$ and $(a,b) \in U$, then by property $(\ast)$ on $\mathbb{R}^2$, there exists $\varepsilon > 0$ such that $S_\varepsilon(a,b) \subseteq U$. Setting $W = S_\varepsilon(a,b) \in \mathcal{B}_2$, we have $(a,b) \in W \subseteq U$. Thus $\mathcal{B}_2$ is a basis for $\tau$.
+**Proof.** Similarly, the collection $\mathcal{B}_2$ forms a basis for the standard topology on $\mathbb{R}^2$. This can be checked in the same way that we checked for $\mathbb{R}$: each open square $S_\varepsilon(a,b)$ satisfies property $(\ast)$, so $\mathcal{B}_2 \subseteq \tau$. Furthermore, if $U \in \tau$ and $(a,b) \in U$, then because $U$ satisfies property $(\ast)$, there exists $\varepsilon > 0$ such that $S_\varepsilon(a,b) \subseteq U$. Setting $W = S_\varepsilon(a,b) \in \mathcal{B}_2$, we have $(a,b) \in W \subseteq U$.
+
+This shows that $\mathcal{B}_2$ is a basis for $\tau$. $\blacksquare$
 {% endcapture %}
 {% include block.html type="example" title="Example 2 (Open squares form a basis for R2)" content=ex_basis_r2 %}
 
@@ -308,7 +298,7 @@ $$\mathcal{B}_2 = \lbrace S_\varepsilon(a,b) \subseteq \mathbb{R}^2 \;:\; (a,b) 
 {% capture ex_basis_rn %}
 Let $X = \mathbb{R}^n$ equipped with the standard topology $\tau$. Let $\mathcal{B}_n$ be the collection of all open hypercubes:
 $$\mathcal{B}_n = \lbrace S_\varepsilon(x) \subseteq \mathbb{R}^n \;:\; x \in \mathbb{R}^n, \ \varepsilon > 0 \rbrace.$$
-Then $\mathcal{B}_n$ forms a basis for the standard topology on $\mathbb{R}^n$. The verification is identical: by definition of property $(\ast)$ on $\mathbb{R}^n$, every point $x \in U$ is witnessed by an open hypercube $W = S_\varepsilon(x) \in \mathcal{B}_n$ contained in $U$.
+Then, once again similarly, $\mathcal{B}_n$ forms a basis for the standard topology on $\mathbb{R}^n$. The verification is checked in the same way: by definition of property $(\ast)$ on $\mathbb{R}^n$, every point $x \in U$ is witnessed by an open hypercube $W = S_\varepsilon(x) \in \mathcal{B}_n$ such that $x \in W \subseteq U$. $\blacksquare$
 {% endcapture %}
 {% include block.html type="example" title="Example 3 (Open hypercubes form a basis for Rn)" content=ex_basis_rn %}
 

@@ -24,7 +24,22 @@ pause and put his finger on the corresponding place. That is the standard.
 Substantive fidelity, not verbatim transcription. Remove fillers (*uh, um, so,
 yeah, okay, right?, you know*), restarts, board-management talk, and repeated
 sentences — keeping the clearest version. Keep emphasis, warnings, "note that",
-and forward references.
+## The verification rhythm
+
+The lecturer teaches through a deliberate rhythm: **state the obligation → discharge it → declare it closed**. This is repeated for every axiom, in every example, in every verification across the course. That repetition is the core pedagogic device by which a beginner learns the shape of a mathematical argument.
+
+Protect these six elements as **lecture content**; never compress or omit them:
+
+1. **Obligation statements** — "we need to check that…", "then their intersection should be in $\tau$", "so then we need to show that the union is in $\tau$". These come *before* the argument and explicitly name its target.
+2. **Recall statements** — "recall that the first condition was…", "recall that $\tau$ is a collection of subsets of $X$". He restates prior definitions constantly; that repetition is deliberate.
+3. **Closing declarations** — "so the second condition is also satisfied", "therefore the first condition is satisfied". Write the sentence. A ✓ may accompany it but never replace it.
+4. **Method signposting** — "let's check them one by one", "once again, we apply the same method", "exactly as in the previous point".
+5. **Case announcements** — "so first consider the case where…", "so if this does not happen, the only other possibility is…".
+6. **Reason clauses in his order** — where he says "because $\tau$ is all of the power set, and the power set contains $\varnothing$ and $X$", do not re-derive it in the opposite direction.
+
+**Prohibition: never open a proof by summarising why it will work.** Sentences such as "each is immediate for the same reason: everything in sight is a subset of $X$" front-load the punchline and reduce the subsequent checks to mere formalities. If that overarching observation is worth making, place it in a supplement *after* the proof.
+
+Where his own scaffolding is thin — where he says "similarly" or "exactly as before" over something a beginner needs spelled out — supply the missing statement in a marked supplement, never silently in the lecture body.
 
 ## Multi-part transcripts
 
